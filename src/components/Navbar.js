@@ -12,13 +12,13 @@ const Navbar = () => {
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-            <li class="nav-item ml-4">
+            <li class="nav-item mr-4">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item ml-">
+            <li class="nav-item mr-4">
               <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mr-4">
               <a class="nav-link disabled">Disabled</a>
             </li>
           </ul>
