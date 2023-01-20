@@ -1,35 +1,30 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React from 'react';
+import logo from '../assets/img/logo.png'
+import LoginButton from './LoginButton';
+import SignUpButton from './SignUpButton';
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg bg-light " aria-label="Eighth navbar example">
-      <div class="container">
-        <a class="navbar-brand" href="#">Vaccitracker</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-lg bg-light " aria-label="Eighth navbar example">
+      <div className="container">
+        <a className="navbar-brand" href="#"><img src={logo} alt="Vaccitracker logo" /></a>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample07">
-          <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Contact us</a>
-            </li>
+        <div className="collapse navbar-collapse" id="navbarsExample07">
+          <ul className="navbar-nav col-lg-6 justify-content-lg-center">
+          
           </ul>
-          <div class="d-lg-flex col-lg-6 justify-content-lg-end">
-            <a class="nav-link m-2" href="#">Login</a>
-            <button class="btn btn-primary">Get Started for free</button>
+          <div className="d-lg-flex col-lg-6 justify-content-lg-end">
+            <LoginButton  text="Login"></LoginButton>
+            <SignUpButton  text="Get started for free" type="submit"></SignUpButton>
           </div>
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
 export default Navbar
