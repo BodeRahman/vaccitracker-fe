@@ -1,0 +1,27 @@
+html, body{
+    margin: 0;
+}
+
+.orange {
+    background: #F76600;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.album {
+    background: #032F5B;
+}
+
+.inp{
+    background: #ACC1D8;
+}
+
+.inp::placeholder { 
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.footer {
+    background: #032F5B;
+    
+}
