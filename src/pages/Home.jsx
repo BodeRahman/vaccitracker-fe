@@ -47,11 +47,11 @@ const Home = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 mb-sm-5">
               <img className="img-fluid mt-3 bro" src={bro} alt="" />
             </div>
 
-            <div className="col-md-6 mt-5 py-5">
+            <div className="col-md-6 mt-sm-5 py-5">
               <h3 className="display-5 fw-normal">
                 Add your spouse to help keep track of immunization schedules
               </h3>
