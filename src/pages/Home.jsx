@@ -48,7 +48,7 @@ const Home = () => {
           </div>
           <div className="row">
             <div className="col-md-6">
-              <img className="img-fluid mt-3" src={bro} alt="" />
+              <img className="img-fluid mt-3 bro" src={bro} alt="" />
             </div>
 
             <div className="col-md-6 mt-5 py-5">
@@ -66,21 +66,45 @@ const Home = () => {
           <div className="album py-5 ">
             <div className="container">
               <div className="row">
-                <div className="col">
-                  <img className="img-fluid mt-2" src={articles} alt="" />
-                  <h5 className="fw-normal">
-                    Add your spouse to help keep track of immunization schedules
-                  </h5>
-                  <p className="fw-light fs-4">
-                    Remember your child’s Immunization appointments with
-                    Vaccitracker
-                  </p>
+                <div className="col-md-4 col-sm-12">
+                  <img className="img-fluid mt-2 articles" src={articles} alt="" />
+                  <div className="mt-3">
+                    <h5 className="title">
+                      Read Immunization articles
+                    </h5>
+                    <p className="desc">
+                      Read articles on different immunization 
+                      and know their side effects, so if they 
+                      do happen you will know what to do 
+                      and expect. 
+                    </p>
+                  </div>
                 </div>
-                <div className="col">
-                  <img className="img-fluid mt-2" src={reminders} alt="" />
+                <div className="col-md-4 col-sm-12">
+                  <img className="img-fluid mt-2 reminders" src={reminders} alt="" />
+                  <div className="mt-3">
+                    <h5 className="title">
+                      Set customized reminders
+                    </h5>
+                    <p className="desc">
+                      Set customized reminders, to remind you
+                      of different immunization schedules.
+                    </p>
+                  </div>
                 </div>
-                <div className="col">
-                  <img className="img-fluid mt-2" src={management} alt="" />
+                <div className="col-md-4 col-sm-12">
+                  <img className="img-fluid mt-2 management" src={management} alt="" />
+                  <div className="mt-3">
+                    <h5 className="title">
+                      Keep track of multiples children 
+                      Immunization Schedules
+                    </h5>
+                    <p className="desc">
+                      Add multiple children to your account and 
+                      keep track of their immunizations without
+                      mixing them up.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

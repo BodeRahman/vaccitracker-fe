@@ -25,3 +25,46 @@ html, body{
     background: #032F5B;
     
 }
+
+.bro {
+    background: #CDDAE7;
+    border-radius: 40px;
+    margin-bottom: 10px;
+}
+
+.album img{
+    width: 424px;
+    height: 382px;
+}
+
+.articles {
+    background: #FDE0CC;
+    border-radius: 20px;
+   
+}
+
+.reminders {
+    background: #CDDAE7;
+    border-radius: 20px;
+    
+}
+
+.management {
+    background: #FDE0CC;
+    border-radius: 20px;
+}
+
+.title {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 23px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.desc {
+    font-style: normal;
+    font-weight: 200;
+    color: #FFFFFF;
+    text-align: center;
+}
