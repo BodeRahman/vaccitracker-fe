@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <Navbar />
       <main>
-        <div className="container">
+        <div className="container gilroy">
           <div className="row rounded-3">
             <div className="col-md-6 mt-3 py-5">
               <h3 className="display-5 fw-bold">

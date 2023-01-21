@@ -3,7 +3,7 @@ import SignUpButton from './SignUpButton';
 
 const Newsletter = () => {
   return (
-    <section className="py-5 text-center container">
+    <section className="py-5 text-center container gilroy">
         <div className="row">
             <div className="col-sm-12">
                 <div className="content mt-2">

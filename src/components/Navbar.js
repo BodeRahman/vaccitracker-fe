@@ -8,7 +8,7 @@ import SignUpButton from './SignUpButton';
 function Navbar() {
   return (
     <nav
-      className="navbar navbar-expand-md bg-light "
+      className="navbar navbar-expand-md bg-light gilroy"
       aria-label="Eighth navbar example"
     >
       <div className="container">

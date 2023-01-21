@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
 import './assets/css/index.css';
+import './assets/fonts/Gilroy/Gilroy-Light.otf';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

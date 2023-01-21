@@ -3,7 +3,7 @@ import logo from "../assets/img/vaccitracker-logo-footer.png";
 
 const Footer = () => {
   return (
-    <div className="container-fluid footer">
+    <div className="container-fluid footer gilroy">
       <footer className="">
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">
           <img className="img-fluid mt-3" src={logo} alt="" />
