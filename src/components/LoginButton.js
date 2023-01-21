@@ -10,6 +10,7 @@ const LoginButton = (props) => {
           background-color: #FFFFF;
           color: #F76600;
           border-color: #F76600;
+          margin-left: 4px;
         }
 
     `}

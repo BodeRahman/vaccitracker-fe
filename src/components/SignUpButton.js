@@ -9,6 +9,7 @@ const SignUpButton = (props) => {
         .btn-flat {
           background-color: #F76600;
           color: white;
+          margin-left: 6px;
         }
 
     `}
