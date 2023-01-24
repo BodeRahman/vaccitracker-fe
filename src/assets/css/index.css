@@ -74,3 +74,42 @@ html, body{
 .foot-item {
     color: #FFFFFF;
 }
+
+.btn-plain {
+    background-color: white;
+    color: #F76600;
+    border-color: #F76600;
+    margin-right: 8px;
+}
+
+.btn-plain:hover, 
+.btn-plain:visited,
+.btn-plain:focus {
+    text-decoration: none !important;
+    background-color: #FDE0CC;
+    color: white; 
+}
+
+.btn-flat {
+    background-color: #F76600;
+    color: white;
+}
+
+.btn-flat:hover, 
+.btn-flat:visited,
+.btn-flat:focus{
+    text-decoration: none !important;
+    background-color: #f4b686;
+    color: white; 
+}
+
+/*Signup page*/
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.login {
+    color: #F76600;
+}

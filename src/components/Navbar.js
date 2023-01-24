@@ -12,7 +12,7 @@ function Navbar() {
       aria-label="Eighth navbar example"
     >
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <img src={logo} alt="Vaccitracker logo" />
         </a>
         <button
