@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import React, { Fragment } from 'react';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import ProtectedRoutes from './config/ProtectedRoutes';
+import AuthHome from './pages/AuthHome';
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/home" element={<AuthHome />} />
+          </Route>
         </Routes>
       </Router>
     </Fragment>
