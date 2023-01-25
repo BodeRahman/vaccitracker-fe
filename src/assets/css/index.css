@@ -93,6 +93,10 @@ html, body{
 .btn-flat {
     background-color: #F76600;
     color: white;
+    height: 50px;
+    border-radius: 8px;
+    Padding: 6px, 20px, 6px, 20px;
+    border-color: #F76600;
 }
 
 .btn-flat:hover, 

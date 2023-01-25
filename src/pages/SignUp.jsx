@@ -205,8 +205,8 @@ function Signup() {
 
                     <div className="form-outline mb-3">
                       <div className="d-grid col-12">
-                        <button className="btn" type="submit">
-                          SignUp
+                        <button className="btn-flat" type="submit">
+                          Create Account
                         </button>
                       </div>
                     </div>
@@ -214,7 +214,7 @@ function Signup() {
                     <p className="text-center text-muted mt-3 mb-0">
                       Have an account?{" "}
                       <a
-                        href="#!"
+                        href="/login"
                         className="sign-in fw-bold text-decoration-none"
                       >
                         Login here
