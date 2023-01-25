@@ -69,6 +69,9 @@ function Signup() {
                     </div>
 
                     <div className="mb-3">
+                      <label className="form-label" htmlFor="location">
+                        Location
+                      </label>
                       <div className="form-outline d-grid col-12">
                         <button
                           className="btn btn-secondary btn-lg bg-light text-dark dropdown-toggle"
@@ -76,7 +79,7 @@ function Signup() {
                           data-bs-toggle="dropdown"
                           aria-expanded="false"
                         >
-                          Select Country
+                          Nigeria
                         </button>
                         <ul className="dropdown-menu">
                           <li>
