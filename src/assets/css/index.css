@@ -110,6 +110,11 @@ html, body{
     border-radius: 16px;
 }
 
-.login {
+.sign-in {
     color: #F76600;
+}
+
+/*Login page*/
+.login {
+    color: #000000;
 }

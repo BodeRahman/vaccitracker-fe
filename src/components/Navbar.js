@@ -29,7 +29,7 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarsExample07">
           <ul className="navbar-nav me-auto mb-2 mb-md-0"></ul>
-          <div className="justify-content-end mb-1">
+          <div className="mb-1">
             <Link to="/login">
               <LoginButton text="Login"></LoginButton>
             </Link>

@@ -73,7 +73,7 @@ function Signup() {
                       </div>
 
                       <p className="text-center text-muted mt-3 mb-0">Have an account? <a href="#!"
-                          className="login fw-bold text-decoration-none">Login here</a></p>
+                          className="sign-in fw-bold text-decoration-none">Login here</a></p>
 
                     </form>
 
