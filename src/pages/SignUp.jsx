@@ -1,8 +1,73 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Navbar from "../components/Navbar";
-import { Link } from 'react-router-dom';
-import SignUpButton from '../components/SignUpButton';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+// import SignUpButton from "../components/SignUpButton";
+import { register, reset } from "../features/auth/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import Spinner from "../components/Spinner";
+
 function Signup() {
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    relationship: "",
+    password: "",
+    password2: "",
+  });
+
+  const { first_name, last_name, email, relationship, password, password2 } =
+    formData;
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+
+    if (isSuccess || user) {
+      navigate("/home");
+    }
+
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (password !== password2) {
+      console.log("Passwords do not match");
+    } else {
+      const userData = {
+        first_name,
+        last_name,
+        email,
+        relationship,
+        password,
+      };
+
+      dispatch(register(userData));
+    }
+  };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
     <>
       <Navbar />
@@ -16,7 +81,7 @@ function Signup() {
                     Create New account
                   </h2>
 
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div className="row">
                       <div className="col-sm-6">
                         <div className="form-outline mb-3">
@@ -25,7 +90,10 @@ function Signup() {
                           </label>
                           <input
                             type="text"
-                            id="first-name"
+                            id="first_name"
+                            name="first_name"
+                            value={first_name}
+                            onChange={onChange}
                             className="form-control form-control-lg"
                           />
                         </div>
@@ -38,7 +106,10 @@ function Signup() {
                           </label>
                           <input
                             type="text"
-                            id="last-name"
+                            id="last_name"
+                            name="last_name"
+                            value={last_name}
+                            onChange={onChange}
                             className="form-control form-control-lg"
                           />
                         </div>
@@ -52,6 +123,9 @@ function Signup() {
                       <input
                         type="email"
                         id="email"
+                        name="email"
+                        value={email}
+                        onChange={onChange}
                         className="form-control form-control-lg"
                       />
                     </div>
@@ -61,8 +135,11 @@ function Signup() {
                         Relationship
                       </label>
                       <input
-                        type="email"
-                        id="email"
+                        type="text"
+                        id="relationship"
+                        name="relationship"
+                        value={relationship}
+                        onChange={onChange}
                         className="form-control form-control-lg"
                         placeholder="e.g. Father, Mother"
                       />
@@ -103,6 +180,9 @@ function Signup() {
                       <input
                         type="password"
                         id="form3Example4cg"
+                        name="password"
+                        value={password}
+                        onChange={onChange}
                         className="form-control form-control-lg"
                       />
                     </div>
@@ -114,20 +194,20 @@ function Signup() {
                       <input
                         type="password"
                         id="form3Example4cdg"
+                        name="password2"
+                        value={password2}
+                        onChange={onChange}
                         className="form-control form-control-lg"
                       />
                     </div>
 
                     <div className="form-outline mb-3">
-                      <Link className="text-decoration-none">
-                        <div className="d-grid col-12">
-                          <SignUpButton
-                            className="btn"
-                            text="CREATE ACCOUNT"
-                            type="submit"
-                          ></SignUpButton>
-                        </div>
-                      </Link>
+                      <div className="d-grid col-12">
+                        <button
+                          className="btn"
+                          type="submit"
+                        >SignUp</button>
+                      </div>
                     </div>
 
                     <p className="text-center text-muted mt-3 mb-0">
