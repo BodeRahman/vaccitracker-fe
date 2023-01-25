@@ -2,6 +2,8 @@
 import Navbar from "../components/Navbar";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 // import SignUpButton from "../components/SignUpButton";
 import { register, reset } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,7 +31,7 @@ function Signup() {
 
   useEffect(() => {
     if (isError) {
-      console.log(message);
+      toast.error(message);
     }
 
     if (isSuccess || user) {
@@ -50,7 +52,7 @@ function Signup() {
     e.preventDefault();
 
     if (password !== password2) {
-      console.log("Passwords do not match");
+      toast.error("Passwords do not match");
     } else {
       const userData = {
         first_name,
@@ -203,10 +205,9 @@ function Signup() {
 
                     <div className="form-outline mb-3">
                       <div className="d-grid col-12">
-                        <button
-                          className="btn"
-                          type="submit"
-                        >SignUp</button>
+                        <button className="btn" type="submit">
+                          SignUp
+                        </button>
                       </div>
                     </div>
 
