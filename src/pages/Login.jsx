@@ -68,6 +68,7 @@ function Login() {
             <div className="col-12 col-md-9 col-lg-7 col-xl-6">
               <div className="card my-5">
                 <div className="card-body p-5">
+                  
                   <form onSubmit={onSubmit}>
                     <div className="form-outline mb-3">
                       <label className="form-label" htmlFor="email">
@@ -100,7 +101,7 @@ function Login() {
                     <div className="form-outline mb-3">
                         <div className="d-grid col-12">
                           <button
-                            className="btn"
+                            className="btn-flat"
                             // text="Login"
                             type="submit"
                           >Login</button>
