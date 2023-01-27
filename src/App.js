@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import React, { Fragment } from 'react';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import TempHome from './pages/TempHome';
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/temphome" element={<TempHome />} />
         </Routes>
       </Router>
     </Fragment>
