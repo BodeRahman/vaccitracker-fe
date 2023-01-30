@@ -1,5 +1,7 @@
 import React from 'react'
-
+import { useEffect } from 'react'
+import { fetchChildren } from '../features/child/childSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import Sidebar from '../components/Sidebar';
 import avatar from '../assets/img/child-pic.png'
 import vacci1 from '../assets/img/measles.png'
@@ -7,6 +9,8 @@ import vacci2 from '../assets/img/pvv.png'
 
 
 const TempHome = () => {
+  const dispatch = useDispatch();
+  const 
   return (
     <>
       <div className="row gilroy">
