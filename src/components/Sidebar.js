@@ -24,19 +24,19 @@ const Sidebar = () => {
             <NavLink exact to="/" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/tables" activeClassName="activeClicked">
+            <NavLink exact to="/children" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="users">Children</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
+            <NavLink exact to="/vaccination-wiki" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="plus">Vaccitracker wiki</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/analytics" activeClassName="activeClicked">
+            <NavLink exact to="/reminders" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="bell">Reminders</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/hero404" activeClassName="activeClicked">
+            <NavLink exact to="/profile" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Profile</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/hero404" activeClassName="activeClicked">
+            <NavLink exact to="/" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="exclamation-circle">Log out</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
