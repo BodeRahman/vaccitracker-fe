@@ -18,7 +18,7 @@ const TempHome = () => {
             <div className="col-sm-6 col-md-7">
               <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B;'}}>
                 <p className="fs-5 fw-bold">Upcoming vaccinations</p>
-                <a href='/Reminders' className="text-decoration-none mt-2 text-dark">See all</a>
+                <a href='/reminders' className="text-decoration-none mt-2 text-dark">See all</a>
               </div>
               <div className="row mt-2">
                 <div className="col-md-6 mt-3">
