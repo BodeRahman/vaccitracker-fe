@@ -11,8 +11,8 @@ import logo from '../assets/img/sidebar-logo.png'
 
 const Sidebar = () => {
   return (
-    <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
-      <CDBSidebar textColor="#fff" backgroundColor="#054689">
+    <div style={{ display: 'flex', height: '100%' }}>
+      <CDBSidebar textColor="#fff" backgroundColor="#054689" width="">
         <CDBSidebarHeader >
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
             <img src={logo} alt="Vaccitracker logo" style={{ height: '40px', width: '110' }}  />

@@ -74,3 +74,11 @@ html, body{
 .foot-item {
     color: #FFFFFF;
 }
+
+/* tempHome */
+.card-deet {
+    background: #FDE0CC;
+    box-shadow: 0px 0px 11.3569px rgba(0, 0, 0, 0.2);
+    border-radius: 9.08552px;
+}
+
