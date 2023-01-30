@@ -16,9 +16,9 @@ const TempHome = () => {
         <div className="col-sm-7 col-md-9">
           <div className="row">
             <div className="col-sm-6 col-md-7">
-              <div className="mt-5 d-flex justify-content-between">
+              <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B;'}}>
                 <p className="fs-5 fw-bold">Upcoming vaccinations</p>
-                <p className="mt-2">See all</p>
+                <a href='/Reminders' className="text-decoration-none mt-2 text-dark">See all</a>
               </div>
               <div className="row mt-2">
                 <div className="col-md-6 mt-3">
@@ -128,9 +128,9 @@ const TempHome = () => {
             </div>
 
             <div className="col-sm- col-md-4">
-              <div className="mt-5 d-flex justify-content-between ">
+              <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B'}}>
                 <p className="fs-5 fw-bold">Children and wards</p>
-                <p className="mt-2">See all</p>
+                <a href='/children' className="text-decoration-none mt-2 text-dark" >See all</a>
               </div>
               <div className="col-md-12 mt-4">
                 <div
@@ -198,9 +198,9 @@ const TempHome = () => {
             </div>
 
             <div className="col-sm-6 col-md-11">
-              <div className="mt-5 d-flex justify-content-between">
+              <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B;'}}>
                 <p className="fs-5 fw-bold">Vaccination wiki</p>
-                <p className="mt-2">See all</p>
+                <a href='/vaccination-wiki' className="text-decoration-none mt-2 text-dark">See all</a>
               </div>
               <div className="row mt-2">
                 <div className="col-md-6 my-3">
