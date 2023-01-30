@@ -35,7 +35,7 @@ function Signup() {
     }
 
     if (isSuccess || user) {
-      navigate("/home");
+      navigate("/temphome");
     }
 
     dispatch(reset());

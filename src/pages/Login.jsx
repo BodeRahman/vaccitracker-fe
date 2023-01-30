@@ -31,7 +31,7 @@ function Login() {
     }
 
     if (isSuccess || user) {
-      navigate("/home");
+      navigate("/temphome");
     }
 
     dispatch(reset());
