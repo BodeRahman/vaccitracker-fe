@@ -4,7 +4,6 @@ import { fetchChildren, selectChildren } from "../features/child/childSlice";
 import { fetchUpcoming, selectUpcoming } from "../features/child/upcomingSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
-import avatar from "../assets/img/child-pic.png";
 import vacci1 from "../assets/img/measles.png";
 import vacci2 from "../assets/img/pvv.png";
 
@@ -12,19 +11,13 @@ const TempHome = () => {
   const dispatch = useDispatch();
   const children = useSelector(selectChildren);
   const immunizations = useSelector(selectUpcoming);
-
   const displayedChildren = children.slice(0, 2);
-  const upcoming = [];
-  for (let i = 0; i < immunizations.length; i++) {
-    upcoming.push(immunizations[i].slice(0, 2));
-  }
-  const homeUpcoming = [];
-  upcoming.forEach((immunization) => {
-    immunization.forEach((vaccination) => {
-      homeUpcoming.push(vaccination);
-    });
+  const sortedImmunizations = [...immunizations].sort((a, b) => {
+    const dateA = new Date(a.immunization.vaccination_date);
+    const dateB = new Date(b.immunization.vaccination_date);
+    return dateA - dateB;
   });
-  const displayedUpcoming = homeUpcoming.slice(0, 4);
+  const displayedUpcoming = sortedImmunizations.slice(0, 4);
 
   useEffect(() => {
     dispatch(fetchChildren());
@@ -54,7 +47,7 @@ const TempHome = () => {
               </div>
               <div className="row mt-2">
                 {displayedUpcoming.map((vaccination) => {
-                  const date = new Date(vaccination.vaccination_date);
+                  const date = new Date(vaccination.immunization.vaccination_date);
                   const options = {
                     year: "numeric",
                     month: "short",
@@ -65,13 +58,13 @@ const TempHome = () => {
                     options
                   ).format(date);
                   return (
-                    <div key={vaccination.id} className="col-md-6 mt-3">
+                    <div key={vaccination.immunization.id} className="col-md-6 mt-3">
                       <div className="card card-deet">
                         <div className="row">
                           <div className="col-3 m-2 mt-5">
                             <img
                               className="rounded-circle card-img-left"
-                              src={avatar}
+                              src={vaccination.avatar_url}
                               style={{ width: "72px" }}
                               alt="avatar1"
                             />
@@ -82,10 +75,12 @@ const TempHome = () => {
                                 {formattedDate}
                               </h5>
                               <p className="card-subtitle fs-6 fw-bolder">
-                                {vaccination.ward.first_name + " " + vaccination.ward.last_name}
+                                {vaccination.ward.first_name +
+                                  " " +
+                                  vaccination.ward.last_name}
                               </p>
                               <p className="card-text fw-light">
-                                {vaccination.name}
+                                {vaccination.immunization.name}
                               </p>
                             </div>
                           </div>
