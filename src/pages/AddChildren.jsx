@@ -14,7 +14,19 @@ const AddChildren = () => {
                                     Add Child
                                 </h2>
                                 <form>
-                                    <div className="row">
+                                    <div>
+                                        <div className="mb-4 d-flex justify-content-center">
+                                            <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                            alt="example placeholder" style={{width: '300px'}} />
+                                        </div>
+                                        <div className="d-flex justify-content-center">
+                                            <div className="btn btn-flat btn-rounded">
+                                                <label className="form-label text-white m-1" htmlFor="customFile1">Choose file</label>
+                                                <input type="file" className="form-control d-none" id="customFile1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="row mt-3">
                                         <div className="col-sm-6">
                                             <div className="form-outline mb-3">
                                             <label className="form-label" htmlFor="first-name">
