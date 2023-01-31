@@ -75,26 +75,11 @@ const AddChildren = () => {
                                                     Gender
                                                 </label>
                                                 <div className="form-outline d-grid">
-                                                    <button
-                                                    className="btn btn-secondary btn-lg bg-light text-dark dropdown-toggle"
-                                                    type="button"
-                                                    data-bs-toggle="dropdown"
-                                                    aria-expanded="false"
-                                                    >
-                                                    Select Gender
-                                                    </button>
-                                                    <ul className="dropdown-menu">
-                                                        <li>
-                                                            <a className="dropdown-item" href="#">
-                                                            Male
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a className="dropdown-item" href="#">
-                                                            Female
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    <select className="form-select form-select-sm form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                        <option selected>Select Gender</option>
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
