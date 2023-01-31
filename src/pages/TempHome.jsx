@@ -3,10 +3,11 @@ import React from 'react'
 import Sidebar from '../components/Sidebar';
 import avatar from '../assets/img/child-pic.png'
 import vacci1 from '../assets/img/measles.png'
-import vacci2 from '../assets/img/pvv.png'
+import Vaccinations from '../components/Vaccinations';
 
 
 const TempHome = () => {
+  const displayedVaccinations = Vaccinations.slice(0, 2);
   return (
     <>
       <div className="row gilroy">
@@ -203,7 +204,8 @@ const TempHome = () => {
                 <a href='/vaccination-wiki' className="text-decoration-none mt-2 text-dark">See all</a>
               </div>
               <div className="row mt-2">
-                <div className="col-md-6 my-3">
+                {displayedVaccinations.map((vaccination) => (
+                  <div key={vaccination.id} className="col-md-6 my-3">
                   <div className="card ">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -217,12 +219,10 @@ const TempHome = () => {
                       <div className="col-8">
                         <div className="card-body">
                           <h5 className="card-title fw-bold">
-                            Measles Vaccine
+                            {vaccination.name}
                           </h5>
                           <p className="card-subtitle fs-6 fw-bolder">
-                            Measles can be prevented with MMR vaccine. The
-                            vaccine protects against diseases, mumps, and
-                            rubella.
+                            {vaccination.home}
                           </p>
                           <button type="button" className="btn card-text fw-bold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Read More
@@ -236,13 +236,7 @@ const TempHome = () => {
                                   <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div className="modal-body">
-                                  Measles can be prevented with MMR vaccine. The
-                                  vaccine protects against diseases, mumps, and
-                                  rubella.Measles can be prevented with MMR vaccine. The
-                                  vaccine protects against diseases, mumps, and
-                                  rubella.Measles can be prevented with MMR vaccine. The
-                                  vaccine protects against diseases, mumps, and
-                                  rubella.
+                                  {vaccination.description}
                                 </div>
                                 <div className="modal-footer">
                                   <button type="button" className="btn btn-flat" data-bs-dismiss="modal">Close</button>
@@ -256,57 +250,7 @@ const TempHome = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="col-md-6 my-3">
-                  <div className="card">
-                    <div className="row">
-                      <div className="col-3 m-2 mt-5">
-                        <img
-                          className="rounded-circle card-img-left"
-                          src={vacci2}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <h5 className="card-title fw-bold">PCV-10 Vaccine</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            Measles can be prevented with MMR vaccine. The
-                            vaccine protects against diseases, mumps, and
-                            rubella.
-                          </p>
-                          <button type="button" className="btn card-text fw-bold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Read More
-                          </button>
-
-                          <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div className="modal-dialog">
-                              <div className="modal-content">
-                                <div className="modal-header">
-                                  <h1 className="modal-title fs-5" id="exampleModalLabel">Measles Vaccine</h1>
-                                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div className="modal-body">
-                                  Measles can be prevented with MMR vaccine. The
-                                  vaccine protects against diseases, mumps, and
-                                  rubella.Measles can be prevented with MMR vaccine. The
-                                  vaccine protects against diseases, mumps, and
-                                  rubella.Measles can be prevented with MMR vaccine. The
-                                  vaccine protects against diseases, mumps, and
-                                  rubella.
-                                </div>
-                                <div className="modal-footer">
-                                  <button type="button" className="btn btn-flat" data-bs-dismiss="modal">Close</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))} 
               </div>
             </div>
           </div>
