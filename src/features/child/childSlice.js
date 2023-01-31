@@ -20,6 +20,5 @@ export const childSlice = createSlice({
   },
 });
 
-// export const { reset } = menuSlice.actions;
 export const selectChildren = (state) => state.children;
 export default childSlice.reducer;

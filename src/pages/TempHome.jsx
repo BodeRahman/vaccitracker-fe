@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { fetchChildren, selectChildren } from "../features/child/childSlice";
+import { fetchUpcoming, selectUpcoming } from "../features/child/upcomingSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "../components/Sidebar";
 import avatar from "../assets/img/child-pic.png";
@@ -10,10 +11,24 @@ import vacci2 from "../assets/img/pvv.png";
 const TempHome = () => {
   const dispatch = useDispatch();
   const children = useSelector(selectChildren);
+  const immunizations = useSelector(selectUpcoming);
+
   const displayedChildren = children.slice(0, 2);
+  const upcoming = [];
+  for (let i = 0; i < immunizations.length; i++) {
+    upcoming.push(immunizations[i].slice(0, 2));
+  }
+  const homeUpcoming = [];
+  upcoming.forEach((immunization) => {
+    immunization.forEach((vaccination) => {
+      homeUpcoming.push(vaccination);
+    });
+  });
+  const displayedUpcoming = homeUpcoming.slice(0, 4);
 
   useEffect(() => {
     dispatch(fetchChildren());
+    dispatch(fetchUpcoming());
   }, [dispatch]);
 
   return (
@@ -38,109 +53,47 @@ const TempHome = () => {
                 </a>
               </div>
               <div className="row mt-2">
-                <div className="col-md-6 mt-3">
-                  <div className="card card-deet">
-                    <div className="row">
-                      <div className="col-3 m-2 mt-5">
-                        <img
-                          className="rounded-circle card-img-left"
-                          src={avatar}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            Destiny Tunde
-                          </p>
-                          <p className="card-text fw-light">
-                            BCG , OPV and Pediatric Hepatitis B vaccines
-                          </p>
+                {displayedUpcoming.map((vaccination) => {
+                  const date = new Date(vaccination.vaccination_date);
+                  const options = {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  };
+                  const formattedDate = new Intl.DateTimeFormat(
+                    "en-US",
+                    options
+                  ).format(date);
+                  return (
+                    <div key={vaccination.id} className="col-md-6 mt-3">
+                      <div className="card card-deet">
+                        <div className="row">
+                          <div className="col-3 m-2 mt-5">
+                            <img
+                              className="rounded-circle card-img-left"
+                              src={avatar}
+                              style={{ width: "72px" }}
+                              alt="avatar1"
+                            />
+                          </div>
+                          <div className="col-8">
+                            <div className="card-body">
+                              <h5 className="card-title fw-bold">
+                                {formattedDate}
+                              </h5>
+                              <p className="card-subtitle fs-6 fw-bolder">
+                                {vaccination.ward.first_name + " " + vaccination.ward.last_name}
+                              </p>
+                              <p className="card-text fw-light">
+                                {vaccination.name}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="col-md-6 mt-3">
-                  <div className="card card-deet">
-                    <div className="row">
-                      <div className="col-3 m-2 mt-5">
-                        <img
-                          className="rounded-circle card-img-left"
-                          src={avatar}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            Destiny Tunde
-                          </p>
-                          <p className="card-text fw-light">
-                            BCG , OPV and Pediatric Hepatitis B vaccines
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-6 mt-3">
-                  <div className="card card-deet">
-                    <div className="row">
-                      <div className="col-3 m-2 mt-5">
-                        <img
-                          className="rounded-circle card-img-left"
-                          src={avatar}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            Destiny Tunde
-                          </p>
-                          <p className="card-text fw-light">
-                            BCG , OPV and Pediatric Hepatitis B vaccines
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-md-6 mt-3">
-                  <div className="card card-deet">
-                    <div className="row">
-                      <div className="col-3 m-2 mt-5">
-                        <img
-                          className="rounded-circle card-img-left"
-                          src={avatar}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            Destiny Tunde
-                          </p>
-                          <p className="card-text fw-light">
-                            BCG , OPV and Pediatric Hepatitis B vaccines
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -157,39 +110,50 @@ const TempHome = () => {
                   See all
                 </a>
               </div>
-              {displayedChildren.map((child) => (
-                <div key={child.id} className="col-md-12 mt-4">
-                  <div
-                    className="card text-white"
-                    style={{ background: "#2F659D" }}
-                  >
-                    <div className="row">
-                      <div className="col-3 m-2 mt-3">
-                        <img
-                          className="rounded-circle card-img-left "
-                          src={child.avatar_url}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <p className="card-title fw-bold">
-                            Name: {child.first_name + " " + child.last_name}
-                          </p>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            DOB: {child.date_of_birth}
-                          </p>
-                          <p className="card-text fw-light">
-                            Gender: {child.gender}
-                          </p>
+              {displayedChildren.map((child) => {
+                const date = new Date(child.date_of_birth);
+                const options = {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                };
+                const formattedDate = new Intl.DateTimeFormat(
+                  "en-US",
+                  options
+                ).format(date);
+                return (
+                  <div key={child.id} className="col-md-12 mt-4">
+                    <div
+                      className="card text-white"
+                      style={{ background: "#2F659D" }}
+                    >
+                      <div className="row">
+                        <div className="col-3 m-2 mt-3">
+                          <img
+                            className="rounded-circle card-img-left "
+                            src={child.avatar_url}
+                            style={{ width: "72px" }}
+                            alt="avatar1"
+                          />
+                        </div>
+                        <div className="col-8">
+                          <div className="card-body">
+                            <p className="card-title fw-bold">
+                              Name: {child.first_name + " " + child.last_name}
+                            </p>
+                            <p className="card-subtitle fs-6 fw-bolder">
+                              DOB: {formattedDate}
+                            </p>
+                            <p className="card-text fw-light">
+                              Gender: {child.gender}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-
+                );
+              })}
             </div>
 
             <div className="col-sm-6 col-md-11">
