@@ -45,6 +45,7 @@ function Login() {
 
     if (isSuccess || user) {
       navigate("/temphome");
+      window.location.reload();
       Toast.fire({
         icon: "success",
         title: "Signed in successfully",
