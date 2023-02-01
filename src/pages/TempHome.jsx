@@ -11,18 +11,18 @@ const TempHome = () => {
   return (
     <>
       <div className="row gilroy">
-        <div className="col-sm-5 col-md-3">
+        <div className="col-sm-6 col-md-3">
           <Sidebar />
         </div>
-        <div className="col-sm-7 col-md-9">
+        <div className="col-sm-12 col-md-9 ">
           <div className="row">
-            <div className="col-sm-6 col-md-7">
+            <div className="col-sm-12 col-md-7 mx-2 justify-content-center">
               <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B;'}}>
                 <p className="fs-5 fw-bold">Upcoming vaccinations</p>
                 <a href='/reminders' className="text-decoration-none mt-2 text-dark">See all</a>
               </div>
               <div className="row mt-2">
-                <div className="col-md-6 mt-3">
+                <div className="col-sm-6 col-md-6 mt-3">
                   <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -48,7 +48,7 @@ const TempHome = () => {
                   </div>
                 </div>
 
-                <div className="col-md-6 mt-3">
+                <div className="col-sm-6 col-md-6 mt-3">
                   <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -74,7 +74,7 @@ const TempHome = () => {
                   </div>
                 </div>
 
-                <div className="col-md-6 mt-3">
+                <div className="col-sm-6 col-md-6 mt-3">
                   <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -100,7 +100,7 @@ const TempHome = () => {
                   </div>
                 </div>
 
-                <div className="col-md-6 mt-3">
+                <div className="col-sm-6 col-md-6 mt-3">
                   <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -128,7 +128,7 @@ const TempHome = () => {
               </div>
             </div>
 
-            <div className="col-sm- col-md-4">
+            <div className="col-sm- col-md-4 ">
               <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B'}}>
                 <p className="fs-5 fw-bold">Children and wards</p>
                 <a href='/children' className="text-decoration-none mt-2 text-dark" >See all</a>
