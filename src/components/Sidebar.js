@@ -1,13 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { FolderPlus, Home, Users, Bell, User, LogOut } from 'react-feather';
+import { logout, reset } from "../features/auth/authSlice";
+import { useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
 
-
-
-//import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/sidebar-logo.png'
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
+  const onLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/")
+  };
+
   return (
     <>
       <style>
@@ -27,9 +35,9 @@ const Sidebar = () => {
         `}
       </style>
       <header className="navbar sticky-top flex-md-nowrap p-0 mt-4">
-        <a className="navbar-brand col-md-3 col-lg-4 me-4  px-3 fs-6 " href="#" >
+        <NavLink className="navbar-brand col-md-3 col-lg-4 me-4  px-3 fs-6 " to="#" >
           <img src={logo} alt="Vaccitracker logo" className='mx-4' style={{ height: '40px', width: '130px' }}  />
-        </a>
+        </NavLink>
         <button className="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -44,40 +52,40 @@ const Sidebar = () => {
             <div className="position-sticky pt-3 sidebar-sticky">
               <ul className="nav flex-column mt-4">
                 <li className="nav-item">
-                  <a className="nav-link text-white" aria-current="page" href="#">
+                  <NavLink className="nav-link text-white" aria-current="page" exact to="/temphome">
                     <span className="align-text-bottom m-4"><Home /></span>
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <NavLink className="nav-link text-white" exact to="/children">
                     <span className="align-text-bottom m-4"><Users /></span>
                     Children
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <NavLink className="nav-link text-white" exact to="/vaccination-wiki">
                     <span className="align-text-bottom m-4"><FolderPlus /></span>
                     Vaccination Wiki
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <NavLink className="nav-link text-white" exact to="/reminders">
                     <span className="align-text-bottom m-4"><Bell /></span>
                     Reminders
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <NavLink className="nav-link text-white" exact to="/profile">
                     <span className="align-text-bottom m-4"><User /></span>
                     Profile
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
+                  <NavLink className="nav-link text-white" onClick={onLogout}>
                     <span className="align-text-bottom m-4"><LogOut /></span>
                     Log out
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
