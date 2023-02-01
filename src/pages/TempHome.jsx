@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { fetchChildren, selectChildren } from "../features/child/childSlice";
 import { fetchUpcoming, selectUpcoming } from "../features/child/upcomingSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import vacci1 from "../assets/img/measles.png";
 import vacci2 from "../assets/img/pvv.png";
@@ -38,16 +39,24 @@ const TempHome = () => {
                 style={{ color: "#032F5B;" }}
               >
                 <p className="fs-5 fw-bold">Upcoming vaccinations</p>
-                <a
-                  href="/reminders"
-                  className="text-decoration-none mt-2 text-dark"
-                >
-                  See all
-                </a>
+                {immunizations.length > 0 && (
+                  <Link to="/reminders" className="text-decoration-none mt-2">
+                    See all
+                  </Link>
+                )}
               </div>
               <div className="row mt-2">
+                {immunizations.length === 0 && (
+                  <div className="col-md-12">
+                    <h3 className="home-place-color">
+                      No upcoming Immunizations
+                    </h3>
+                  </div>
+                )}
                 {displayedUpcoming.map((vaccination) => {
-                  const date = new Date(vaccination.immunization.vaccination_date);
+                  const date = new Date(
+                    vaccination.immunization.vaccination_date
+                  );
                   const options = {
                     year: "numeric",
                     month: "short",
@@ -58,7 +67,10 @@ const TempHome = () => {
                     options
                   ).format(date);
                   return (
-                    <div key={vaccination.immunization.id} className="col-md-6 mt-3">
+                    <div
+                      key={vaccination.immunization.id}
+                      className="col-md-6 mt-3"
+                    >
                       <div className="card card-deet">
                         <div className="row">
                           <div className="col-3 m-2 mt-5">
@@ -98,13 +110,27 @@ const TempHome = () => {
                 style={{ color: "#032F5B" }}
               >
                 <p className="fs-5 fw-bold">Children and wards</p>
-                <a
-                  href="/children"
-                  className="text-decoration-none mt-2 text-dark"
-                >
-                  See all
-                </a>
+                {children.length > 2 && (
+                  <Link
+                    to="/children"
+                    className="text-decoration-none mt-2 text-dark"
+                  >
+                    See all
+                  </Link>
+                )}
               </div>
+              {children.length === 0 && (
+                <div className="col-md-12">
+                  <Link
+                    to="/addChildren"
+                    className="text-decoration-none"
+                  >
+                    <h3 className="home-add-btn">
+                      Add a child <span>+</span>
+                    </h3>
+                  </Link>
+                </div>
+              )}
               {displayedChildren.map((child) => {
                 const date = new Date(child.date_of_birth);
                 const options = {

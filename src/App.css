@@ -2,6 +2,18 @@
     font-family: gilroy;
 }
 
+.home-place-color {
+    color: #F76600;
+}
+
+.home-add-btn {
+    border: 1px solid #F76600;
+    color: #F76600;
+    text-align: center;
+    padding: 5px 10px;
+    
+}
+
 .loadingSpinnerContainer {
     position: fixed;
     top: 0;
