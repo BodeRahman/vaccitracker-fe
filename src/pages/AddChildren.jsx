@@ -38,7 +38,6 @@ const AddChildren = () => {
       icon: "success",
       title: "Image uploaded successfully",
     });
-
   };
 
   const handleSubmit = (e) => {
