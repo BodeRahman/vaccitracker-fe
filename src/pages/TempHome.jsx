@@ -30,19 +30,22 @@ const TempHome = () => {
   return (
     <>
       <div className="row gilroy">
-        <div className="col-sm-5 col-md-3">
+        <div className="col-sm-6 col-md-3">
           <Sidebar />
         </div>
-        <div className="col-sm-7 col-md-9">
+        <div className="col-sm-12 col-md-9">
           <div className="row">
-            <div className="col-sm-6 col-md-7">
+            <div className="col-sm-12 col-md-7 mx-2 justify-content-center">
               <div
                 className="mt-5 d-flex justify-content-between"
                 style={{ color: "#032F5B;" }}
               >
                 <p className="fs-5 fw-bold">Upcoming vaccinations</p>
                 {immunizations.length > 0 && (
-                  <Link to="/reminders" className="text-decoration-none mt-2">
+                  <Link
+                    to="/reminders"
+                    className="text-decoration-none text-dark mt-2"
+                  >
                     See all
                   </Link>
                 )}
@@ -71,7 +74,7 @@ const TempHome = () => {
                   return (
                     <div
                       key={vaccination.immunization.id}
-                      className="col-md-6 mt-3"
+                      className="col-sm-6 col-md-6 mt-3"
                     >
                       <div className="card card-deet">
                         <div className="row">
@@ -182,12 +185,12 @@ const TempHome = () => {
                 style={{ color: "#032F5B;" }}
               >
                 <p className="fs-5 fw-bold">Vaccination wiki</p>
-                <a
-                  href="/vaccination-wiki"
-                  className="text-decoration-none mt-2 text-dark"
+                <Link
+                  to="/vaccination-wiki"
+                  className="text-decoration-none text-dark mt-2"
                 >
                   See all
-                </a>
+                </Link>
               </div>
               <div className="row mt-2">
                 {displayedVaccinations.map((vaccination) => (
