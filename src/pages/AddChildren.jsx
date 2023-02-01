@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addChild, selectWards, reset } from "../features/child/wardSlice";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Spinner from "../components/Spinner";
 
 const AddChildren = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -15,7 +16,6 @@ const AddChildren = () => {
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
   const [gender, setGender] = useState("");
-  const [saved, setSaved] = useState(false);
 
   const { isLoading, isError, isSuccess, message } = useSelector(selectWards);
 
@@ -43,7 +43,9 @@ const AddChildren = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("ward[avatar]", file);
+    if (file) {
+      formData.append("ward[avatar]", file);
+    }
     formData.append("ward[first_name]", firstName);
     formData.append("ward[last_name]", lastName);
     formData.append("ward[date_of_birth]", dateOfBirth);
@@ -59,16 +61,13 @@ const AddChildren = () => {
     }
 
     if (isSuccess) {
-      setSaved(true);
+      navigate("/children");
+      window.location.reload();
       Swal.fire("Confirmed!", "Child created.", "success");
     }
 
     dispatch(reset());
-  }, [isError, isSuccess, message, dispatch]);
-
-  if (saved) {
-    return <Navigate to="/children" replace />;
-  }
+  }, [isError, isSuccess, message, dispatch, navigate]);
 
   if (isLoading) {
     return <Spinner />;

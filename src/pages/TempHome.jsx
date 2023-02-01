@@ -1,16 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
-import { fetchChildren, selectChildren } from "../features/child/childSlice";
-import { fetchUpcoming, selectUpcoming } from "../features/child/upcomingSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { selectChildren } from "../features/child/childSlice";
+import { selectUpcoming } from "../features/child/upcomingSlice";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import vacci1 from "../assets/img/measles.png";
+import avatar from "../assets/img/child-pic.png";
 import Vaccinations from "../components/Vaccinations";
-// import vacci2 from "../assets/img/pvv.png";
 
 const TempHome = () => {
-  const dispatch = useDispatch();
   const children = useSelector(selectChildren);
   const immunizations = useSelector(selectUpcoming);
   const displayedChildren = children.slice(0, 2);
@@ -21,11 +19,6 @@ const TempHome = () => {
     return dateA - dateB;
   });
   const displayedUpcoming = sortedImmunizations.slice(0, 4);
-
-  useEffect(() => {
-    dispatch(fetchChildren());
-    dispatch(fetchUpcoming());
-  }, [dispatch]);
 
   return (
     <>
@@ -44,7 +37,7 @@ const TempHome = () => {
                 {immunizations.length > 0 && (
                   <Link
                     to="/reminders"
-                    className="text-decoration-none text-dark mt-2"
+                    className="text-decoration-none text-dark  mt-2"
                   >
                     See all
                   </Link>
@@ -81,7 +74,7 @@ const TempHome = () => {
                           <div className="col-3 m-2 mt-5">
                             <img
                               className="rounded-circle card-img-left"
-                              src={vaccination.avatar_url}
+                              src={vaccination.avatar_url !== null ? vaccination.avatar_url : avatar}
                               style={{ width: "72px" }}
                               alt="avatar1"
                             />
@@ -154,9 +147,9 @@ const TempHome = () => {
                         <div className="col-3 m-2 mt-3">
                           <img
                             className="rounded-circle card-img-left "
-                            src={child.avatar_url}
+                            src={child.avatar_url ? child.avatar_url : avatar}
                             style={{ width: "72px" }}
-                            alt="avatar1"
+                            alt="avatar"
                           />
                         </div>
                         <div className="col-8">
