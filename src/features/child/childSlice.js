@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const API_URL = "http://localhost:3000/wards";
+const API_URL = "http://localhost:3000/user/wards";
 const { jwt } = JSON.parse(localStorage.getItem("user")) || "";
 
 export const fetchChildren = createAsyncThunk("children/fetchChildren", async () => {
