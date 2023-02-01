@@ -180,4 +180,20 @@ html, body{
 .sidebar-heading {
     font-size: .75rem;
 }
+
+/* Child page */
+.add-btn {
+    padding: 20px;
+    gap: 10px;
+    background: #043A72;
+    border-radius: 8px;
+}
+
+.add-btn:hover, 
+.add-btn:visited,
+.add-btn:focus {
+    text-decoration: none !important;
+    background-color: #427cbb;
+    color: white; 
+}
   
