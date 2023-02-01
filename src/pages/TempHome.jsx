@@ -6,13 +6,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import vacci1 from "../assets/img/measles.png";
-import vacci2 from "../assets/img/pvv.png";
+import Vaccinations from "../components/Vaccinations";
+// import vacci2 from "../assets/img/pvv.png";
 
 const TempHome = () => {
   const dispatch = useDispatch();
   const children = useSelector(selectChildren);
   const immunizations = useSelector(selectUpcoming);
   const displayedChildren = children.slice(0, 2);
+  const displayedVaccinations = Vaccinations.slice(0, 2);
   const sortedImmunizations = [...immunizations].sort((a, b) => {
     const dateA = new Date(a.immunization.vaccination_date);
     const dateB = new Date(b.immunization.vaccination_date);
