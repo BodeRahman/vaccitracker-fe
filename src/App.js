@@ -15,7 +15,7 @@ import VaccinationWiki from './pages/VaccinationWiki';
 import AddChildren from './pages/AddChildren'; 
 
 import ProtectedRoutes from './config/ProtectedRoutes';
-import AuthHome from './pages/AuthHome';
+// import AuthHome from './pages/AuthHome';
 
 function App() {
   return (
@@ -25,19 +25,18 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/temphome" element={<TempHome />} />
-          <Route path="/reminders" element={<Reminders />} />
-          <Route path="/children" element={<Child />} />
-          <Route path="/vaccination-wiki" element={<VaccinationWiki />} />
-          <Route path="/addchildren" element={<AddChildren />} />
           <Route element={<ProtectedRoutes />}>
-            <Route path="/home" element={<AuthHome />} />
+            <Route path="/temphome" element={<TempHome />} />
+            <Route path="/children" element={<Child />} />
+            <Route path="/reminders" element={<Reminders />} />
+            <Route path="/vaccination-wiki" element={<VaccinationWiki />} />
+            <Route path="/addchildren" element={<AddChildren />} />
           </Route>
         </Routes>
       </Router>
       <ToastContainer />
     </Fragment>
-  )
+  );
 }
 
 export default App;

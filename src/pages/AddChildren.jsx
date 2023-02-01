@@ -19,8 +19,26 @@ const AddChildren = () => {
 
   const { isLoading, isError, isSuccess, message } = useSelector(selectWards);
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
+
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
+    Toast.fire({
+      icon: "success",
+      title: "Image uploaded successfully",
+    });
+
   };
 
   const handleSubmit = (e) => {
