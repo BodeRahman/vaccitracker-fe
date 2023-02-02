@@ -42,7 +42,7 @@ function App() {
             <Route path="/reminders" element={<Reminders />} />
             <Route path="/vaccination-wiki" element={<VaccinationWiki />} />
             <Route path="/addchildren" element={<AddChildren />} />
-            <Route path="/editChild" element={<EditChild />} />
+            <Route path="/editChild/:id" element={<EditChild />} />
           </Route>
         </Routes>
       </Router>
