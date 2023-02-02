@@ -50,7 +50,7 @@ function Signup() {
       window.location.reload();
       Toast.fire({
         icon: "success",
-        title: "Signed in successfully",
+        title: "Account created successfully",
       });
     }
 
