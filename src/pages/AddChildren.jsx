@@ -63,7 +63,7 @@ const AddChildren = () => {
     if (isSuccess) {
       navigate("/children");
       window.location.reload();
-      Swal.fire("Confirmed!", "Child created.", "success");
+      Swal.fire("Confirmed!", "Child Added!", "success");
     }
 
     dispatch(reset());
@@ -84,13 +84,13 @@ const AddChildren = () => {
                   <h2 className="text-uppercase text-center mb-4">Add Child</h2>
                   <form onSubmit={handleSubmit}>
                     <div>
-                      {/* <div className="mb-4 d-flex justify-content-center">
+                      <div className="mb-4 d-flex justify-content-center">
                           <img
                             src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
                             alt="example placeholder"
                             style={{ width: "300px" }}
                           />
-                        </div> */}
+                        </div>
                       <div className="d-flex justify-content-center">
                         <div className="btn btn-flat btn-rounded">
                           <label
@@ -119,6 +119,7 @@ const AddChildren = () => {
                             id="first_name"
                             name="first_name"
                             className="form-control form-control-lg"
+                            required
                             value={firstName}
                             onChange={(event) =>
                               setFirstName(event.target.value)
@@ -136,6 +137,7 @@ const AddChildren = () => {
                             type="text"
                             id="last_name"
                             name="last_name"
+                            required
                             className="form-control form-control-lg"
                             value={lastName}
                             onChange={(event) =>
@@ -155,6 +157,7 @@ const AddChildren = () => {
                             id="date_of_birth"
                             name="date_of_birth"
                             className="form-control form-control-lg"
+                            required
                             value={dateOfBirth}
                             onChange={(event) =>
                               setDateOfBirth(event.target.value)
@@ -172,6 +175,7 @@ const AddChildren = () => {
                             <select
                               className="form-select form-select-sm form-select-lg mb-3"
                               aria-label=".form-select-lg example"
+                              required
                               value={gender}
                               onChange={(event) =>
                                 setGender(event.target.value)
@@ -195,6 +199,7 @@ const AddChildren = () => {
                             id="height"
                             name="height"
                             className="form-control form-control-lg"
+                            required
                             value={height}
                             onChange={(event) => setHeight(event.target.value)}
                           />
@@ -211,6 +216,7 @@ const AddChildren = () => {
                             id="weight"
                             name="weight"
                             className="form-control form-control-lg"
+                            required
                             value={weight}
                             onChange={(event) => setWeight(event.target.value)}
                           />

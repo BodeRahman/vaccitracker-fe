@@ -26,6 +26,23 @@ export const addChild = createAsyncThunk(
   }
 );
 
+export const updateChild  = createAsyncThunk(
+  "ward/updateChild",
+  async (childData, thunkAPI) => {
+    try {
+      return await childService.updateChild(childData);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 export const wardSlice = createSlice({
   name: "ward",
   initialState,
@@ -42,9 +59,22 @@ export const wardSlice = createSlice({
       .addCase(addChild.pending, (state) => {
         state.isLoading = true;
       })
+      .addCase(updateChild.pending, (state) => {
+        state.isLoading = true;
+      })
       .addCase(addChild.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
+        state.message = action.payload;
+      })
+      .addCase(updateChild.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.message = action.payload;
+      })
+      .addCase(updateChild.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
         state.message = action.payload;
       })
       .addCase(addChild.rejected, (state, action) => {

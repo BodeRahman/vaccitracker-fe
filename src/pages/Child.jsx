@@ -60,7 +60,7 @@ const Children = () => {
                             {child.first_name + " " + child.last_name}
                           </span>
                           <span className="">
-                            <Link to="/editChild">
+                            <Link to={`/editChild/${child.id}`}>
                               <button className="btn text-white mx-4">
                                 <Edit2 />
                               </button>
