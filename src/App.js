@@ -11,11 +11,12 @@ import TempHome from './pages/TempHome';
 import Reminders from './pages/Reminders';
 import Child from './pages/Child';
 import VaccinationWiki from './pages/VaccinationWiki';
-
+import ChildrenVaccination from './pages/ChildrenVaccination';
 import AddChildren from './pages/AddChildren'; 
 
 import ProtectedRoutes from './config/ProtectedRoutes';
 import AuthHome from './pages/AuthHome';
+
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/children" element={<Child />} />
           <Route path="/vaccination-wiki" element={<VaccinationWiki />} />
           <Route path="/addchildren" element={<AddChildren />} />
+          <Route path="/childrenvaccination" element={<ChildrenVaccination />} />
           <Route element={<ProtectedRoutes />}>
             <Route path="/home" element={<AuthHome />} />
           </Route>
