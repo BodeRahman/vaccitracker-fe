@@ -7,11 +7,13 @@ import articles from "../assets/img/articles.png";
 import reminders from "../assets/img/reminders.png";
 import management from "../assets/img/management.png";
 import Navbar from "../components/Navbar";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
 const Home = () => {
+  const { user } = useSelector((state) => state.auth);
   return (
     <>
       <Navbar />
@@ -27,13 +29,23 @@ const Home = () => {
                 Track your child’s immunization schedule with ease, get email
                 reminders before the date.
               </p>
-              <Link to="/signup">
-                <SignUpButton
-                  class="btn"
-                  text="Get started for free"
-                  type="submit"
-                ></SignUpButton>
-              </Link>
+              {user ? (
+                <Link to="/temphome">
+                  <SignUpButton
+                    class="btn"
+                    text="Go to dashboard"
+                    type="submit"
+                  ></SignUpButton>
+                </Link>
+              ) : (
+                <Link to="/signup">
+                  <SignUpButton
+                    class="btn"
+                    text="Get started for free"
+                    type="submit"
+                  ></SignUpButton>
+                </Link>
+              )}
             </div>
             <div className="col-md-6">
               <div className="row">
@@ -67,42 +79,47 @@ const Home = () => {
             <div className="container">
               <div className="row">
                 <div className="col-md-4 col-sm-12">
-                  <img className="img-fluid mt-2 articles" src={articles} alt="" />
+                  <img
+                    className="img-fluid mt-2 articles"
+                    src={articles}
+                    alt=""
+                  />
                   <div className="mt-3">
-                    <h5 className="title">
-                      Read Immunization articles
-                    </h5>
+                    <h5 className="title">Read Immunization articles</h5>
                     <p className="desc">
-                      Read articles on different immunization 
-                      and know their side effects, so if they 
-                      do happen you will know what to do 
-                      and expect. 
+                      Read articles on different immunization and know their
+                      side effects, so if they do happen you will know what to
+                      do and expect.
                     </p>
                   </div>
                 </div>
                 <div className="col-md-4 col-sm-12">
-                  <img className="img-fluid mt-2 reminders" src={reminders} alt="" />
+                  <img
+                    className="img-fluid mt-2 reminders"
+                    src={reminders}
+                    alt=""
+                  />
                   <div className="mt-3">
-                    <h5 className="title">
-                      Set customized reminders
-                    </h5>
+                    <h5 className="title">Set customized reminders</h5>
                     <p className="desc">
-                      Set customized reminders, to remind you
-                      of different immunization schedules.
+                      Set customized reminders, to remind you of different
+                      immunization schedules.
                     </p>
                   </div>
                 </div>
                 <div className="col-md-4 col-sm-12">
-                  <img className="img-fluid mt-2 management" src={management} alt="" />
+                  <img
+                    className="img-fluid mt-2 management"
+                    src={management}
+                    alt=""
+                  />
                   <div className="mt-3">
                     <h5 className="title">
-                      Keep track of multiples children 
-                      Immunization Schedules
+                      Keep track of multiples children Immunization Schedules
                     </h5>
                     <p className="desc">
-                      Add multiple children to your account and 
-                      keep track of their immunizations without
-                      mixing them up.
+                      Add multiple children to your account and keep track of
+                      their immunizations without mixing them up.
                     </p>
                   </div>
                 </div>
