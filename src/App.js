@@ -16,6 +16,7 @@ import AddChildren from './pages/AddChildren';
 
 import ProtectedRoutes from './config/ProtectedRoutes';
 import AuthHome from './pages/AuthHome';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/vaccination-wiki" element={<VaccinationWiki />} />
           <Route path="/addchildren" element={<AddChildren />} />
           <Route path="/childrenvaccination" element={<ChildrenVaccination />} />
+          <Route path="/profile" element={<Profile />} />
           <Route element={<ProtectedRoutes />}>
             <Route path="/home" element={<AuthHome />} />
           </Route>
