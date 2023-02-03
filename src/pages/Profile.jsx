@@ -22,7 +22,7 @@ const Profile = () => {
                     <p className="fs-4">Samuel Tunde</p> 
                 </div>
                 <div className="row d-flex justify-content-center align-items-center">
-                    <div className="col-8 col-md-9 col-lg-7 col-xl-6">
+                    <div className="col-8 col-md-8 col-lg-7 col-xl-6">
                         <form>
                             <div className="form-outline mb-3">
                                 <label className="form-label" htmlFor="first-name">
