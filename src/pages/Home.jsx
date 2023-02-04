@@ -1,5 +1,4 @@
 import React from "react";
-import SignUpButton from "../components/SignUpButton";
 import child from "../assets/img/child.png";
 import injection from "../assets/img/injection.png";
 import bro from "../assets/img/bro.png";
@@ -11,6 +10,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import PrimaryButton from "../components/PrimaryButton";
 
 const Home = () => {
   const { user } = useSelector((state) => state.auth);
@@ -31,19 +31,19 @@ const Home = () => {
               </p>
               {user ? (
                 <Link to="/temphome">
-                  <SignUpButton
+                  <PrimaryButton
                     class="btn"
                     text="Go to dashboard"
                     type="submit"
-                  ></SignUpButton>
+                  ></PrimaryButton>
                 </Link>
               ) : (
                 <Link to="/signup">
-                  <SignUpButton
+                  <PrimaryButton
                     class="btn"
                     text="Get started for free"
                     type="submit"
-                  ></SignUpButton>
+                  ></PrimaryButton>
                 </Link>
               )}
             </div>

@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import LoginButton from "../components/LoginButton";
+// import LoginButton from "../components/LoginButton";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../components/Spinner";
+import PrimaryButton from "../components/PrimaryButton";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -137,7 +138,7 @@ function Login() {
                     <hr className="hr" />
                     <div className="d-flex justify-content-center mb-1">
                       <Link to="/signup">
-                        <LoginButton text="Create Account"></LoginButton>
+                        <PrimaryButton text="Create Account"></PrimaryButton>
                       </Link>
                     </div>
                   </form>

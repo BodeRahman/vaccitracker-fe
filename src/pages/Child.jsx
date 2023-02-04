@@ -16,7 +16,7 @@ const Children = () => {
         <div className="col-md-3">
           <Sidebar />
         </div>
-        <div className="col-sm-12 col-md-8">
+        <div className="col-xs-12 col-sm-12 col-md-8 mx-3 justify-content-center align-items-center">
           <div
             className="mt-5 d-flex justify-content-between"
             style={{ color: "#032F5B" }}
