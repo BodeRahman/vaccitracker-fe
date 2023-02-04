@@ -4,8 +4,34 @@ body {
 }
 
 @font-face {
-    font-family: "Gilroy";
-    src: local("Gilroy"), url("../fonts/Gilroy/Gilroy-Light.otf") format("truetype");
+    font-family: "ExtraBold";
+    src: local("Gilroy-ExtraBold"), url("../fonts/Gilroy/Gilroy-ExtraBold.otf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Light";
+    src: local("Gilroy-Light"), url("../fonts/Gilroy/Gilroy-Light.otf") format("truetype");
+}
+
+/* Home/Landing Page */
+
+.h-font {
+    font-size: 48px;
+    font-weight: 600;
+    color: #032F5B;
+}
+
+.h-font-2 {
+    font-size: 48px;
+    font-weight: 500;
+    color: #032F5B;
+}
+
+.sub-h-font {
+    font-size: 20px;
+    font-weight: 400;
+    color: #010E1B;
 }
 
 .orange {
@@ -54,7 +80,6 @@ body {
 }
 
 .title {
-    font-style: normal;
     font-weight: 500;
     line-height: 23px;
     color: #FFFFFF;
@@ -62,7 +87,6 @@ body {
 }
 
 .desc {
-    font-style: normal;
     font-weight: 200;
     color: #FFFFFF;
     text-align: center;
@@ -88,11 +112,25 @@ body {
     color: #F76600;
     border-color: #F76600;
     margin-right: 8px;
+    height: 40px;
+    border-radius: 8px;
+    Padding: 6px, 20px, 6px, 20px;
 }
 
-.btn-plain:hover,
-.btn-plain:visited,
+.btn-plain:link,
 .btn-plain:focus {
+    text-decoration: none !important;
+    background-color: #FDE0CC;
+    color: white;
+}
+
+.btn-plain:hover {
+    text-decoration: none !important;
+    background-color: #FDE0CC;
+    color: white;
+}
+
+.btn-plain:active {
     text-decoration: none !important;
     background-color: #FDE0CC;
     color: white;
@@ -100,18 +138,30 @@ body {
 
 .btn-flat {
     background-color: #F76600;
+    text-decoration: none !important;
     color: white;
-    height: 50px;
+    height: 40px;
     border-radius: 8px;
     Padding: 6px, 20px, 6px, 20px;
     border-color: #F76600;
 }
 
-.btn-flat:hover,
-.btn-flat:visited,
+.btn-flat:link,
 .btn-flat:focus {
     text-decoration: none !important;
-    background-color: #f4b686;
+    background-color: #f8802B;
+    color: white;
+}
+
+.btn-flat:hover {
+    background-color: #Ce5500;
+    text-decoration: none !important;
+    color: white;
+}
+
+.btn-flat:active {
+    text-decoration: none !important;
+    background-color: #f8802B;
     color: white;
 }
 
@@ -124,6 +174,12 @@ body {
 
 .sign-in {
     color: #F76600;
+}
+
+.head-title {
+    font-weight: 500;
+    font-size: 40px;
+    color: #3A3A3A
 }
 
 /*Login page*/
@@ -199,4 +255,45 @@ body {
     text-decoration: none !important;
     background-color: #427cbb;
     color: white;
+}
+
+/* ChildrenVaccination */
+.custom-select {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+    color: white;
+}
+
+#accordionExample .custom-accordion {
+    margin: 10px;
+    border-top: 1px solid rgb(223, 217, 217);
+    border-radius: 4px;
+}
+
+.form-check {
+    border-radius: 8px;
+}
+
+input[type="checkbox"].form-check-input:checked {
+    background-color: #1DB954;
+    border-color: #1DB954;
+}
+
+/* Reminder */
+.reminder-head {
+    color: #032F5B;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.divider {
+    border: 1px solid #3A3A3A;
+    width: 465.5px;
+}
+
+.bell {
+    stroke: #F76600;
+}
+
+.form-control option {
+    background: #CDDAE7;
 }
