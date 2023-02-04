@@ -34,7 +34,7 @@ function App() {
     <Fragment>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" index element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route element={<ProtectedRoutes />}>

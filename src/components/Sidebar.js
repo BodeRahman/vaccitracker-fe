@@ -123,7 +123,7 @@ const Sidebar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link text-white" onClick={onLogout}>
+                  <NavLink className="nav-link text-white" exact to="/" onClick={onLogout}>
                     <span className="align-text-bottom m-4">
                       <LogOut />
                     </span>
