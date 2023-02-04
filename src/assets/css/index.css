@@ -3,10 +3,28 @@ html, body{
 }
 
 @font-face {
+    font-family: "Gilroy-ExtraBold";
+    src: local("Gilroy-ExtraBold"), url("../fonts/Gilroy/Gilroy-ExtraBold.otf") format("truetype");
+}
+
+@font-face {
     font-family: "Gilroy";
     src: local("Gilroy"), url("../fonts/Gilroy/Gilroy-Light.otf") format("truetype");
 }
+/* Home/Landing Page */
 
+.h-font{
+    font: Gilroy-ExtraBold;
+    font-size: 48px;
+    font-weight: 600;
+    color: #032F5B;
+}
+
+.sub-h-font {
+    font-size: 20px;
+    font-weight: 400;
+    color: #010E1B;
+}
 .orange {
     background: #F76600;
     border-radius: 5px;
@@ -87,31 +105,57 @@ html, body{
     color: #F76600;
     border-color: #F76600;
     margin-right: 8px;
+    height: 40px;
+    border-radius: 8px;
+    Padding: 6px, 20px, 6px, 20px;
 }
 
-.btn-plain:hover, 
-.btn-plain:visited,
-.btn-plain:focus {
+.btn-plain:link,
+.btn-plain:focus{
+    text-decoration: none !important;
+    background-color: #FDE0CC;
+    color: white;
+}
+
+.btn-plain:hover {
     text-decoration: none !important;
     background-color: #FDE0CC;
     color: white; 
 }
 
+.btn-plain:active{
+    text-decoration: none !important;
+    background-color: #FDE0CC;
+    color: white;
+}
+
 .btn-flat {
     background-color: #F76600;
+    text-decoration: none !important;
     color: white;
-    height: 50px;
+    height: 40px;
     border-radius: 8px;
     Padding: 6px, 20px, 6px, 20px;
     border-color: #F76600;
 }
 
-.btn-flat:hover, 
-.btn-flat:visited,
+.btn-flat:link,
 .btn-flat:focus{
     text-decoration: none !important;
-    background-color: #f4b686;
-    color: white; 
+    background-color: #f8802B; 
+    color: white;
+}
+
+.btn-flat:hover{
+    background-color: #Ce5500;
+    text-decoration: none !important;
+    color: white;
+} 
+
+.btn-flat:active{
+    text-decoration: none !important;
+    background-color: #f8802B; 
+    color: white;
 }
 
 /*Signup page*/

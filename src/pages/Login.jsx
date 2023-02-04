@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import LoginButton from "../components/LoginButton";
+import SecondaryButton from "../components/SecondaryButton";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -119,7 +119,7 @@ function Login() {
                     <hr className="hr" />
                     <div className="d-flex justify-content-center mb-1">
                       <Link to="/signup">
-                        <LoginButton text="Create Account"></LoginButton>
+                        <SecondaryButton text="Create Account"></SecondaryButton>
                       </Link>
                     </div>
                   </form>

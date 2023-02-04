@@ -35,7 +35,7 @@ const Sidebar = () => {
         `}
       </style>
       <header className="navbar sticky-top flex-md-nowrap p-0 mt-4">
-        <NavLink className="navbar-brand col-md-3 col-lg-4 me-4  px-3 fs-6 " to="#" >
+        <NavLink className="navbar-brand col-md-3 col-lg-4 me-4  px-3 fs-6 " to="/" >
           <img src={logo} alt="Vaccitracker logo" className='mx-4' style={{ height: '40px', width: '130px' }}  />
         </NavLink>
         <button className="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">

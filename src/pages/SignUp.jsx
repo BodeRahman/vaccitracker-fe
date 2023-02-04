@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-// import SignUpButton from "../components/SignUpButton";
+// import PrimaryButton from "../components/PrimaryButton";
 import { register, reset } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../components/Spinner";

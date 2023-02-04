@@ -1,5 +1,5 @@
 import React from "react";
-import SignUpButton from "../components/SignUpButton";
+import PrimaryButton from "../components/PrimaryButton";
 import child from "../assets/img/child.png";
 import injection from "../assets/img/injection.png";
 import bro from "../assets/img/bro.png";
@@ -19,20 +19,20 @@ const Home = () => {
         <div className="container gilroy">
           <div className="row rounded-3">
             <div className="col-md-6 mt-3 py-5">
-              <h3 className="display-5 fw-bold">
+              <h3 className="display-5 h-font">
                 Remember your child’s Immunization appointments with
                 Vaccitracker
               </h3>
-              <p className="fs-5">
+              <p className="sub-h-font">
                 Track your child’s immunization schedule with ease, get email
                 reminders before the date.
               </p>
               <Link to="/signup">
-                <SignUpButton
+                <PrimaryButton
                   class="btn"
                   text="Get started for free"
                   type="submit"
-                ></SignUpButton>
+                ></PrimaryButton>
               </Link>
             </div>
             <div className="col-md-6">

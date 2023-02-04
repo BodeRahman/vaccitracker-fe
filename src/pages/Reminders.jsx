@@ -1,8 +1,8 @@
 import React from 'react'
 import Sidebar from "../components/Sidebar";
 import { Bell } from 'react-feather';
-import SignUpButton from '../components/SignUpButton';
-import LoginButton from '../components/LoginButton';
+import PrimaryButton from '../components/PrimaryButton';
+import SecondaryButton from '../components/SecondaryButton';
 
 const Reminders = () => {
   return (
@@ -36,20 +36,20 @@ const Reminders = () => {
             <hr className="divider" />
           </div>
           <div className="mb-3 d-flex justify-content-center ">
-            <SignUpButton
+            <PrimaryButton
               className=""
               text="Set Reminder"
               type="submit"
               style={{ padding: "21px, 29px, 21px, 29px", borderRadius: "4px"}}
-            ></SignUpButton>
+            ></PrimaryButton>
           </div>
           <div className="d-flex justify-content-center ">
-            <LoginButton
+            <SecondaryButton
               className=""
               text="Cancel"
               type="submit"
               style={{ padding: "21px, 29px, 21px, 29px", borderRadius: "4px"}}
-            ></LoginButton>
+            ></SecondaryButton>
           </div>
         </div>
       </div>

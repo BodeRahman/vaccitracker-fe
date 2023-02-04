@@ -2,8 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/img/logo.png'
-import LoginButton from './LoginButton';
-import SignUpButton from './SignUpButton';
+import SecondaryButton from './SecondaryButton';
+import PrimaryButton from './PrimaryButton';
 
 function Navbar() {
   return (
@@ -31,16 +31,16 @@ function Navbar() {
           <ul className="navbar-nav me-auto mb-2 mb-md-0"></ul>
           <div className="mb-1">
             <Link to="/login">
-              <LoginButton text="Login"></LoginButton>
+              <SecondaryButton text="Login" style={{fontSize: "16px", fontWeight: "500"}}></SecondaryButton>
             </Link>
           </div>
           <div className="mb-1">
             <Link to="/signup">
-              <SignUpButton
+              <PrimaryButton
                 class="btn"
                 text="Get started for free"
                 type="submit"
-              ></SignUpButton>
+              ></PrimaryButton>
             </Link>
           </div>
         </div>
