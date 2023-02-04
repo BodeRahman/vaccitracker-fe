@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import PrimaryButton from "../components/PrimaryButton";
 import SecondaryButton from "../components/SecondaryButton";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -103,11 +104,11 @@ function Login() {
 
                     <div className="form-outline mb-3">
                         <div className="d-grid col-12">
-                          <button
+                          <PrimaryButton
                             className="btn-flat"
-                            // text="Login"
+                            text="Login"
                             type="submit"
-                          >Login</button>
+                          ></PrimaryButton>
                         </div>
                     </div>
 

@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 // import PrimaryButton from "../components/PrimaryButton";
 import { register, reset } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import PrimaryButton from "../components/PrimaryButton";
 import Spinner from "../components/Spinner";
 
 function Signup() {
@@ -205,9 +206,9 @@ function Signup() {
 
                     <div className="form-outline mb-3">
                       <div className="d-grid col-12">
-                        <button className="btn-flat" type="submit">
-                          Create Account
-                        </button>
+                        <PrimaryButton className="btn-flat" text="Create Account" type="submit">
+                         
+                        </PrimaryButton>
                       </div>
                     </div>
 
