@@ -24,8 +24,8 @@ const Sidebar = () => {
     <div style={{ display: "flex", height: "100%" }}>
       <CDBSidebar textColor="#fff" backgroundColor="#054689" width="">
         <CDBSidebarHeader>
-          <a
-            href="/"
+          <NavLink
+            to="/"
             className="text-decoration-none"
             style={{ color: "inherit" }}
           >
@@ -34,7 +34,7 @@ const Sidebar = () => {
               alt="Vaccitracker logo"
               style={{ height: "40px", width: "110" }}
             />
-          </a>
+          </NavLink>
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content">
