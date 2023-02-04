@@ -119,7 +119,6 @@ function Login() {
                       <div className="d-grid col-12">
                         <button
                           className="btn-flat"
-                          // text="Login"
                           type="submit"
                         >
                           Login
