@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
-import profileImage from "../assets/img/img-placeholder.png";
+import profileImage from "../assets/img/child.png";
 
 const Profile = () => {
   return (
