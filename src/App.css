@@ -1,5 +1,9 @@
-.gilroy {
-    font-family: Gilroy, Gilroy-ExtraBold;
+.gilroy-light {
+    font-family: "Gilroy-Light";
+}
+
+.gilroy-extrabold {
+    font-family: "Gilroy-Extrabold";
 }
 
 .loadingSpinnerContainer {

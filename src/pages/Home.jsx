@@ -16,10 +16,10 @@ const Home = () => {
     <>
       <Navbar />
       <main>
-        <div className="container gilroy">
+        <div className="container gilroy-light">
           <div className="row rounded-3">
             <div className="col-md-6 mt-3 py-5">
-              <h3 className="display-5 h-font">
+              <h3 className="display-5 h-font gilroy-extrabold">
                 Remember your child’s Immunization appointments with
                 Vaccitracker
               </h3>
@@ -52,10 +52,10 @@ const Home = () => {
             </div>
 
             <div className="col-md-6 mt-sm-5 py-5">
-              <h3 className="display-5 fw-normal">
+              <h3 className="display-5 h-font-2 gilroy-extrabold">
                 Add your spouse to help keep track of immunization schedules
               </h3>
-              <p className="fw-light fs-4">
+              <p className="fw-light sub-h-font">
                 Remember your child’s Immunization appointments with
                 Vaccitracker
               </p>
@@ -63,7 +63,7 @@ const Home = () => {
           </div>
         </div>
         <section>
-          <div className="album py-5 ">
+          <div className="album py-5 gilroy-light">
             <div className="container">
               <div className="row">
                 <div className="col-md-4 col-sm-12">
