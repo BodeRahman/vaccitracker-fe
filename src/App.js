@@ -19,6 +19,8 @@ import AddChildren from "./pages/AddChildren";
 
 import ProtectedRoutes from "./config/ProtectedRoutes";
 import EditChild from "./pages/EditChild";
+import ChildrenVaccination from "./pages/ChildrenVaccination";
+import Profile from "./pages/Profile";
 // import AuthHome from './pages/AuthHome';
 
 function App() {
