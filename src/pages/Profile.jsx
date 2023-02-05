@@ -1,8 +1,79 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "../config/axios";
 import Sidebar from "../components/Sidebar";
 import profileImage from "../assets/img/child.png";
+import Swal from "sweetalert2";
+import Spinner from "../components/Spinner";
+import updateProfile from "../config/profile";
 
 const Profile = () => {
+  const [form, setForm] = useState({});
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [file, setFile] = useState(null);
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
+  useEffect(() => {
+    async function fetchProfile() {
+      const response = await axios.get("/authorized");
+      setForm(response.data);
+    }
+    fetchProfile();
+  }, []);
+
+  const handleChange = (e) => {
+    setForm((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+    Toast.fire({
+      icon: "success",
+      title: "Image uploaded successfully",
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      Swal.fire("Error!", "Passwords do not match", "error");
+    } else {
+      const formData = new FormData();
+      if (file) {
+        formData.append("user[avatar]", file);
+      }
+      formData.append("user[first_name]", form.first_name);
+      formData.append("user[last_name]", form.last_name);
+      formData.append("user[email]", form.email);
+      formData.append("user[password]", password);
+      const response = await updateProfile(formData);
+      if (response.status === 200) {
+        Swal.fire("Success!", "Profile updated successfully", "success");
+        window.location.reload();
+      } else {
+        Swal.fire("Error!", "Something went wrong", "error");
+      }
+    }
+  };
+
+  if (!form) {
+    return <Spinner />;
+  }
+
   return (
     <>
       <div className="row gilroy">
@@ -13,17 +84,33 @@ const Profile = () => {
           <div className="my-3 d-flex justify-content-center">
             <img
               className=""
-              src={profileImage}
+              src={form.avatar_url ? form.avatar_url : profileImage}
               style={{}}
               alt="profile avatar"
             />
           </div>
           <div className="d-flex justify-content-center">
-            <p className="fs-4">Samuel Tunde</p>
+            <p className="fs-4">{form.first_name + " " + form.last_name}</p>
+            <div className="justify-content-center">
+              <div className="btn btn-flat btn-rounded">
+                <label
+                  className="form-label text-white m-1"
+                  htmlFor="customFile1"
+                >
+                  Choose file
+                </label>
+                <input
+                  type="file"
+                  className="form-control d-none"
+                  id="customFile1"
+                  onChange={handleFileChange}
+                />
+              </div>
+            </div>
           </div>
           <div className="row d-flex justify-content-center align-items-center">
             <div className="col-8 col-md-8 col-lg-7 col-xl-6">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-outline mb-3">
                   <label className="form-label" htmlFor="first-name">
                     First Name
@@ -32,8 +119,8 @@ const Profile = () => {
                     type="text"
                     id="first_name"
                     name="first_name"
-                    value=""
-                    onChange=""
+                    value={form.first_name}
+                    onChange={handleChange}
                     className="form-control form-control-lg"
                   />
                 </div>
@@ -46,26 +133,11 @@ const Profile = () => {
                     type="text"
                     id="last_name"
                     name="last_name"
-                    value=""
-                    onChange=""
+                    value={form.last_name}
+                    onChange={handleChange}
                     className="form-control form-control-lg"
                   />
                 </div>
-
-                <div className="form-outline mb-3">
-                  <label className="form-label" htmlFor="phone">
-                    Phone Number
-                  </label>
-                  <input
-                    type="text"
-                    id="phone"
-                    name="phone"
-                    value=""
-                    onChange=""
-                    className="form-control form-control-lg"
-                  />
-                </div>
-
                 <div className="form-outline mb-3">
                   <label className="form-label" htmlFor="email">
                     Email Address
@@ -74,10 +146,43 @@ const Profile = () => {
                     type="text"
                     id="email"
                     name="email"
-                    value=""
-                    onChange=""
+                    value={form.email}
+                    onChange={handleChange}
                     className="form-control form-control-lg"
                   />
+                </div>
+                <div className="form-outline mb-3">
+                  <label className="form-label" htmlFor="password2">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    className="form-control form-control-lg"
+                  />
+                </div>
+                <div className="form-outline mb-3">
+                  <label className="form-label" htmlFor="password2">
+                    Confirm Password
+                  </label>
+                  <input
+                    type="password"
+                    id="password2"
+                    name="password2"
+                    value={confirmPassword}
+                    onChange={(event) => setConfirmPassword(event.target.value)}
+                    className="form-control form-control-lg"
+                  />
+                </div>
+                <div className="form-outline mb-3">
+                  <div className="d-grid col-12">
+                    <button className="btn-flat" type="submit">
+                      Update Profile
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
