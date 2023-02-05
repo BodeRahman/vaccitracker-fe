@@ -45,7 +45,7 @@ const Children = () => {
                 <Link
                   to={`/vaccinations/${child.id}`}
                   key={child.id}
-                  className="col-sm- col-md-6 mt-4"
+                  className="col-sm- col-md-6 mt-4 text-decoration-none"
                 >
                   <div>
                     <div
