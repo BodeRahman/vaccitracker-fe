@@ -4,7 +4,6 @@ import Vaccinations from "../components/Vaccinations";
 import vacci1 from "../assets/img/measles.png";
 
 const VaccinationWiki = () => {
-  const displayedVaccinations = Vaccinations.slice(0, 2);
   return (
     <>
       <div className="row gilroy">
@@ -19,7 +18,7 @@ const VaccinationWiki = () => {
             <p className="fs-5 fw-bold">Vaccination wiki</p>
           </div>
           <div className="row mt-2">
-            {displayedVaccinations.map((vaccination) => (
+            {Vaccinations.map((vaccination) => (
               <div key={vaccination.id} className="col-md-6 my-3">
                 <div className="card ">
                   <div className="row">

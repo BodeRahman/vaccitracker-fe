@@ -10,9 +10,9 @@ const updateChild = async (childData) => {
   return response.data;
 };
 
-const childService = {
+const wardService = {
   addChild,
   updateChild,
 };
 
-export default childService;
+export default wardService;

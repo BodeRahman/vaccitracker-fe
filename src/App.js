@@ -45,7 +45,7 @@ function App() {
             <Route path="/addchildren" element={<AddChildren />} />
             <Route path="/editChild/:id" element={<EditChild />} />
             <Route path="/vaccination-wiki" element={<VaccinationWiki />} />
-            <Route path="/childrenvaccination" element={<ChildrenVaccination />} />
+            <Route path="/vaccinations/:id" element={<ChildrenVaccination />} />
             <Route path="/profile" element={<Profile />} />
           </Route>
         </Routes>

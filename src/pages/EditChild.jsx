@@ -9,7 +9,6 @@ import Spinner from "../components/Spinner";
 function EditChild() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  console.log(id)
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [firstName, setFirstName] = useState("");

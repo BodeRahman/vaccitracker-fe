@@ -1,11 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import avatar from "../assets/img/child-pic.png";
+import axios from "../config/axios";
+// import { useSelector, useDispatch } from "react-redux";
+// import { fetchVaccines } from "../features/vaccination/vaccineSlice";
+import { useParams } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 const ChildrenVaccination = () => {
+  const [selectedChild, setSelectedChild] = useState({});
   const [checkbox1, setCheckbox1] = useState(false);
+  const [filter, setFilter] = useState("All");
+  console.log(filter)
   const [checkbox2, setCheckbox2] = useState(false);
   const [checkbox3, setCheckbox3] = useState(false);
+  const { id } = useParams();
+
+  useEffect(() => {
+    async function fetchChild() {
+      const response = await axios.get(`/ward/${id}`);
+      setSelectedChild(response.data);
+    }
+    fetchChild();
+  }, [id]);
+  
+
 
   const handleCheckbox1Change = (event) => {
     setCheckbox1(event.target.checked);
@@ -19,6 +38,10 @@ const ChildrenVaccination = () => {
     setCheckbox3(event.target.checked);
   };
 
+  if (!selectedChild) {
+    return <Spinner />;
+  }
+
   return (
     <>
       <div className="container gilroy">
@@ -27,23 +50,26 @@ const ChildrenVaccination = () => {
             <div className="d-flex justify-content-center mt-5">
               <img
                 className="rounded-circle"
-                src={avatar}
+                src={selectedChild.avatar_url ? selectedChild.avatar_url : avatar}
                 style={{ width: "72px" }}
-                alt="avatar1"
+                alt="avatar"
               />
             </div>
             <div className="d-flex justify-content-center">
-              <p className="fs-4">Samuel Tunde</p>
+              <p className="fs-4">
+                {selectedChild.first_name + " " + selectedChild.last_name}
+              </p>
             </div>
             <select
               className="form-select form-select-lg custom-select"
+              onChange={(e) => {setFilter(e.target.value)}}
               aria-label=".form-select-lg example"
               style={{ backgroundColor: "#054689" }}
             >
-              <option selected>All</option>
-              <option value="1">Given</option>
-              <option value="2">Upcoming</option>
-              <option value="3">Weeks</option>
+              <option value="All">All</option>
+              <option value="Completed">Completed</option>
+              <option value="Upcoming">Upcoming</option>
+              <option value="Due">Due</option>
             </select>
 
             <Accordion className="my-3 accordion" id="accordionExample">

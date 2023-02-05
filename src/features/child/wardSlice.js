@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import childService from "./childService";
+import wardService from "./wardService";
 
 const initialState = {
   isError: false,
@@ -13,7 +13,7 @@ export const addChild = createAsyncThunk(
   "ward/addChild",
   async (childData, thunkAPI) => {
     try {
-      return await childService.addChild(childData);
+      return await wardService.addChild(childData);
     } catch (error) {
       const message =
         (error.response &&
@@ -30,7 +30,7 @@ export const updateChild  = createAsyncThunk(
   "ward/updateChild",
   async (childData, thunkAPI) => {
     try {
-      return await childService.updateChild(childData);
+      return await wardService.updateChild(childData);
     } catch (error) {
       const message =
         (error.response &&
