@@ -9,23 +9,6 @@ const initialState = {
   message: "",
 };
 
-export const fetchVaccines = createAsyncThunk(
-  "vaccine/fetchVaccines",
-  async (filter, wardId, thunkAPI) => {
-    try {
-      return await vaccineService.fetchVaccines(filter, wardId);
-    } catch (error) {
-      const message =
-        (error.response &&
-          error.response.data &&
-          error.response.data.message) ||
-        error.message ||
-        error.toString();
-      return thunkAPI.rejectWithValue(message);
-    }
-  }
-);
-
 export const updateVaccine = createAsyncThunk(
   "vaccine/updateVaccine",
   async (vaccineData, wardId, id, thunkAPI) => {
@@ -56,16 +39,8 @@ export const vaccineSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchVaccines.pending, (state) => {
-        state.isLoading = true;
-      })
       .addCase(updateVaccine.pending, (state) => {
         state.isLoading = true;
-      })
-      .addCase(fetchVaccines.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.message = action.payload;
       })
       .addCase(updateVaccine.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -76,11 +51,6 @@ export const vaccineSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-      })
-      .addCase(fetchVaccines.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.message = action.payload;
       });
   },
 });
@@ -88,4 +58,3 @@ export const vaccineSlice = createSlice({
 export const { reset } = vaccineSlice.actions;
 export const selectVaccine = (state) => state.vaccine;
 export default vaccineSlice.reducer;
-
