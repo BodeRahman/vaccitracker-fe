@@ -301,7 +301,17 @@ input[type="checkbox"].form-check-input:checked {
     background: #CDDAE7;
 }
 
+/* reminder-log */
 
+.rem {
+    text-decoration: none;
+    color: #F76600;
+} 
 
-
+.rem:hover, 
+.rem:visited,
+.rem:focus{
+    text-decoration: none;
+    color: #F76600
+}
   

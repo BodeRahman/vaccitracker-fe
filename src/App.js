@@ -17,6 +17,7 @@ import AddChildren from './pages/AddChildren';
 import ProtectedRoutes from './config/ProtectedRoutes';
 import AuthHome from './pages/AuthHome';
 import Profile from './pages/Profile';
+import ReminderLog from './pages/ReminderLog';
 
 
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/addchildren" element={<AddChildren />} />
           <Route path="/childrenvaccination" element={<ChildrenVaccination />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/reminder-log" element={<ReminderLog />} />
           <Route element={<ProtectedRoutes />}>
             <Route path="/home" element={<AuthHome />} />
           </Route>
