@@ -2,18 +2,51 @@ import React, { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import avatar from "../assets/img/child-pic.png";
 import axios from "../config/axios";
-// import { useSelector, useDispatch } from "react-redux";
-// import { fetchVaccines } from "../features/vaccination/vaccineSlice";
+import Swal from "sweetalert2";
 import { useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
 const ChildrenVaccination = () => {
+  // const dispatch = useDispatch();
   const [selectedChild, setSelectedChild] = useState({});
   const [vaccines, setVaccines] = useState({});
   const [filter, setFilter] = useState("All");
   const { id } = useParams();
 
-  console.log(vaccines)
+  // const Toast = Swal.mixin({
+  //   toast: true,
+  //   position: "top-end",
+  //   showConfirmButton: false,
+  //   timer: 5000,
+  //   timerProgressBar: true,
+  //   didOpen: (toast) => {
+  //     toast.addEventListener("mouseenter", Swal.stopTimer);
+  //     toast.addEventListener("mouseleave", Swal.resumeTimer);
+  //   },
+  // });
+
+  const handleUpdateVaccine = (vaccineId, vaccineData) => {
+    try {
+      const response = axios.patch(
+        `/ward/${id}/vaccine/${vaccineId}`,
+        vaccineData
+      );
+      window.location.reload();
+      Swal.fire("Confirmed!", "Vaccine Completed!", "success");
+      setVaccines((prevVaccines) => {
+      const updatedVaccines = { ...prevVaccines };
+      const vaccineIndex = updatedVaccines[response.data.vaccination_date].findIndex(
+        (v) => v.id === vaccineId
+      );
+      updatedVaccines[response.data.vaccination_date][vaccineIndex] = response.data;
+      return updatedVaccines;
+    });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  
 
   useEffect(() => {
     async function fetchChild() {
@@ -39,6 +72,10 @@ const ChildrenVaccination = () => {
   if (!vaccines) {
     return <Spinner />;
   }
+
+  // if (isLoading) {
+  //   return <Spinner />;
+  // }
 
   return (
     <>
@@ -117,6 +154,8 @@ const ChildrenVaccination = () => {
                             checked={vaccine.completed}
                             value=""
                             id={`checkbox${vaccine.id}`}
+                            onChange={(e) => handleUpdateVaccine(vaccine.id, {
+                              completed: e.target.checked})}
                           />
                         </div>
                       ))}
