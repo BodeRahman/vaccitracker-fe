@@ -27,6 +27,13 @@
     align-items: center;
 }
 
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
 .loadingSpinner {
     width: 64px;
     height: 64px;
@@ -45,3 +52,4 @@
         transform: rotate(360deg);
     }
 }
+   
