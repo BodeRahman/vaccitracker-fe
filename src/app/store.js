@@ -3,7 +3,6 @@ import authReducer from "../features/auth/authSlice";
 import childReducer from "../features/child/childSlice";
 import upcomingReducer from "../features/child/upcomingSlice";
 import wardReducer from "../features/child/wardSlice";
-import vaccineReducer from "../features/vaccination/vaccineSlice";
 import reminderReducer from "../features/reminder/reminderSlice";
 
 const store = configureStore({
@@ -12,7 +11,6 @@ const store = configureStore({
     children: childReducer,
     ward: wardReducer,
     upcoming: upcomingReducer,
-    vaccine: vaccineReducer,
     reminder: reminderReducer,
   },
 });
