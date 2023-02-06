@@ -7,23 +7,10 @@ import { useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 
 const ChildrenVaccination = () => {
-  // const dispatch = useDispatch();
   const [selectedChild, setSelectedChild] = useState({});
   const [vaccines, setVaccines] = useState({});
   const [filter, setFilter] = useState("All");
   const { id } = useParams();
-
-  // const Toast = Swal.mixin({
-  //   toast: true,
-  //   position: "top-end",
-  //   showConfirmButton: false,
-  //   timer: 5000,
-  //   timerProgressBar: true,
-  //   didOpen: (toast) => {
-  //     toast.addEventListener("mouseenter", Swal.stopTimer);
-  //     toast.addEventListener("mouseleave", Swal.resumeTimer);
-  //   },
-  // });
 
   const handleUpdateVaccine = (vaccineId, vaccineData) => {
     try {
@@ -45,8 +32,6 @@ const ChildrenVaccination = () => {
       console.log(error);
     }
   };
-
-  
 
   useEffect(() => {
     async function fetchChild() {
@@ -72,10 +57,6 @@ const ChildrenVaccination = () => {
   if (!vaccines) {
     return <Spinner />;
   }
-
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
 
   return (
     <>
