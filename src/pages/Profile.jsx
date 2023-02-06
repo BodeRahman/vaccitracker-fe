@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "../config/axios";
 import Sidebar from "../components/Sidebar";
-import profileImage from "../assets/img/child.png";
+import profileImage from "../assets/img/vector-img.png";
 import Swal from "sweetalert2";
 import Spinner from "../components/Spinner";
 import updateProfile from "../config/profile";
@@ -62,8 +62,8 @@ const Profile = () => {
       formData.append("user[password]", password);
       const response = await updateProfile(formData);
       if (response.status === 200) {
-        Swal.fire("Success!", "Profile updated successfully", "success");
         window.location.reload();
+        Swal.fire("Success!", "Profile updated successfully", "success");
       } else {
         Swal.fire("Error!", "Something went wrong", "error");
       }
@@ -83,7 +83,7 @@ const Profile = () => {
         <div className="col-xs-12 col-sm-12 col-md-8 my-5 justify-content-center align-items-center">
           <div className="my-3 d-flex justify-content-center">
             <img
-              className=""
+              className="profile-image"
               src={form.avatar_url ? form.avatar_url : profileImage}
               style={{}}
               alt="profile avatar"
