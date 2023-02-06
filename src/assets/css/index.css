@@ -104,6 +104,15 @@ html, body{
     border-radius: 9.08552px;
 }
 
+.card-home {
+    transition: transform 0.3s ease-in-out;
+}
+  
+.card-home:hover {
+    transform: scale(1.1);
+}
+  
+
 .btn-plain {
     background-color: white;
     color: #F76600;

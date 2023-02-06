@@ -10,20 +10,20 @@ const TempHome = () => {
   const displayedVaccinations = Vaccinations.slice(0, 2);
   return (
     <>
-      <div className="row gilroy">
+      <div className="row gilroy-light">
         <div className="col-sm-6 col-md-3">
           <Sidebar />
         </div>
         <div className="col-sm-12 col-md-9 ">
           <div className="row">
             <div className="col-sm-12 col-md-7 mx-2 justify-content-center">
-              <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B;'}}>
-                <p className="fs-5 fw-bold">Upcoming vaccinations</p>
-                <a href='/reminders' className="text-decoration-none mt-2 text-dark">See all</a>
+              <div className="mt-5 d-flex justify-content-between">
+                <p className="fs-5 gilroy-extrabold" style={{color: '#032F5B',}}>Upcoming vaccinations</p>
+                <a href='/reminders' className="text-decoration-none mt-1 text-dark">See all</a>
               </div>
               <div className="row mt-2">
                 <div className="col-sm-6 col-md-6 mt-3">
-                  <div className="card card-deet">
+                  <div className="card card-home card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -36,9 +36,9 @@ const TempHome = () => {
                       <div className="col-8">
                         <div className="card-body">
                           <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
+                          <h6 className="card-title fw-bold">
                             Destiny Tunde
-                          </p>
+                          </h6>
                           <p className="card-text fw-light">
                             BCG , OPV and Pediatric Hepatitis B vaccines
                           </p>
@@ -49,7 +49,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="col-sm-6 col-md-6 mt-3">
-                  <div className="card card-deet">
+                  <div className="card card-home card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -62,9 +62,9 @@ const TempHome = () => {
                       <div className="col-8">
                         <div className="card-body">
                           <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
+                          <h6 className="card-title fw-bold">
                             Destiny Tunde
-                          </p>
+                          </h6>
                           <p className="card-text fw-light">
                             BCG , OPV and Pediatric Hepatitis B vaccines
                           </p>
@@ -75,7 +75,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="col-sm-6 col-md-6 mt-3">
-                  <div className="card card-deet">
+                  <div className="card card-home card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -88,9 +88,9 @@ const TempHome = () => {
                       <div className="col-8">
                         <div className="card-body">
                           <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
+                          <h6 className="card-title fw-bold">
                             Destiny Tunde
-                          </p>
+                          </h6>
                           <p className="card-text fw-light">
                             BCG , OPV and Pediatric Hepatitis B vaccines
                           </p>
@@ -101,7 +101,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="col-sm-6 col-md-6 mt-3">
-                  <div className="card card-deet">
+                  <div className="card card-home card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -114,9 +114,9 @@ const TempHome = () => {
                       <div className="col-8">
                         <div className="card-body">
                           <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
+                          <h6 className="card-title fw-bold">
                             Destiny Tunde
-                          </p>
+                          </h6>
                           <p className="card-text fw-light">
                             BCG , OPV and Pediatric Hepatitis B vaccines
                           </p>
@@ -129,16 +129,16 @@ const TempHome = () => {
             </div>
 
             <div className="col-sm- col-md-4 ">
-              <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B'}}>
-                <p className="fs-5 fw-bold">Children and wards</p>
-                <a href='/children' className="text-decoration-none mt-2 text-dark" >See all</a>
+              <div className="mt-5 d-flex justify-content-between">
+                <p className="fs-5 gilroy-extrabold" style={{color: '#032F5B'}}>Children and wards</p>
+                <a href='/children' className="text-decoration-none mt-1 text-dark" >See all</a>
               </div>
               <div className="col-md-12 mt-4">
                 <div
-                  className="card text-white"
+                  className="card card-home text-white"
                   style={{ background: "#2F659D" }}
                 >
-                  <div className="row">
+                  <div className="row mt-2">
                     <div className="col-3 m-2 mt-5">
                       <img
                         className="rounded-circle card-img-left "
@@ -167,7 +167,7 @@ const TempHome = () => {
 
               <div className="col-md-12 mt-4">
                 <div
-                  className="card text-white"
+                  className="card card-home text-white"
                   style={{ background: "#2F659D" }}
                 >
                   <div className="row">
@@ -199,14 +199,14 @@ const TempHome = () => {
             </div>
 
             <div className="col-sm-6 col-md-11">
-              <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B;'}}>
-                <p className="fs-5 fw-bold">Vaccination wiki</p>
+              <div className="mt-5 d-flex justify-content-between">
+                <p className="fs-5 gilroy-extrabold" style={{color: '#032F5B'}}>Vaccination wiki</p>
                 <a href='/vaccination-wiki' className="text-decoration-none mt-2 text-dark">See all</a>
               </div>
               <div className="row mt-2">
                 {displayedVaccinations.map((vaccination) => (
                   <div key={vaccination.id} className="col-md-6 my-3">
-                  <div className="card ">
+                  <div className="card card-home">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -221,7 +221,7 @@ const TempHome = () => {
                           <h5 className="card-title fw-bold">
                             {vaccination.name}
                           </h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
+                          <p className="card-subtitle gilroy-light">
                             {vaccination.home}
                           </p>
                           <button type="button" className="btn card-text fw-bold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
