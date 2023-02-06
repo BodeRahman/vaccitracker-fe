@@ -105,9 +105,9 @@ const TempHome = () => {
             <div className="col-sm- col-md-4">
               <div
                 className="mt-5 d-flex justify-content-between"
-                style={{ color: "#032F5B" }}
+                style={{ color: "#032F5B",  }}
               >
-                <p className="fs-5 fw-bold">Children and wards</p>
+                <p className="fs-5 fw-bold">My Children</p>
                 {children.length > 2 && (
                   <Link
                     to="/children"
@@ -138,36 +138,42 @@ const TempHome = () => {
                   options
                 ).format(date);
                 return (
-                  <div key={child.id} className="col-md-12 mt-4">
-                    <div
-                      className="card text-white"
-                      style={{ background: "#2F659D" }}
-                    >
-                      <div className="row">
-                        <div className="col-3 m-2 mt-3">
-                          <img
-                            className="rounded-circle card-img-left "
-                            src={child.avatar_url ? child.avatar_url : avatar}
-                            style={{ width: "72px" }}
-                            alt="avatar"
-                          />
-                        </div>
-                        <div className="col-8">
-                          <div className="card-body">
-                            <p className="card-title fw-bold">
-                              Name: {child.first_name + " " + child.last_name}
-                            </p>
-                            <p className="card-subtitle fs-6 fw-bolder">
-                              DOB: {formattedDate}
-                            </p>
-                            <p className="card-text fw-light">
-                              Gender: {child.gender}
-                            </p>
+                  <Link
+                    to={`/vaccinations/${child.id}`}
+                    key={child.id}
+                    className="col-sm- col-md-6 mt-4 text-decoration-none"
+                  >
+                    <div className="col-md-12 mt-4">
+                      <div
+                        className="card text-white"
+                        style={{ background: "#2F659D" }}
+                      >
+                        <div className="row">
+                          <div className="col-3 m-2 mt-3">
+                            <img
+                              className="rounded-circle card-img-left "
+                              src={child.avatar_url ? child.avatar_url : avatar}
+                              style={{ width: "72px" }}
+                              alt="avatar"
+                            />
+                          </div>
+                          <div className="col-8">
+                            <div className="card-body">
+                              <p className="card-title fw-bold">
+                                Name: {child.first_name + " " + child.last_name}
+                              </p>
+                              <p className="card-subtitle fs-6 fw-bolder">
+                                DOB: {formattedDate}
+                              </p>
+                              <p className="card-text fw-light">
+                                Gender: {child.gender}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
             </div>

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 
 import Sidebar from "../components/Sidebar";
 import avatar from "../assets/img/child-pic.png";
@@ -83,22 +83,6 @@ const Children = () => {
                             <p className="card-text fw-light">
                               Gender: {child.gender}
                             </p>
-                            {/* <div className="">
-                        <div className="row">
-                          <div className="col">
-                            <p>Given</p>
-                            <p className="text-center">0</p>
-                          </div>
-                          <div className="col">
-                            <p className="mx-3">Due</p>
-                            <p className="text-center">20</p>
-                          </div>
-                          <div className="col">
-                            <p>Upcoming</p>
-                            <p className="text-center">0</p>
-                          </div>
-                        </div>
-                      </div> */}
                           </div>
                         </div>
                       </div>
@@ -107,7 +91,6 @@ const Children = () => {
                 </Link>
               );
             })}
-            
           </div>
           <div className="d-flex flex-row-reverse">
             <Link to="/addChildren">
