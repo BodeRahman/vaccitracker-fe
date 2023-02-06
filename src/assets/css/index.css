@@ -98,6 +98,16 @@ html, body{
 }
 
 /* tempHome */
+.title-head{
+    color: #032F5B;
+    font-size: 32px;
+}
+
+.see-all{
+    color: #032F5B;
+    font-size: 16px;
+}
+
 .card-deet {
     background: #FDE0CC;
     box-shadow: 0px 0px 11.3569px rgba(0, 0, 0, 0.2);

@@ -11,19 +11,19 @@ const TempHome = () => {
   return (
     <>
       <div className="row gilroy-light">
-        <div className="col-sm-6 col-md-3">
+        <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>
-        <div className="col-sm-12 col-md-9 ">
+        <div className="col-12 col-sm-12 col-md-9 ">
           <div className="row">
             <div className="col-sm-12 col-md-7 mx-2 justify-content-center">
               <div className="mt-5 d-flex justify-content-between">
-                <p className="fs-5 gilroy-extrabold" style={{color: '#032F5B',}}>Upcoming vaccinations</p>
-                <a href='/reminder-log' className="text-decoration-none mt-1 text-dark">See all</a>
+                <p className="title-head">Upcoming vaccinations</p>
+                <a href='/reminder-log' className="see-all text-decoration-none mt-3 text-dark">See all</a>
               </div>
               <div className="row mt-2">
                 <div className="col-sm-6 col-md-6 mt-3">
-                  <div className="card card-home card-deet">
+                  <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -49,7 +49,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="col-sm-6 col-md-6 mt-3">
-                  <div className="card card-home card-deet">
+                  <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -75,7 +75,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="col-sm-6 col-md-6 mt-3">
-                  <div className="card card-home card-deet">
+                  <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -101,7 +101,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="col-sm-6 col-md-6 mt-3">
-                  <div className="card card-home card-deet">
+                  <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -130,15 +130,15 @@ const TempHome = () => {
 
             <div className="col-sm- col-md-4 ">
               <div className="mt-5 d-flex justify-content-between">
-                <p className="fs-5 gilroy-extrabold" style={{color: '#032F5B'}}>Children and wards</p>
-                <a href='/children' className="text-decoration-none mt-1 text-dark" >See all</a>
+                <p className="title-head">My Children</p>
+                <a href='/children' className="see-all text-decoration-none mt-3 text-dark" >See all</a>
               </div>
               <div className="col-md-12 mt-4">
                 <div
                   className="card card-home text-white"
                   style={{ background: "#2F659D" }}
                 >
-                  <div className="row mt-2">
+                  <div className="row">
                     <div className="col-3 m-2 mt-5">
                       <img
                         className="rounded-circle card-img-left "
@@ -200,8 +200,8 @@ const TempHome = () => {
 
             <div className="col-sm-6 col-md-11">
               <div className="mt-5 d-flex justify-content-between">
-                <p className="fs-5 gilroy-extrabold" style={{color: '#032F5B'}}>Vaccination wiki</p>
-                <a href='/vaccination-wiki' className="text-decoration-none mt-2 text-dark">See all</a>
+                <p className="title-head">Vaccination wiki</p>
+                <a href='/vaccination-wiki' className="see-all text-decoration-none mt-3 text-dark">See all</a>
               </div>
               <div className="row mt-2">
                 {displayedVaccinations.map((vaccination) => (
