@@ -23,7 +23,7 @@ const TempHome = () => {
               </div>
               <div className="row mt-2">
                 <div className="col-12 col-sm-6 col-md-6 mt-3">
-                  <div className="card card-deet">
+                  <div className="card" id="card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -49,7 +49,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="col-12 col-sm-6 col-md-6 mt-3">
-                  <div className="card card-deet">
+                  <div className="card" id="card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -75,7 +75,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="ccol-12 col-sm-6 col-md-6 mt-3">
-                  <div className="card card-deet">
+                  <div className="card" id="card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -101,7 +101,7 @@ const TempHome = () => {
                 </div>
 
                 <div className="col-12 col-sm-6 col-md-6 mt-3">
-                  <div className="card card-deet">
+                  <div className="card" id="card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img
@@ -135,29 +135,28 @@ const TempHome = () => {
               </div>
               <div className="col-md-12 mt-4">
                 <div
-                  className="card transi text-white"
-                  style={{ background: "#2F659D" }}
+                  className="card transi"
                 >
                   <div className="row">
-                    <div className="col-3 m-2 mt-5">
+                    <div className="col-4" style={{ background: "#2F659D" }}>
                       <img
-                        className="rounded-circle card-img-left "
+                        className="rounded-circle card-img-left m-2 my-5"
                         src={avatar}
                         style={{ width: "72px" }}
                         alt="avatar1"
                       />
                     </div>
-                    <div className="col-8">
+                    <div className="col-8" >
                       <div className="card-body">
-                        <p className="card-title fw-bold">
-                          Name: Destiny Tunde
-                        </p>
+                        <h6 className="card-title fw-bold">
+                          Name:  Destiny Tunde
+                        </h6>
                         <p className="card-subtitle fs-6 fw-bolder">
-                          DOB: 23 February, 2022
+                          DOB:  23 February, 2022
                         </p>
-                        <p className="card-text fw-light">Gender: Male</p>
+                        <p className="card-text fw-light">Gender:  Male</p>
                         <p className="card-subtitle fs-6 fw-bolder">
-                          Country: Nigeria
+                          Country:  Nigeria
                         </p>
                       </div>
                     </div>
@@ -167,13 +166,12 @@ const TempHome = () => {
 
               <div className="col-md-12 mt-4">
                 <div
-                  className="card transi text-white"
-                  style={{ background: "#2F659D" }}
+                  className="card transi"
                 >
                   <div className="row">
-                    <div className="col-3 m-2 mt-5">
+                    <div className="col-4" style={{ background: "#2F659D" }}>
                       <img
-                        className="rounded-circle card-img-left "
+                        className="rounded-circle card-img-left m-2 my-5 "
                         src={avatar}
                         style={{ width: "72px" }}
                         alt="avatar1"
@@ -181,15 +179,15 @@ const TempHome = () => {
                     </div>
                     <div className="col-8">
                       <div className="card-body">
-                        <p className="card-title fw-bold">
-                          Name: Destiny Tunde
-                        </p>
+                        <h6 className="card-title fw-bold">
+                          Name:  Destiny Tunde
+                        </h6>
                         <p className="card-subtitle fs-6 fw-bolder">
-                          DOB: 23 February, 2022
+                          DOB:  23 February, 2022
                         </p>
-                        <p className="card-text fw-light">Gender: Male</p>
+                        <p className="card-text fw-light">Gender:  Male</p>
                         <p className="card-subtitle fs-6 fw-bolder">
-                          Country: Nigeria
+                          Country:  Nigeria
                         </p>
                       </div>
                     </div>
