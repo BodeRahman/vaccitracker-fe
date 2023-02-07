@@ -16,6 +16,8 @@ const Sidebar = () => {
     navigate("/")
   };
 
+
+
   return (
     <>
       <style>
@@ -32,6 +34,9 @@ const Sidebar = () => {
           .navbar .form-control {
               padding: .75rem 1rem;
           }
+
+          
+          
         `}
       </style>
       <header className="navbar sticky-top flex-md-nowrap p-0 mt-4">
@@ -52,37 +57,37 @@ const Sidebar = () => {
             <div className="position-sticky pt-3 sidebar-sticky">
               <ul className="nav flex-column mt-4">
                 <li className="nav-item">
-                  <NavLink className="nav-link text-white" aria-current="page" exact to="/temphome">
+                  <NavLink className="nav-link text-white transi" aria-current="page" exact to="/temphome">
                     <span className="align-text-bottom m-4"><Home /></span>
                     Home
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link text-white" exact to="/children">
+                  <NavLink className="nav-link text-white transi" exact to="/children">
                     <span className="align-text-bottom m-4"><Users /></span>
                     Children
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link text-white" exact to="/vaccination-wiki">
+                  <NavLink className="nav-link text-white transi" exact to="/vaccination-wiki">
                     <span className="align-text-bottom m-4"><FolderPlus /></span>
                     Vaccination Wiki
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link text-white" exact to="/reminder-log">
+                  <NavLink className="nav-link text-white transi" exact to="/reminder-log">
                     <span className="align-text-bottom m-4"><Bell /></span>
                     Reminders
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link text-white" exact to="/profile">
+                  <NavLink className="nav-link text-white transi" exact to="/profile">
                     <span className="align-text-bottom m-4"><User /></span>
                     Profile
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link text-white" onClick={onLogout}>
+                  <NavLink className="nav-link text-white transi" onClick={onLogout}>
                     <span className="align-text-bottom m-4"><LogOut /></span>
                     Log out
                   </NavLink>
