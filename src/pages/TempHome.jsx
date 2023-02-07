@@ -19,7 +19,7 @@ const TempHome = () => {
             <div className="col-11 col-sm-11 col-md-7 mx-1 justify-content-center">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">Upcoming vaccinations</p>
-                <a href='/reminder-log' className="see-all text-decoration-none mt-3 text-dark">See all</a>
+                <a href='/reminder-log' className="see-all text-decoration-none mt-3">See all</a>
               </div>
               <div className="row mt-2">
                 <div className="col-12 col-sm-6 col-md-6 mt-3">
@@ -131,7 +131,7 @@ const TempHome = () => {
             <div className="col-11 col-sm-11 col-md-4 mx-2">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">My Children</p>
-                <a href='/children' className="see-all text-decoration-none mt-3 text-dark" >See all</a>
+                <a href='/children' className="see-all text-decoration-none mt-3" >See all</a>
               </div>
               <div className="col-md-12 mt-4">
                 <div
@@ -199,7 +199,7 @@ const TempHome = () => {
             <div className="col-11 col-sm-11 col-md-11 mx-2">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">Vaccination wiki</p>
-                <a href='/vaccination-wiki' className="see-all text-decoration-none mt-3 text-dark">See all</a>
+                <a href='/vaccination-wiki' className="see-all text-decoration-none mt-3">See all</a>
               </div>
               <div className="row mt-2">
                 {displayedVaccinations.map((vaccination) => (
