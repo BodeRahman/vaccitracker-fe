@@ -16,13 +16,13 @@ const TempHome = () => {
         </div>
         <div className="col-12 col-sm-12 col-md-9 ">
           <div className="row">
-            <div className="col-sm-12 col-md-7 mx-2 justify-content-center">
+            <div className="col-11 col-sm-11 col-md-7 mx-1 justify-content-center">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">Upcoming vaccinations</p>
                 <a href='/reminder-log' className="see-all text-decoration-none mt-3 text-dark">See all</a>
               </div>
               <div className="row mt-2">
-                <div className="col-sm-6 col-md-6 mt-3">
+                <div className="col-12 col-sm-6 col-md-6 mt-3">
                   <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -48,7 +48,7 @@ const TempHome = () => {
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-6 mt-3">
+                <div className="col-12 col-sm-6 col-md-6 mt-3">
                   <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -74,7 +74,7 @@ const TempHome = () => {
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-6 mt-3">
+                <div className="ccol-12 col-sm-6 col-md-6 mt-3">
                   <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -100,7 +100,7 @@ const TempHome = () => {
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-6 mt-3">
+                <div className="col-12 col-sm-6 col-md-6 mt-3">
                   <div className="card card-deet">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -128,14 +128,14 @@ const TempHome = () => {
               </div>
             </div>
 
-            <div className="col-sm- col-md-4 ">
+            <div className="col-11 col-sm-11 col-md-4 mx-2">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">My Children</p>
                 <a href='/children' className="see-all text-decoration-none mt-3 text-dark" >See all</a>
               </div>
               <div className="col-md-12 mt-4">
                 <div
-                  className="card card-home text-white"
+                  className="card transi text-white"
                   style={{ background: "#2F659D" }}
                 >
                   <div className="row">
@@ -167,7 +167,7 @@ const TempHome = () => {
 
               <div className="col-md-12 mt-4">
                 <div
-                  className="card card-home text-white"
+                  className="card transi text-white"
                   style={{ background: "#2F659D" }}
                 >
                   <div className="row">
@@ -198,7 +198,7 @@ const TempHome = () => {
               </div>
             </div>
 
-            <div className="col-sm-6 col-md-11">
+            <div className="col-11 col-sm-11 col-md-11 mx-2">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">Vaccination wiki</p>
                 <a href='/vaccination-wiki' className="see-all text-decoration-none mt-3 text-dark">See all</a>
@@ -206,7 +206,7 @@ const TempHome = () => {
               <div className="row mt-2">
                 {displayedVaccinations.map((vaccination) => (
                   <div key={vaccination.id} className="col-md-6 my-3">
-                  <div className="card card-home">
+                  <div className="card">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
                         <img

@@ -114,11 +114,11 @@ html, body{
     border-radius: 9.08552px;
 }
 
-.card-home {
+.transi {
     transition: transform 0.3s ease-in-out;
 }
   
-.card-home:hover {
+.transi:hover {
     transform: scale(1.1);
 }
   
