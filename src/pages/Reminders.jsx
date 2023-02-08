@@ -7,7 +7,7 @@ import SecondaryButton from '../components/SecondaryButton';
 const Reminders = () => {
   return (
     <>
-      <div className="row gilroy">
+      <div className="row gilroy-light">
         <div className="col-md-3">
           <Sidebar />
         </div>
