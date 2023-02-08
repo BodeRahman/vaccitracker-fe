@@ -22,25 +22,25 @@ const TempHome = () => {
 
   return (
     <>
-      <div className="row gilroy">
+      <div className="row gilroy-light">
         <div className="col-sm-6 col-md-3">
           <Sidebar />
         </div>
         <div className="col-sm-12 col-md-9">
           <div className="row">
-            <div className="col-sm-12 col-md-7 mx-2 justify-content-center">
+            <div className="col-11 col-sm-11 col-md-7 mx-1 justify-content-center">
               <div
                 className="mt-5 d-flex justify-content-between"
                 style={{ color: "#032F5B;" }}
               >
-                <p className="fs-5 fw-bold">Upcoming vaccinations</p>
+                <p className="title-head">Upcoming vaccinations</p>
                 {immunizations.length > 0 && (
-                  <Link
-                    to="/reminders"
-                    className="text-decoration-none text-dark  mt-2"
+                  <a
+                    href="/reminder-log"
+                    className="text-decoration-none see-all mt-3"
                   >
                     See all
-                  </Link>
+                  </a>
                 )}
               </div>
               <div className="row mt-2">
@@ -67,14 +67,18 @@ const TempHome = () => {
                   return (
                     <div
                       key={vaccination.immunization.id}
-                      className="col-sm-6 col-md-6 mt-3"
+                      className="col-12 col-sm-6 col-md-6 mt-3"
                     >
                       <div className="card card-deet">
                         <div className="row">
                           <div className="col-3 m-2 mt-5">
                             <img
                               className="rounded-circle card-img-left"
-                              src={vaccination.avatar_url !== null ? vaccination.avatar_url : avatar}
+                              src={
+                                vaccination.avatar_url !== null
+                                  ? vaccination.avatar_url
+                                  : avatar
+                              }
                               style={{ width: "72px" }}
                               alt="avatar1"
                             />
@@ -84,7 +88,7 @@ const TempHome = () => {
                               <h5 className="card-title fw-bold">
                                 {formattedDate}
                               </h5>
-                              <p className="card-subtitle fs-6 fw-bolder">
+                              <p className="card-title fw-bold">
                                 {vaccination.ward.first_name +
                                   " " +
                                   vaccination.ward.last_name}
@@ -105,7 +109,7 @@ const TempHome = () => {
             <div className="col-sm- col-md-4">
               <div
                 className="mt-5 d-flex justify-content-between"
-                style={{ color: "#032F5B",  }}
+                style={{ color: "#032F5B" }}
               >
                 <p className="fs-5 fw-bold">My Children</p>
                 {children.length > 2 && (
