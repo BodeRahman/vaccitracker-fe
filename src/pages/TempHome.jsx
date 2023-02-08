@@ -182,23 +182,20 @@ const TempHome = () => {
               })}
             </div>
 
-            <div className="col-col-sm-6 col-md-11">
-              <div
-                className="mt-5 d-flex justify-content-between"
-                style={{ color: "#032F5B;" }}
-              >
-                <p className="fs-5 fw-bold">Vaccination wiki</p>
-                <Link
-                  to="/vaccination-wiki"
-                  className="text-decoration-none text-dark mt-2"
+            <div className="col-11 col-sm-11 col-md-11 mx-2">
+              <div className="mt-5 d-flex justify-content-between">
+                <p className="title-head">Vaccination wiki</p>
+                <a
+                  href="/vaccination-wiki"
+                  className="see-all text-decoration-none mt-3"
                 >
                   See all
-                </Link>
+                </a>
               </div>
               <div className="row mt-2">
                 {displayedVaccinations.map((vaccination) => (
                   <div key={vaccination.id} className="col-md-6 my-3">
-                    <div className="card ">
+                    <div className="card">
                       <div className="row">
                         <div className="col-3 m-2 mt-5">
                           <img
@@ -213,7 +210,7 @@ const TempHome = () => {
                             <h5 className="card-title fw-bold">
                               {vaccination.name}
                             </h5>
-                            <p className="card-subtitle fs-6 fw-bolder">
+                            <p className="card-subtitle gilroy-light">
                               {vaccination.home}
                             </p>
                             <button
