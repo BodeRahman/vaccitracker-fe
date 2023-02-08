@@ -59,7 +59,7 @@ const Reminders = () => {
 
   return (
     <>
-      <div className="row gilroy">
+      <div className="row gilroy-light">
         <div className="col-md-3">
           <Sidebar />
         </div>
@@ -122,6 +122,9 @@ const Reminders = () => {
               >
                 Set Reminders
               </button>
+            </div>
+            <div className="d-flex justify-content-center ">
+              <p className="" style={{backgroundColor: "#FDE0CC"}}>Reminder set for 2 days before vaccination</p>
             </div>
           </form>
 
