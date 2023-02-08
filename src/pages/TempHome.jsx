@@ -35,12 +35,9 @@ const TempHome = () => {
               >
                 <p className="title-head">Upcoming vaccinations</p>
                 {immunizations.length > 0 && (
-                  <a
-                    href="/upcoming"
-                    className="text-decoration-none see-all mt-3"
-                  >
+                  <Link to="/upcoming" className="text-decoration-none see-all mt-3">
                     See all
-                  </a>
+                  </Link>
                 )}
               </div>
               <div className="row mt-2">

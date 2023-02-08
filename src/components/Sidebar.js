@@ -73,8 +73,8 @@ const Sidebar = () => {
             <div className="position-sticky pt-3 sidebar-sticky">
               <ul className="nav flex-column mt-4">
                 <li className="nav-item">
-                  <a
-                    href="/temphome"
+                  <NavLink
+                    to="/temphome"
                     className="nav-link text-white transi"
                     aria-current="page"
                   >
@@ -82,7 +82,7 @@ const Sidebar = () => {
                       <Home />
                     </span>
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink

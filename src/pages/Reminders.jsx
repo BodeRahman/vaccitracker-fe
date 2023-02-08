@@ -113,7 +113,7 @@ const Reminders = () => {
             </div>
             <div className="mb-3 d-flex justify-content-center ">
               <button
-                className=""
+                className="btn-flat"
                 type="submit"
                 style={{
                   padding: "21px, 29px, 21px, 29px",
