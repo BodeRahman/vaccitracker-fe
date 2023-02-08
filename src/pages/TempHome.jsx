@@ -143,29 +143,29 @@ const TempHome = () => {
                 ).format(date);
                 return (
                   <Link
-                    to={`/vaccinations/${child.id}`}
                     key={child.id}
-                    className="text-decoration-none"
+                    to={`/vaccinations/${child.id}`}
+                    className="text-decoration-none text-dark"
                   >
                     <div className="col-md-12 mt-4">
                       <div className="card transi">
                         <div className="row">
                           <div
-                            className="col-3"
+                            className="col-4"
                             style={{ background: "#2F659D" }}
                           >
                             <img
                               className="rounded-circle card-img-left m-2 my-5"
                               src={child.avatar_url ? child.avatar_url : avatar}
                               style={{ width: "72px" }}
-                              alt="avatar"
+                              alt="avatar1"
                             />
                           </div>
                           <div className="col-8">
                             <div className="card-body">
-                              <p className="card-title fw-bold">
+                              <h6 className="card-title fw-bold">
                                 Name: {child.first_name + " " + child.last_name}
-                              </p>
+                              </h6>
                               <p className="card-subtitle fs-6 fw-bolder">
                                 DOB: {formattedDate}
                               </p>
@@ -182,7 +182,7 @@ const TempHome = () => {
               })}
             </div>
 
-            <div className="col-sm-6 col-md-11">
+            <div className="col-col-sm-6 col-md-11">
               <div
                 className="mt-5 d-flex justify-content-between"
                 style={{ color: "#032F5B;" }}
@@ -239,7 +239,7 @@ const TempHome = () => {
                                       className="modal-title fs-5"
                                       id="exampleModalLabel"
                                     >
-                                      Measles Vaccine
+                                      {vaccination.name}
                                     </h1>
                                     <button
                                       type="button"
