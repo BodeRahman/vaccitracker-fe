@@ -1,7 +1,13 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import avatar from "../assets/img/child-pic.png";
+import { selectUpcoming } from "../features/child/upcomingSlice";
+import { useSelector } from "react-redux";
+
 const Upcoming = () => {
+   const upcoming = useSelector(selectUpcoming);
+
+
   return (
     <>
       <div className="row gilroy-light">
@@ -18,83 +24,65 @@ const Upcoming = () => {
                 Set reminders
               </a>
               <div className="row mt-2">
-                <div className="col-12 col-sm-6 col-md-4 mt-3">
-                  <div className="card" id="card-deet">
-                    <div className="row">
-                      <div className="col-3 m-2 mt-5">
-                        <img
-                          className="rounded-circle card-img-left"
-                          src={avatar}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            Destiny Tunde
-                          </p>
-                          <p className="card-text fw-light">
-                            BCG , OPV and Pediatric Hepatitis B vaccines
-                          </p>
+                {upcoming.length === 0 && (
+                  <div className="col-md-12">
+                    <h3 className="home-place-color">
+                      No upcoming Immunizations
+                    </h3>
+                  </div>
+                )}
+                {upcoming.map((vaccination) => {
+                  const date = new Date(
+                    vaccination.immunization.vaccination_date
+                  );
+                  const options = {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  };
+                  const formattedDate = new Intl.DateTimeFormat(
+                    "en-US",
+                    options
+                  ).format(date);
+                  return (
+                    <div
+                      key={vaccination.immunization.id}
+                      className="col-12 col-sm-6 col-md-4 mt-3"
+                    >
+                      <div className="card" id="card-deet">
+                        <div className="row">
+                          <div className="col-3 m-2 mt-5">
+                            <img
+                              className="rounded-circle card-img-left"
+                              src={
+                                vaccination.avatar_url !== null
+                                  ? vaccination.avatar_url
+                                  : avatar
+                              }
+                              style={{ width: "72px" }}
+                              alt="avatar1"
+                            />
+                          </div>
+                          <div className="col-8">
+                            <div className="card-body">
+                              <h5 className="card-title fw-bold">
+                                {formattedDate}
+                              </h5>
+                              <p className="card-subtitle fs-6 fw-bolder">
+                                {vaccination.ward.first_name +
+                                  " " +
+                                  vaccination.ward.last_name}
+                              </p>
+                              <p className="card-text fw-light">
+                                {vaccination.immunization.name}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="col-12 col-sm-6 col-md-4 mt-3">
-                  <div className="card" id="card-deet">
-                    <div className="row">
-                      <div className="col-3 m-2 mt-5">
-                        <img
-                          className="rounded-circle card-img-left"
-                          src={avatar}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            Destiny Tunde
-                          </p>
-                          <p className="card-text fw-light">
-                            BCG , OPV and Pediatric Hepatitis B vaccines
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-12 col-sm-6 col-md-4 mt-3">
-                  <div className="card" id="card-deet">
-                    <div className="row">
-                      <div className="col-3 m-2 mt-5">
-                        <img
-                          className="rounded-circle card-img-left"
-                          src={avatar}
-                          style={{ width: "72px" }}
-                          alt="avatar1"
-                        />
-                      </div>
-                      <div className="col-8">
-                        <div className="card-body">
-                          <h5 className="card-title fw-bold">1 Jan, 2023</h5>
-                          <p className="card-subtitle fs-6 fw-bolder">
-                            Destiny Tunde
-                          </p>
-                          <p className="card-text fw-light">
-                            BCG , OPV and Pediatric Hepatitis B vaccines
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
           </div>
