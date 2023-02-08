@@ -265,6 +265,11 @@ html, body{
 }
 
 /* Child page */
+.name-font{
+    font-size: 22px;
+    font-weight: 500;
+}
+
 .add-btn {
     padding: 20px;
     gap: 10px;

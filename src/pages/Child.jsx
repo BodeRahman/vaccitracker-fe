@@ -7,27 +7,24 @@ import { Plus, Edit2 } from 'react-feather';
 const Children = () => {
   return (
     <>
-      <div className="row gilroy">
-        <div className="col-md-3">
+      <div className="row gilroy-light">
+        <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>
-        <div className="col-xs-12 col-sm-12 col-md-8 mx-3 justify-content-center align-items-center">
+        <div className="col-11 col-sm-11 col-md-8 mx-2">
           <div
             className="mt-5 d-flex justify-content-between"
             style={{ color: "#032F5B" }}
           >
-            <p className="fs-5 fw-bold">Children and wards</p>
-            <a href="/children" className="text-decoration-none mt-2 text-dark">
-              See all
-            </a>
+            <p className="title-head">My Children</p>
           </div>
           <div className="row">
             <div className="col-sm- col-md-6 mt-4">
-              <div className="card text-white" style={{ background: "#2F659D" }}>
+              <div className="card transi ">
                 <div className="row">
-                  <div className="col-3 m-2 mt-5">
+                  <div className="col-3" style={{ background: "#2F659D" }}>
                     <img
-                      className="rounded-circle card-img-left "
+                      className="rounded-circle card-img-left m-2 my-5"
                       src={avatar}
                       style={{ width: "72px" }}
                       alt="avatar1"
@@ -35,29 +32,37 @@ const Children = () => {
                   </div>
                   <div className="col-8">
                     <div className="card-body">
-                      <span className=" card-title fs-5 fw-bold">Destiny Tunde</span>
-                      <span className=""><button className="btn text-white mx-4"><Edit2/></button></span>
-                      <p className="card-subtitle fs-6 fw-bolder">
+                      <span className=" card-title name-font">Destiny Tunde</span>
+                     
+                      <p className="card-subtitle fs-6 fw-bold mt-2">
                         DOB: 23 February, 2022
                       </p>
-                      <p className="card-text fw-light">Gender: Male</p>
-                      <div className="">
-                        <div className="row">
-                          <div className="col">
-                            <p>Given</p>
-                            <p className="text-center">0</p>
-                          </div>
-                          <div className="col">
-                            <p className="mx-3">Due</p>
-                            <p className="text-center">20</p>
-                          </div>
-                          <div className="col">
-                            <p>Upcoming</p>
-                            <p className="text-center">0</p>
-                          </div>
-
-                        </div>
+                      <p className="card-subtitle fs-6 fw-bold mt-2">Gender: Male</p>
+                      <div className="mt-2">
+                        <table className="table table-borderless">
+                          <thead>
+                            <tr>
+                              <th className="text-center" scope="col">Given</th>
+                              <th className="text-center" scope="col">Due</th>
+                              <th className="text-center" scope="col">Upcoming</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="text-center">0</td>
+                              <td className="text-center">20</td>
+                              <td className="text-center">0</td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
+                    </div>
+                  </div>
+                  <div className="col-1">
+                    <div className="d-flex justify-content-end mt-2">
+                      <button className="btn text-white">
+                        <Edit2 style={{color: "rgba(0, 0, 0, 0.54)", fill: "rgba(0, 0, 0, 0.54)"}} />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -65,11 +70,11 @@ const Children = () => {
             </div>
 
             <div className="col-sm- col-md-6 mt-4">
-              <div className="card text-white" style={{ background: "#2F659D" }}>
+              <div className="card transi ">
                 <div className="row">
-                  <div className="col-3 m-2 mt-5">
+                  <div className="col-3" style={{ background: "#2F659D" }}>
                     <img
-                      className="rounded-circle card-img-left "
+                      className="rounded-circle card-img-left m-2 my-5"
                       src={avatar}
                       style={{ width: "72px" }}
                       alt="avatar1"
@@ -77,118 +82,43 @@ const Children = () => {
                   </div>
                   <div className="col-8">
                     <div className="card-body">
-                      <span className=" card-title fs-5 fw-bold">Destiny Tunde</span>
-                      <span className=""><button className="btn text-white mx-4"><Edit2/></button></span>
-                      <p className="card-subtitle fs-6 fw-bolder">
+                      <span className=" card-title name-font">Destiny Tunde</span>
+                     
+                      <p className="card-subtitle fs-6 fw-bold mt-2">
                         DOB: 23 February, 2022
                       </p>
-                      <p className="card-text fw-light">Gender: Male</p>
-                      <div className="">
-                        <div className="row">
-                          <div className="col">
-                            <p>Given</p>
-                            <p className="text-center">0</p>
-                          </div>
-                          <div className="col">
-                            <p className="mx-3">Due</p>
-                            <p className="text-center">20</p>
-                          </div>
-                          <div className="col">
-                            <p>Upcoming</p>
-                            <p className="text-center">0</p>
-                          </div>
-
-                        </div>
+                      <p className="card-subtitle fs-6 fw-bold mt-2">Gender: Male</p>
+                      <div className="mt-2">
+                        <table className="table table-borderless">
+                          <thead>
+                            <tr>
+                              <th className="text-center" scope="col">Given</th>
+                              <th className="text-center" scope="col">Due</th>
+                              <th className="text-center" scope="col">Upcoming</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="text-center">0</td>
+                              <td className="text-center">20</td>
+                              <td className="text-center">0</td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
+                    </div>
+                  </div>
+                  <div className="col-1">
+                    <div className="d-flex justify-content-end mt-2">
+                      <button className="btn text-white">
+                        <Edit2 style={{color: "rgba(0, 0, 0, 0.54)", fill: "rgba(0, 0, 0, 0.54)"}} />
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="col-sm- col-md-6 mt-4">
-              <div className="card text-white" style={{ background: "#2F659D" }}>
-                <div className="row">
-                  <div className="col-3 m-2 mt-5">
-                    <img
-                      className="rounded-circle card-img-left "
-                      src={avatar}
-                      style={{ width: "72px" }}
-                      alt="avatar1"
-                    />
-                  </div>
-                  <div className="col-8">
-                    <div className="card-body">
-                      <span className=" card-title fs-5 fw-bold">Destiny Tunde</span>
-                      <span className=""><button className="btn text-white mx-4"><Edit2/></button></span>
-                      <p className="card-subtitle fs-6 fw-bolder">
-                        DOB: 23 February, 2022
-                      </p>
-                      <p className="card-text fw-light">Gender: Male</p>
-                      <div className="">
-                        <div className="row">
-                          <div className="col">
-                            <p>Given</p>
-                            <p className="text-center">0</p>
-                          </div>
-                          <div className="col">
-                            <p className="mx-3">Due</p>
-                            <p className="text-center">20</p>
-                          </div>
-                          <div className="col">
-                            <p>Upcoming</p>
-                            <p className="text-center">0</p>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-6 mt-4">
-              <div className="card text-white" style={{ background: "#2F659D" }}>
-                <div className="row">
-                  <div className="col-3 m-2 mt-5">
-                    <img
-                      className="rounded-circle card-img-left "
-                      src={avatar}
-                      style={{ width: "72px" }}
-                      alt="avatar1"
-                    />
-                  </div>
-                  <div className="col-8">
-                    <div className="card-body">
-                      <span className=" card-title fs-5 fw-bold">Destiny Tunde</span>
-                      <span className=""><button className="btn text-white mx-4"><Edit2/></button></span>
-                      <p className="card-subtitle fs-6 fw-bolder">
-                        DOB: 23 February, 2022
-                      </p>
-                      <p className="card-text fw-light">Gender: Male</p>
-                      <div className="">
-                        <div className="row">
-                          <div className="col">
-                            <p>Given</p>
-                            <p className="text-center">0</p>
-                          </div>
-                          <div className="col">
-                            <p className="mx-3">Due</p>
-                            <p className="text-center">20</p>
-                          </div>
-                          <div className="col">
-                            <p>Upcoming</p>
-                            <p className="text-center">0</p>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div className="d-flex flex-row-reverse">
             <button className="btn add-btn my-4 text-white">
