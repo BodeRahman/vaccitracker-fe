@@ -69,7 +69,7 @@ const TempHome = () => {
                       key={vaccination.immunization.id}
                       className="col-12 col-sm-6 col-md-6 mt-3"
                     >
-                      <div className="card card-deet">
+                      <div className="card" id="card-deet">
                         <div className="row">
                           <div className="col-3 m-2 mt-5">
                             <img
@@ -106,16 +106,16 @@ const TempHome = () => {
               </div>
             </div>
 
-            <div className="col-sm- col-md-4">
+            <div className="col-11 col-sm-11 col-md-4 mx-2">
               <div
                 className="mt-5 d-flex justify-content-between"
                 style={{ color: "#032F5B" }}
               >
-                <p className="fs-5 fw-bold">My Children</p>
+                <p className="title-head">My Children</p>
                 {children.length > 2 && (
                   <Link
                     to="/children"
-                    className="text-decoration-none mt-2 text-dark"
+                    className="text-decoration-none mt-3 see-all"
                   >
                     See all
                   </Link>
@@ -145,17 +145,17 @@ const TempHome = () => {
                   <Link
                     to={`/vaccinations/${child.id}`}
                     key={child.id}
-                    className="col-sm- col-md-6 mt-4 text-decoration-none"
+                    className="text-decoration-none"
                   >
                     <div className="col-md-12 mt-4">
-                      <div
-                        className="card text-white"
-                        style={{ background: "#2F659D" }}
-                      >
+                      <div className="card transi">
                         <div className="row">
-                          <div className="col-3 m-2 mt-3">
+                          <div
+                            className="col-3"
+                            style={{ background: "#2F659D" }}
+                          >
                             <img
-                              className="rounded-circle card-img-left "
+                              className="rounded-circle card-img-left m-2 my-5"
                               src={child.avatar_url ? child.avatar_url : avatar}
                               style={{ width: "72px" }}
                               alt="avatar"
