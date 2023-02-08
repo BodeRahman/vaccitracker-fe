@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const API_URL = "http://localhost:3000/upcoming";
+const API_URL = "https://vaccitracker.herokuapp.com/upcoming";
 const { jwt } = JSON.parse(localStorage.getItem("user")) || "";
 
 export const fetchUpcoming = createAsyncThunk("upcoming/fetchUpcoming", async () => {

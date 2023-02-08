@@ -2,7 +2,10 @@ import axios from "axios";
 
 
 const register = async (userData) => {
-  const response = await axios.post("http://localhost:3000/signup", userData);
+  const response = await axios.post(
+    "https://vaccitracker.herokuapp.com/signup",
+    userData
+  );
 
   if (response.data) {
     localStorage.setItem("user", JSON.stringify(response.data));
@@ -12,7 +15,10 @@ const register = async (userData) => {
 };
 
 const login = async (userData) => {
-  const response = await axios.post("http://localhost:3000/login", userData);
+  const response = await axios.post(
+    "https://vaccitracker.herokuapp.com/login",
+    userData
+  );
 
   if (response.data) {
     localStorage.setItem("user", JSON.stringify(response.data));
