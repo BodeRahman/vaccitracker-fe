@@ -62,7 +62,6 @@ const AddChildren = () => {
 
     if (isSuccess) {
       navigate("/children");
-      window.location.reload();
       Swal.fire("Confirmed!", "Child Added!", "success");
     }
 
