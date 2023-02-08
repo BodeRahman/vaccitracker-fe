@@ -101,11 +101,40 @@ body {
 }
 
 /* tempHome */
-.card-deet {
+.title-head {
+    color: #032F5B;
+    font-size: 32px;
+}
+
+.see-all {
+    color: #F76600;
+    font-size: 16px;
+}
+
+.see-all:hover {
+    text-decoration: none !important;
+    color: #Ce5500;
+}
+
+.see-all:active {
+    text-decoration: none !important;
+    color: #f8802B;
+}
+
+#card-deet {
     background: #FDE0CC;
     box-shadow: 0px 0px 11.3569px rgba(0, 0, 0, 0.2);
     border-radius: 9.08552px;
 }
+
+.transi {
+    transition: transform 0.3s ease-in-out;
+}
+
+.transi:hover {
+    transform: scale(1.1);
+}
+
 
 .btn-plain {
     background-color: white;
@@ -242,6 +271,11 @@ body {
 }
 
 /* Child page */
+.name-font {
+    font-size: 22px;
+    font-weight: 500;
+}
+
 .add-btn {
     padding: 20px;
     gap: 10px;
@@ -296,4 +330,18 @@ input[type="checkbox"].form-check-input:checked {
 
 .form-control option {
     background: #CDDAE7;
+}
+
+/* reminder-log */
+
+.rem {
+    text-decoration: none;
+    color: #F76600;
+}
+
+.rem:hover,
+.rem:visited,
+.rem:focus {
+    text-decoration: none;
+    color: #F76600
 }
