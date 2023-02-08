@@ -44,7 +44,7 @@ const TempHome = () => {
                 {immunizations.length === 0 && (
                   <div className="col-md-12">
                     <h3 className="home-place-color">
-                      No upcoming Immunizations
+                      No upcoming Vaccinations
                     </h3>
                   </div>
                 )}
