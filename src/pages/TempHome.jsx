@@ -36,7 +36,7 @@ const TempHome = () => {
                 <p className="title-head">Upcoming vaccinations</p>
                 {immunizations.length > 0 && (
                   <a
-                    href="/reminder-log"
+                    href="/upcoming"
                     className="text-decoration-none see-all mt-3"
                   >
                     See all

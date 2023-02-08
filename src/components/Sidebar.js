@@ -112,7 +112,7 @@ const Sidebar = () => {
                   <NavLink
                     className="nav-link text-white transi"
                     exact
-                    to="/reminder-log"
+                    to="/upcoming"
                   >
                     <span className="align-text-bottom m-4">
                       <Bell />
