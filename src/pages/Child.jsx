@@ -18,16 +18,16 @@ const Children = () => {
 
   return (
     <>
-      <div className="row gilroy">
-        <div className="col-md-3">
+      <div className="row gilroy-light">
+        <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>
-        <div className="col-xs-12 col-sm-12 col-md-8 mx-3 justify-content-center align-items-center">
+        <div className="col-11 col-sm-11 col-md-8 mx-2">
           <div
             className="mt-5 d-flex justify-content-between"
             style={{ color: "#032F5B" }}
           >
-            <p className="fs-5 fw-bold">Children and wards</p>
+            <p className="title-head">My Children</p>
           </div>
           <div className="row">
             {children.map((child) => {
@@ -45,44 +45,72 @@ const Children = () => {
                 <Link
                   to={`/vaccinations/${child.id}`}
                   key={child.id}
-                  className="col-sm- col-md-6 mt-4 text-decoration-none"
+                  className="text-decoration-none text-dark col-sm- col-md-6 mt-4"
                 >
-                  <div>
-                    <div
-                      className="card text-white"
-                      style={{ background: "#2F659D" }}
-                    >
+                  <div key={child.id}>
+                    <div className="card transi ">
                       <div className="row">
-                        <div className="col-3 m-2 mt-3">
+                        <div
+                          className="col-3"
+                          style={{ background: "#2F659D" }}
+                        >
                           <img
-                            className="rounded-circle card-img-left "
-                            src={
-                              child.avatar_url !== null
-                                ? child.avatar_url
-                                : avatar
-                            }
+                            className="rounded-circle card-img-left m-2 my-5"
+                            src={avatar}
                             style={{ width: "72px" }}
-                            alt="avatar"
+                            alt="avatar1"
                           />
                         </div>
                         <div className="col-8">
                           <div className="card-body">
-                            <span className=" card-title fs-5 fw-bold">
-                              {child.first_name + " " + child.last_name}
+                            <span className=" card-title name-font">
+                              {child.first_name} {child.last_name}
                             </span>
-                            <span className="">
-                              <Link to={`/editChild/${child.id}`}>
-                                <button className="btn text-white mx-4">
-                                  <Edit2 />
-                                </button>
-                              </Link>
-                            </span>
-                            <p className="card-subtitle fs-6 fw-bolder">
+
+                            <p className="card-subtitle fs-6 fw-bold mt-2">
                               DOB: {formattedDate}
                             </p>
-                            <p className="card-text fw-light">
+                            <p className="card-subtitle fs-6 fw-bold mt-2">
                               Gender: {child.gender}
                             </p>
+                            {/* <div className="mt-2">
+                            <table className="table table-borderless">
+                              <thead>
+                                <tr>
+                                  <th className="text-center" scope="col">
+                                    Given
+                                  </th>
+                                  <th className="text-center" scope="col">
+                                    Due
+                                  </th>
+                                  <th className="text-center" scope="col">
+                                    Upcoming
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td className="text-center">0</td>
+                                  <td className="text-center">20</td>
+                                  <td className="text-center">0</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div> */}
+                          </div>
+                        </div>
+                        <div className="col-1">
+                          <div className="d-flex justify-content-end mt-2">
+                            <Link to={`/editChild/${child.id}`}>
+                              <button className="btn text-white">
+                                <Edit2
+                                  style={{
+                                    color: "rgba(0, 0, 0, 0.54)",
+                                    fill: "rgba(0, 0, 0, 0.54)",
+                                  }}
+                                />
+                              </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -91,6 +119,7 @@ const Children = () => {
                 </Link>
               );
             })}
+            
           </div>
           <div className="d-flex flex-row-reverse">
             <Link to="/addChildren">
