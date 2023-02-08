@@ -5,7 +5,7 @@ import profileImage from "../assets/img/img-placeholder.png";
 const Profile = () => {
   return (
     <>
-        <div className="row gilroy">
+        <div className="row gilroy-light">
             <div className="col-md-3">
                 <Sidebar />
             </div>

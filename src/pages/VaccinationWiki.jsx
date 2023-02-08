@@ -7,17 +7,19 @@ const VaccinationWiki = () => {
   const displayedVaccinations = Vaccinations.slice(0, 2);
   return (
     <>
-      <div className="row gilroy">
-        <div className="col-md-3">
+      <div className="row gilroy-light">
+        <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>
-        <div className="col-sm-6 col-md-9">
-              <div className="mt-5 d-flex justify-content-between" style={{color: '#032F5B;'}}>
-                <p className="fs-5 fw-bold">Vaccination wiki</p>
+        <div className="col-12 col-sm-12 col-md-9">
+          <div className="row">
+            <div className="col-11 col-sm-11 col-md- mx-1 justify-content-center">
+              <div className="mt-5 d-flex justify-content-between">
+                <p className="title-head">Vaccination wiki</p>
               </div>
               <div className="row mt-2">
                 {displayedVaccinations.map((vaccination) => (
-                  <div key={vaccination.id} className="col-md-6 my-3">
+                  <div key={vaccination.id} className="col-12 col-sm-6 col-md-6 mt-3">
                   <div className="card ">
                     <div className="row">
                       <div className="col-3 m-2 mt-5">
@@ -65,6 +67,8 @@ const VaccinationWiki = () => {
                 ))} 
               </div>
             </div>
+          </div>
+        </div>
       </div>
     </>
   )
