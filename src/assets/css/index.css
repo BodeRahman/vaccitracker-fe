@@ -182,6 +182,10 @@ body {
     color: white;
 }
 
+.float {
+    float: right;
+}
+
 .btn-flat {
     background-color: #F76600;
     text-decoration: none !important;

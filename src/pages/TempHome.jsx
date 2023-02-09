@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Modal } from "react-bootstrap";
 import { selectChildren } from "../features/child/childSlice";
 import { selectUpcoming } from "../features/child/upcomingSlice";
 import { useSelector } from "react-redux";
@@ -9,6 +10,9 @@ import avatar from "../assets/img/child-pic.png";
 import Vaccinations from "../components/Vaccinations";
 
 const TempHome = () => {
+  const [show, setShow] = useState(false);
+  const [selectedModal, setSelectedModal] = useState(-1);
+
   const children = useSelector(selectChildren);
   const immunizations = useSelector(selectUpcoming);
   const displayedChildren = children.slice(0, 2);
@@ -19,6 +23,16 @@ const TempHome = () => {
     return dateA - dateB;
   });
   const displayedUpcoming = sortedImmunizations.slice(0, 4);
+
+  const handleShow = (index) => {
+    setSelectedModal(index);
+    setShow(true);
+  };
+
+  const handleClose = () => {
+    setSelectedModal(-1);
+    setShow(false);
+  };
 
   return (
     <>
@@ -186,7 +200,7 @@ const TempHome = () => {
                   See all
                 </Link>
               </div>
-              <div className="row mt-2">
+              <div className="row">
                 {displayedVaccinations.map((vaccination) => (
                   <div key={vaccination.id} className="col-md-6 my-3">
                     <div className="card">
@@ -209,50 +223,29 @@ const TempHome = () => {
                             <button
                               type="button"
                               className="btn see-all card-text fw-bold mt-2"
-                              data-bs-toggle="modal"
-                              data-bs-target="#exampleModal"
+                              onClick={() => handleShow(vaccination.id)}
                             >
                               Read More
                             </button>
-
-                            <div
-                              className="modal fade"
-                              id="exampleModal"
-                              tabIndex="-1"
-                              aria-labelledby="exampleModalLabel"
-                              aria-hidden="true"
-                            >
-                              <div className="modal-dialog">
-                                <div className="modal-content">
-                                  <div className="modal-header">
-                                    <h1
-                                      className="modal-title fs-5"
-                                      id="exampleModalLabel"
-                                    >
-                                      {vaccination.name}
-                                    </h1>
-                                    <button
-                                      type="button"
-                                      className="btn-close"
-                                      data-bs-dismiss="modal"
-                                      aria-label="Close"
-                                    ></button>
-                                  </div>
-                                  <div className="modal-body">
+                            {selectedModal === vaccination.id && (
+                              <Modal show={show} onHide={handleClose}>
+                                <Modal.Header closeButton>
+                                  <Modal.Title>{vaccination.name}</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                  <p className="card-text gilroy-light">
                                     {vaccination.description}
-                                  </div>
-                                  <div className="modal-footer">
-                                    <button
-                                      type="button"
-                                      className="btn btn-flat"
-                                      data-bs-dismiss="modal"
-                                    >
-                                      Close
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                                  </p>
+                                  <button
+                                    className="btn-flat float"
+                                    type="button"
+                                    onClick={handleClose}
+                                  >
+                                    Close
+                                  </button>
+                                </Modal.Body>
+                              </Modal>
+                            )}
                           </div>
                         </div>
                       </div>

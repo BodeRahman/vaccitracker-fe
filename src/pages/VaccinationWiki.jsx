@@ -2,8 +2,23 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import Vaccinations from "../components/Vaccinations";
 import vacci1 from "../assets/img/measles.png";
+import { Modal } from "react-bootstrap";
+import { useState } from "react";
 
 const VaccinationWiki = () => {
+  const [show, setShow] = useState(false);
+  const [selectedModal, setSelectedModal] = useState(-1);
+
+  const handleShow = (index) => {
+    setSelectedModal(index);
+    setShow(true);
+  };
+
+  const handleClose = () => {
+    setSelectedModal(-1);
+    setShow(false);
+  };
+
   return (
     <>
       <div className="row gilroy-light mb-4 wrapper">
@@ -39,50 +54,30 @@ const VaccinationWiki = () => {
                             <button
                               type="button"
                               className="btn see-all card-text fw-bold mt-2"
-                              data-bs-toggle="modal"
-                              data-bs-target="#exampleModal"
+                              onClick={() => handleShow(vaccination.id)}
                             >
                               Read More
                             </button>
 
-                            <div
-                              className="modal fade"
-                              id="exampleModal"
-                              tabIndex="-1"
-                              aria-labelledby="exampleModalLabel"
-                              aria-hidden="true"
-                            >
-                              <div className="modal-dialog">
-                                <div className="modal-content">
-                                  <div className="modal-header">
-                                    <h1
-                                      className="modal-title fs-5"
-                                      id="exampleModalLabel"
-                                    >
-                                      {vaccination.name}
-                                    </h1>
-                                    <button
-                                      type="button"
-                                      className="btn-close"
-                                      data-bs-dismiss="modal"
-                                      aria-label="Close"
-                                    ></button>
-                                  </div>
-                                  <div className="modal-body">
+                            {selectedModal === vaccination.id && (
+                              <Modal show={show} onHide={handleClose}>
+                                <Modal.Header closeButton>
+                                  <Modal.Title>{vaccination.name}</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                  <p className="card-text gilroy-light">
                                     {vaccination.description}
-                                  </div>
-                                  <div className="modal-footer">
-                                    <button
-                                      type="button"
-                                      className="btn btn-flat"
-                                      data-bs-dismiss="modal"
-                                    >
-                                      Close
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                                  </p>
+                                  <button
+                                    className="btn-flat float"
+                                    type="button"
+                                    onClick={handleClose}
+                                  >
+                                    Close
+                                  </button>
+                                </Modal.Body>
+                              </Modal>
+                            )}
                           </div>
                         </div>
                       </div>
