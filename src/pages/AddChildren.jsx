@@ -75,7 +75,7 @@ const AddChildren = () => {
 
   return (
     <>
-      <section className="">
+      <section className="wrapper">
         <div className="container gilroy-light">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-9 col-lg-7 col-xl-6">

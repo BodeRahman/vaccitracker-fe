@@ -17,8 +17,8 @@ const Children = () => {
   }, [dispatch]);
 
   return (
-    <div className="wrapper">
-      <div className="row gilroy-light">
+    <>
+      <div className="row gilroy-light wrapper">
         <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>
@@ -129,7 +129,7 @@ const Children = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
