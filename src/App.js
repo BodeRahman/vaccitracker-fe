@@ -22,13 +22,14 @@ import EditChild from "./pages/EditChild";
 import ChildrenVaccination from "./pages/ChildrenVaccination";
 import Profile from "./pages/Profile";
 import Upcoming from "./pages/UpcomingVaccination";
-// import AuthHome from './pages/AuthHome';
+import { fetchReminderDays } from "./features/reminder/reminderDaysSlice";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchChildren());
     dispatch(fetchUpcoming());
+    dispatch(fetchReminderDays());
   }, [dispatch]);
 
   return (

@@ -6,16 +6,17 @@ import {
   selectReminder,
   reset,
 } from "../features/reminder/reminderSlice";
+import { selectDays } from "../features/reminder/reminderDaysSlice";
 import { Bell } from "react-feather";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
-// import PrimaryButton from "../components/PrimaryButton";
-// import SecondaryButton from "../components/SecondaryButton";
 import Spinner from "../components/Spinner";
 
 const Reminders = () => {
   const dispatch = useDispatch();
   const [reminder, setReminder] = useState(null);
+
+  const day = useSelector(selectDays);
 
   const { isLoading, isError, isSuccess, message } =
     useSelector(selectReminder);
@@ -39,6 +40,7 @@ const Reminders = () => {
 
     if (isSuccess) {
       setReminder("");
+      window.location.reload();
       Toast.fire({
         icon: "success",
         title: "Reminders updated successfully",
@@ -126,7 +128,7 @@ const Reminders = () => {
                 className="reminder-announce"
                 style={{ backgroundColor: "#FDE0CC" }}
               >
-                Reminder set for 2 days before vaccination
+                {`Reminder set for ${day} days before vaccination`}
               </p>
             </div>
           </form>

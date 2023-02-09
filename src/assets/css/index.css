@@ -358,7 +358,7 @@ input[type="checkbox"].form-check-input:checked {
 
 /* reminder-log */
 
-.rem {
+/* .rem {
     text-decoration: none;
     color: #F76600;
 }
@@ -368,11 +368,20 @@ input[type="checkbox"].form-check-input:checked {
 .rem:focus {
     text-decoration: none;
     color: #F76600
-}
+} */
 
 @media screen and (max-width: 768px) {
     .title-head {
         font-size: 25px;
+    }
+
+    .reminder-form {
+        margin-right: 30px;
+    }
+
+    .reminder-head {
+        font-size: 25px;
+        text-align: center;
     }
 
     .wiki-card h5 {
