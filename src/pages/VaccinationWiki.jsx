@@ -5,7 +5,7 @@ import vacci1 from "../assets/img/measles.png";
 
 const VaccinationWiki = () => {
   return (
-    <>
+    <div className="wrapper">
       <div className="row gilroy-light mb-4">
         <div className="col- col-sm-6 col-md-3">
           <Sidebar />
@@ -18,31 +18,27 @@ const VaccinationWiki = () => {
               </div>
               <div className="row mt-2">
                 {Vaccinations.map((vaccination) => (
-                  <div
-                    key={vaccination.id}
-                    className="col-12 col-sm-6 col-md-6 mt-3"
-                  >
+                  <div key={vaccination.id} className="col-md-6 my-3">
                     <div className="card">
-                      <div className="row">
-                        <div className="col-3 m-2 mt-5">
+                      <div className="wiki-card">
+                        <div className="m-2 mt-3">
                           <img
-                            className="rounded-circle card-img-left"
+                            className="rounded card-img-left"
                             src={vacci1}
-                            style={{ width: "72px" }}
                             alt="avatar1"
                           />
                         </div>
-                        <div className="col-8">
+                        <div className="">
                           <div className="card-body">
                             <h5 className="card-title fw-bold">
                               {vaccination.name}
                             </h5>
-                            <p className="card-subtitle fs-6 fw-bolder">
+                            <p className="card-subtitle gilroy-light">
                               {vaccination.home}
                             </p>
                             <button
                               type="button"
-                              className="btn card-text fw-bold mt-2"
+                              className="btn see-all card-text fw-bold mt-2"
                               data-bs-toggle="modal"
                               data-bs-target="#exampleModal"
                             >
@@ -63,7 +59,7 @@ const VaccinationWiki = () => {
                                       className="modal-title fs-5"
                                       id="exampleModalLabel"
                                     >
-                                      Measles Vaccine
+                                      {vaccination.name}
                                     </h1>
                                     <button
                                       type="button"
@@ -98,7 +94,7 @@ const VaccinationWiki = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

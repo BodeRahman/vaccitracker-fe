@@ -21,7 +21,7 @@ const TempHome = () => {
   const displayedUpcoming = sortedImmunizations.slice(0, 4);
 
   return (
-    <>
+    <div className="wrapper">
       <div className="row gilroy-light">
         <div className="col-sm-6 col-md-3">
           <Sidebar />
@@ -35,7 +35,7 @@ const TempHome = () => {
               >
                 <p className="title-head">Upcoming vaccinations</p>
                 {immunizations.length > 0 && (
-                  <Link to="/upcoming" className="text-decoration-none see-all mt-3">
+                  <Link to="/upcoming" className="text-decoration-none see-all">
                     See all
                   </Link>
                 )}
@@ -110,10 +110,7 @@ const TempHome = () => {
               >
                 <p className="title-head">My Children</p>
                 {children.length > 2 && (
-                  <Link
-                    to="/children"
-                    className="text-decoration-none mt-3 see-all"
-                  >
+                  <Link to="/children" className="text-decoration-none see-all">
                     See all
                   </Link>
                 )}
@@ -182,27 +179,26 @@ const TempHome = () => {
             <div className="col-11 col-sm-11 col-md-11 mx-2">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">Vaccination wiki</p>
-                <a
-                  href="/vaccination-wiki"
-                  className="see-all text-decoration-none mt-3"
+                <Link
+                  to="/vaccination-wiki"
+                  className="see-all text-decoration-none"
                 >
                   See all
-                </a>
+                </Link>
               </div>
               <div className="row mt-2">
                 {displayedVaccinations.map((vaccination) => (
                   <div key={vaccination.id} className="col-md-6 my-3">
                     <div className="card">
-                      <div className="row">
-                        <div className="col-3 m-2 mt-5">
+                      <div className="wiki-card">
+                        <div className="m-2 mt-3">
                           <img
-                            className="rounded-circle card-img-left"
+                            className="rounded card-img-left"
                             src={vacci1}
-                            style={{ width: "72px" }}
                             alt="avatar1"
                           />
                         </div>
-                        <div className="col-8">
+                        <div className="">
                           <div className="card-body">
                             <h5 className="card-title fw-bold">
                               {vaccination.name}
@@ -212,7 +208,7 @@ const TempHome = () => {
                             </p>
                             <button
                               type="button"
-                              className="btn card-text fw-bold mt-2"
+                              className="btn see-all card-text fw-bold mt-2"
                               data-bs-toggle="modal"
                               data-bs-target="#exampleModal"
                             >
@@ -268,7 +264,7 @@ const TempHome = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
