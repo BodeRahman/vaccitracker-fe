@@ -90,8 +90,6 @@ const Profile = () => {
             />
           </div>
           <div className="d-flex justify-content-center">
-            <p className="fs-4">{form.first_name + " " + form.last_name}</p>
-            <div className="justify-content-center">
               <div className="btn btn-flat btn-rounded">
                 <label
                   className="form-label text-white m-1"
@@ -107,6 +105,8 @@ const Profile = () => {
                 />
               </div>
             </div>
+          <div className="d-flex justify-content-center mt-2">
+            <p className="fs-4">{form.first_name + " " + form.last_name}</p>
           </div>
           <div className="row d-flex justify-content-center align-items-center">
             <div className="col-8 col-md-8 col-lg-7 col-xl-6">
