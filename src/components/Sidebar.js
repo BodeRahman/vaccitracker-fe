@@ -33,8 +33,12 @@ const Sidebar = () => {
               padding: .75rem 1rem;
           }
 
-          
-          
+          .active {
+            border-right: 6px solid white;
+            padding-left: 4px;
+          }
+
+         
         `}
       </style>
       <header className="navbar sticky-top flex-md-nowrap p-0 mt-4">
@@ -73,8 +77,8 @@ const Sidebar = () => {
             <div className="position-sticky pt-3 sidebar-sticky">
               <ul className="nav flex-column mt-4">
                 <li className="nav-item">
-                  <a
-                    href="/temphome"
+                  <NavLink
+                    to="/temphome"
                     className="nav-link text-white transi"
                     aria-current="page"
                   >
@@ -82,7 +86,7 @@ const Sidebar = () => {
                       <Home />
                     </span>
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink
@@ -109,15 +113,15 @@ const Sidebar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a
+                  <NavLink
                     className="nav-link text-white transi"
-                    href="/upcoming"
+                    to="/upcoming"
                   >
                     <span className="align-text-bottom m-4">
                       <Bell />
                     </span>
                     Reminders
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink
