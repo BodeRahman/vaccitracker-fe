@@ -6,7 +6,7 @@ import vacci1 from "../assets/img/measles.png";
 const VaccinationWiki = () => {
   return (
     <>
-      <div className="row gilroy-light">
+      <div className="row gilroy-light mb-4">
         <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>
@@ -22,7 +22,7 @@ const VaccinationWiki = () => {
                     key={vaccination.id}
                     className="col-12 col-sm-6 col-md-6 mt-3"
                   >
-                    <div className="card ">
+                    <div className="card">
                       <div className="row">
                         <div className="col-3 m-2 mt-5">
                           <img

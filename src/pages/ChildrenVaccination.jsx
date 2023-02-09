@@ -60,7 +60,7 @@ const ChildrenVaccination = () => {
 
   return (
     <>
-      <div className="container gilroy-light">
+      <div className="container gilroy-light mb-4">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-9 col-lg-7 col-xl-6">
             <div className="d-flex justify-content-center mt-5">
@@ -135,14 +135,17 @@ const ChildrenVaccination = () => {
                             checked={vaccine.completed}
                             value=""
                             id={`checkbox${vaccine.id}`}
-                            onChange={(e) => handleUpdateVaccine(vaccine.id, {
-                              completed: e.target.checked})}
+                            onChange={(e) =>
+                              handleUpdateVaccine(vaccine.id, {
+                                completed: e.target.checked,
+                              })
+                            }
                           />
                         </div>
                       ))}
                     </Accordion.Body>
                   </Accordion.Item>
-                ); 
+                );
               })}
             </Accordion>
           </div>

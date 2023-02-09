@@ -10,7 +10,7 @@ const Upcoming = () => {
 
   return (
     <>
-      <div className="row gilroy-light">
+      <div className="row gilroy-light mb-4">
         <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>

@@ -124,21 +124,14 @@ const Reminders = () => {
               </button>
             </div>
             <div className="d-flex justify-content-center ">
-              <p className="" style={{backgroundColor: "#FDE0CC"}}>Reminder set for 2 days before vaccination</p>
+              <p
+                className="reminder-announce"
+                style={{ backgroundColor: "#FDE0CC" }}
+              >
+                Reminder set for 2 days before vaccination
+              </p>
             </div>
           </form>
-
-          {/* <div className="d-flex justify-content-center ">
-            <SecondaryButton
-              className=""
-              text="Cancel"
-              type="submit"
-              style={{
-                padding: "21px, 29px, 21px, 29px",
-                borderRadius: "4px",
-              }}
-            ></SecondaryButton>
-          </div> */}
         </div>
       </div>
     </>
