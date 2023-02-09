@@ -5,8 +5,8 @@ import vacci1 from "../assets/img/measles.png";
 
 const VaccinationWiki = () => {
   return (
-    <div className="wrapper">
-      <div className="row gilroy-light mb-4">
+    <>
+      <div className="row gilroy-light mb-4 wrapper">
         <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>
@@ -94,7 +94,7 @@ const VaccinationWiki = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

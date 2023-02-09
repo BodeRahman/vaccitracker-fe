@@ -59,7 +59,7 @@ const Reminders = () => {
 
   return (
     <>
-      <div className="row gilroy-light">
+      <div className="row gilroy-light wrapper">
         <div className="col-md-3">
           <Sidebar />
         </div>
@@ -72,7 +72,7 @@ const Reminders = () => {
             <div className="d-flex justify-content-center ">
               <hr className="divider" />
             </div>
-            <div className="mb-2 ml-4 d-flex justify-content-center">
+            <div className="mb-2 reminder-form d-flex justify-content-center">
               <span className="mx-4">
                 <Bell fill="#F76600" className="bell" />
               </span>
@@ -88,8 +88,6 @@ const Reminders = () => {
                   onChange={(e) => setReminder(e.target.value)}
                   style={{
                     backgroundColor: "#E1E1E1",
-                    borderRadius: "4px",
-                    padding: "5px 24px;",
                   }}
                 />
               </span>
@@ -111,7 +109,7 @@ const Reminders = () => {
             <div className="d-flex justify-content-center ">
               <hr className="divider" />
             </div>
-            <div className="mb-3 d-flex justify-content-center ">
+            <div className="mb-3 d-flex justify-content-center align-items-center">
               <button
                 className="btn-flat"
                 type="submit"

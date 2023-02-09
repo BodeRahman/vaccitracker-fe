@@ -21,8 +21,8 @@ const TempHome = () => {
   const displayedUpcoming = sortedImmunizations.slice(0, 4);
 
   return (
-    <div className="wrapper">
-      <div className="row gilroy-light">
+    <>
+      <div className="row gilroy-light wrapper">
         <div className="col-sm-6 col-md-3">
           <Sidebar />
         </div>
@@ -264,7 +264,7 @@ const TempHome = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

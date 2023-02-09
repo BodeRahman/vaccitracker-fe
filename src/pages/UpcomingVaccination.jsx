@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import avatar from "../assets/img/child-pic.png";
 import { selectUpcoming } from "../features/child/upcomingSlice";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Upcoming = () => {
    const upcoming = useSelector(selectUpcoming);
@@ -10,7 +11,7 @@ const Upcoming = () => {
 
   return (
     <>
-      <div className="row gilroy-light mb-4">
+      <div className="row gilroy-light mb-4 wrapper">
         <div className="col- col-sm-6 col-md-3">
           <Sidebar />
         </div>
@@ -20,9 +21,9 @@ const Upcoming = () => {
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">Upcoming vaccinations</p>
               </div>
-              <a href="/reminders" className="rem">
+              <Link to="/reminders" className="text-decoration-none see-all">
                 Set reminders
-              </a>
+              </Link>
               <div className="row mt-2">
                 {upcoming.length === 0 && (
                   <div className="col-md-12">
