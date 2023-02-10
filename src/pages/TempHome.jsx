@@ -42,7 +42,7 @@ const TempHome = () => {
         </div>
         <div className="col-sm-12 col-md-9">
           <div className="row">
-            <div className="col-11 col-sm-11 col-md-7 mx-1 justify-content-center">
+            <div className="col-12 col-md-7 justify-content-center">
               <div
                 className="mt-5 d-flex justify-content-between"
                 style={{ color: "#032F5B;" }}
@@ -117,7 +117,7 @@ const TempHome = () => {
               </div>
             </div>
 
-            <div className="col-11 col-sm-11 col-md-4 mx-2">
+            <div className="col-12 col-md-4">
               <div
                 className="mt-5 d-flex justify-content-between"
                 style={{ color: "#032F5B" }}
@@ -190,7 +190,7 @@ const TempHome = () => {
               })}
             </div>
 
-            <div className="col-11 col-sm-11 col-md-11 mx-2">
+            <div className="col-12 col-md-11">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">Vaccination wiki</p>
                 <Link

@@ -17,7 +17,7 @@ const Upcoming = () => {
         </div>
         <div className="col-12 col-sm-12 col-md-9">
           <div className="row">
-            <div className="col-11 col-sm-11 col-md- mx-1 justify-content-center">
+            <div className="col-12 col-sm-11 justify-content-center">
               <div className="mt-5 d-flex justify-content-between">
                 <p className="title-head">Upcoming vaccinations</p>
               </div>

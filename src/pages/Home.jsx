@@ -15,7 +15,7 @@ import PrimaryButton from "../components/PrimaryButton";
 const Home = () => {
   const { user } = useSelector((state) => state.auth);
   return (
-    <>
+    <div className="wrapper">
       <Navbar />
       <main>
         <div className="container gilroy-light">
@@ -130,7 +130,7 @@ const Home = () => {
       </main>
       <Newsletter />
       <Footer />
-    </>
+    </div>
   );
 };
 
