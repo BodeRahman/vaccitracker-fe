@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/img/logo.png'
-import LoginButton from './LoginButton';
-import SignUpButton from './SignUpButton';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import logo from "../assets/img/logo.png";
+import PrimaryButton from "./PrimaryButton";
+import SecondaryButton from "./SecondaryButton";
+
 
 function Navbar() {
+  const { user } = useSelector((state) => state.auth);
   return (
     <nav
       className="navbar navbar-expand-md bg-light gilroy"
@@ -29,25 +32,38 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarsExample07">
           <ul className="navbar-nav me-auto mb-2 mb-md-0"></ul>
-          <div className="mb-1">
-            <Link to="/login">
-              <LoginButton text="Login"></LoginButton>
-            </Link>
-          </div>
-          <div className="mb-1">
-            <Link to="/signup">
-              <SignUpButton
-                class="btn"
-                text="Get started for free"
-                type="submit"
-              ></SignUpButton>
-            </Link>
-          </div>
+          {user ? (
+            <div className="mb-1">
+              <Link to="/temphome">
+                <PrimaryButton  
+                  class="btn"
+                  text="Go to dashboard"
+                  type="submit"
+                ></PrimaryButton>
+              </Link>
+            </div>
+          ) : (
+            <>
+              <div className="mb-1">
+                <Link to="/login">
+                  <SecondaryButton text="Login"></SecondaryButton>
+                </Link>
+              </div>
+              <div className="mb-1">
+                <Link to="/signup">
+                  <PrimaryButton
+                    class="btn"
+                    text="Get started for free"
+                    type="submit"
+                  ></PrimaryButton>
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </nav>
-    
   );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,5 +1,6 @@
 import React from 'react'
-import SignUpButton from './SignUpButton';
+import PrimaryButton from './PrimaryButton';
+
 
 const Newsletter = () => {
   return (
@@ -12,7 +13,7 @@ const Newsletter = () => {
                     <div className="input-group col-md-8">
                         <input type="email" className="form-control inp" placeholder="Enter your email"/>
                         <span className="input-group-btn">
-                            <SignUpButton class="btn" text="Suscribe Now" type="submit"></SignUpButton>
+                            <PrimaryButton class="btn" text="Suscribe Now" type="submit"></PrimaryButton>
                         </span>
                     </div>
                 </div>

@@ -1,5 +1,21 @@
-.gilroy {
-    font-family: gilroy;
+.gilroy-light {
+    font-family: "Gilroy-Light";
+}
+
+.gilroy-extrabold {
+    font-family: "Gilroy-Extrabold";
+}
+
+.home-place-color {
+    color: #F76600;
+}
+
+.home-add-btn {
+    border: 1px solid #F76600;
+    color: #F76600;
+    text-align: center;
+    padding: 5px 10px;
+    
 }
 
 .loadingSpinnerContainer {
@@ -13,6 +29,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10%;
 }
 
 .loadingSpinner {
@@ -33,3 +56,4 @@
         transform: rotate(360deg);
     }
 }
+   

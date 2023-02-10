@@ -3,8 +3,7 @@ import Navbar from "../components/Navbar";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-
-// import SignUpButton from "../components/SignUpButton";
+import Swal from "sweetalert2";
 import { register, reset } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../components/Spinner";
@@ -25,6 +24,18 @@ function Signup() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
@@ -36,10 +47,15 @@ function Signup() {
 
     if (isSuccess || user) {
       navigate("/temphome");
+      window.location.reload();
+      Toast.fire({
+        icon: "success",
+        title: "Account created successfully",
+      });
     }
 
     dispatch(reset());
-  }, [user, isError, isSuccess, message, navigate, dispatch]);
+  }, [user, isError, isSuccess, message, navigate, dispatch, Toast]);
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -74,7 +90,7 @@ function Signup() {
     <>
       <Navbar />
       <section className="">
-        <div className="container gilroy">
+        <div className="container gilroy-light">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-9 col-lg-7 col-xl-6">
               <div className="card my-5">

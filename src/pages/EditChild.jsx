@@ -1,13 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addChild, selectWards, reset } from "../features/child/wardSlice";
-import { useNavigate } from "react-router-dom";
+import { updateChild, selectWards, reset } from "../features/child/wardSlice";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import Spinner from "../components/Spinner";
 
-const AddChildren = () => {
+function EditChild() {
   const dispatch = useDispatch();
+  const { id } = useParams();
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [firstName, setFirstName] = useState("");
@@ -31,7 +32,6 @@ const AddChildren = () => {
     },
   });
 
-
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
     Toast.fire({
@@ -46,13 +46,14 @@ const AddChildren = () => {
     if (file) {
       formData.append("ward[avatar]", file);
     }
+    formData.append("ward[id]", id);
     formData.append("ward[first_name]", firstName);
     formData.append("ward[last_name]", lastName);
     formData.append("ward[date_of_birth]", dateOfBirth);
     formData.append("ward[gender]", gender);
     formData.append("ward[height]", height);
     formData.append("ward[weight]", weight);
-    dispatch(addChild(formData));
+    dispatch(updateChild(formData));
   };
 
   useEffect(() => {
@@ -62,8 +63,8 @@ const AddChildren = () => {
 
     if (isSuccess) {
       navigate("/children");
-      // window.location.reload();
-      Swal.fire("Confirmed!", "Child Added!", "success");
+      window.location.reload();
+      Swal.fire("Confirmed!", "Child Updated!", "success");
     }
 
     dispatch(reset());
@@ -81,16 +82,18 @@ const AddChildren = () => {
             <div className="col-12 col-md-9 col-lg-7 col-xl-6">
               <div className="card my-5">
                 <div className="card-body p-5">
-                  <h2 className="text-uppercase text-center mb-4">Add Child</h2>
+                  <h2 className="text-uppercase text-center mb-4">
+                    Edit Child
+                  </h2>
                   <form onSubmit={handleSubmit}>
                     <div>
                       <div className="mb-4 d-flex justify-content-center">
-                          <img
-                            src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                            alt="example placeholder"
-                            style={{ width: "300px" }}
-                          />
-                        </div>
+                        <img
+                          src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                          alt="example placeholder"
+                          style={{ width: "300px" }}
+                        />
+                      </div>
                       <div className="d-flex justify-content-center">
                         <div className="btn btn-flat btn-rounded">
                           <label
@@ -137,8 +140,8 @@ const AddChildren = () => {
                             type="text"
                             id="last_name"
                             name="last_name"
-                            required
                             className="form-control form-control-lg"
+                            required
                             value={lastName}
                             onChange={(event) =>
                               setLastName(event.target.value)
@@ -198,8 +201,8 @@ const AddChildren = () => {
                             type="text"
                             id="height"
                             name="height"
-                            className="form-control form-control-lg"
                             required
+                            className="form-control form-control-lg"
                             value={height}
                             onChange={(event) => setHeight(event.target.value)}
                           />
@@ -226,7 +229,7 @@ const AddChildren = () => {
                       <div className="form-outline mb-3">
                         <div className="d-grid col-12">
                           <button className="btn-flat" type="submit">
-                            Add Child
+                            Update Child
                           </button>
                         </div>
                       </div>
@@ -240,6 +243,6 @@ const AddChildren = () => {
       </section>
     </>
   );
-};
+}
 
-export default AddChildren;
+export default EditChild;
