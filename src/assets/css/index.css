@@ -341,11 +341,20 @@ input[type="checkbox"].form-check-input:checked {
 }
 
 .back-btn {
+    display: flex;
+    align-items: center;
     font-size: 24px;
     font-weight: 500;
     text-decoration: none;
-    color: #000000;
+    color: #F76600;
+    margin: 0 50px;
 }
+
+.back-btn:hover {
+    text-decoration: none;
+    color: #Ce5500;
+}
+
 /* Reminder */
 .reminder-head {
     color: #032F5B;
@@ -406,6 +415,14 @@ input[type="checkbox"].form-check-input:checked {
     .see-all {
         margin-top: 5px;
         font-size: larger;
+    }
+
+    .vaccine-label {
+        font-size: 13px;
+    }
+
+    .back-btn {
+        margin: 0 10px;
     }
 
     .wrapper {

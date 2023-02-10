@@ -3,7 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import avatar from "../assets/img/child-pic.png";
 import axios from "../config/axios";
 import Swal from "sweetalert2";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
 
@@ -12,32 +12,24 @@ const ChildrenVaccination = () => {
   const [vaccines, setVaccines] = useState({});
   const [filter, setFilter] = useState("All");
   const { id } = useParams();
-  const [showComponent, setShowComponent] = useState(true);
 
-  const handleBack = () => {
-    setShowComponent(false);
-  };
-
-  const handleUpdateVaccine = (vaccineId, vaccineData) => {
+  const handleUpdateVaccine = async (vaccineId, vaccineData) => {
     try {
-      const response = axios.patch(
+      await axios.patch(
         `/ward/${id}/vaccine/${vaccineId}`,
         vaccineData
       );
-      window.location.reload();
-      Swal.fire("Confirmed!", "Vaccine Completed!", "success");
-      setVaccines((prevVaccines) => {
-      const updatedVaccines = { ...prevVaccines };
-      const vaccineIndex = updatedVaccines[response.data.vaccination_date].findIndex(
-        (v) => v.id === vaccineId
+      
+      Swal.fire("Confirmed!", "Vaccine Updated!", "success");
+      const updatedVaccines = await axios.get(
+        `/vaccines?filter=${filter}&ward_id=${id}`
       );
-      updatedVaccines[response.data.vaccination_date][vaccineIndex] = response.data;
-      return updatedVaccines;
-    });
+      setVaccines(updatedVaccines.data);
     } catch (error) {
       console.log(error);
     }
   };
+
 
   useEffect(() => {
     async function fetchChild() {
@@ -66,11 +58,10 @@ const ChildrenVaccination = () => {
 
   return (
     <>
-      {showComponent && (
-        <div>
-          <BackButton onClick={handleBack} />
-        </div>
-      )}
+      <Link to="/children" className="text-decoration-none see-all">
+        <BackButton />
+      </Link>
+
       <div className="container gilroy-light mb-4">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-9 col-lg-7 col-xl-6">
@@ -135,7 +126,7 @@ const ChildrenVaccination = () => {
                           }}
                         >
                           <label
-                            className="form-check-label"
+                            className="form-check-label vaccine-label"
                             htmlFor={`checkbox${vaccine.id}`}
                           >
                             {vaccine.name}
