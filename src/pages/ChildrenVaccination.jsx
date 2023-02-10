@@ -5,12 +5,18 @@ import axios from "../config/axios";
 import Swal from "sweetalert2";
 import { useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
+import BackButton from "../components/BackButton";
 
 const ChildrenVaccination = () => {
   const [selectedChild, setSelectedChild] = useState({});
   const [vaccines, setVaccines] = useState({});
   const [filter, setFilter] = useState("All");
   const { id } = useParams();
+  const [showComponent, setShowComponent] = useState(true);
+
+  const handleBack = () => {
+    setShowComponent(false);
+  };
 
   const handleUpdateVaccine = (vaccineId, vaccineData) => {
     try {
@@ -60,6 +66,11 @@ const ChildrenVaccination = () => {
 
   return (
     <>
+      {showComponent && (
+        <div>
+          <BackButton onClick={handleBack} />
+        </div>
+      )}
       <div className="container gilroy-light mb-4">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-9 col-lg-7 col-xl-6">

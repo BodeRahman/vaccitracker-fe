@@ -340,6 +340,12 @@ input[type="checkbox"].form-check-input:checked {
     border-color: #1DB954;
 }
 
+.back-btn {
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000000;
+}
 /* Reminder */
 .reminder-head {
     color: #032F5B;
@@ -359,6 +365,7 @@ input[type="checkbox"].form-check-input:checked {
 .form-control option {
     background: #CDDAE7;
 }
+
 
 /* reminder-log */
 
