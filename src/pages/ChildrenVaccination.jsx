@@ -11,6 +11,7 @@ const ChildrenVaccination = () => {
   const [selectedChild, setSelectedChild] = useState({});
   const [vaccines, setVaccines] = useState({});
   const [filter, setFilter] = useState("All");
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   const handleUpdateVaccine = async (vaccineId, vaccineData) => {
@@ -35,6 +36,7 @@ const ChildrenVaccination = () => {
     async function fetchChild() {
       const response = await axios.get(`/ward/${id}`);
       setSelectedChild(response.data);
+      setLoading(false);
     }
 
     async function fetchVaccines() {
@@ -48,17 +50,13 @@ const ChildrenVaccination = () => {
   }, [filter, id]);
   
 
-  if (!selectedChild) {
-    return <Spinner />;
-  }
-
-  if (!vaccines) {
+  if (loading) {
     return <Spinner />;
   }
 
   return (
     <>
-      <Link to="/children" className="text-decoration-none see-all">
+      <Link to="/children" className="text-decoration-none flex see-all">
         <BackButton />
       </Link>
 

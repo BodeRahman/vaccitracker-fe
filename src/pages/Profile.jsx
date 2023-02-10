@@ -8,6 +8,7 @@ import updateProfile from "../config/profile";
 
 const Profile = () => {
   const [form, setForm] = useState({});
+  const [loading, setLoading] = useState(true);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [file, setFile] = useState(null);
@@ -30,6 +31,7 @@ const Profile = () => {
       setForm(response.data);
     }
     fetchProfile();
+    setLoading(false);
   }, []);
 
   const handleChange = (e) => {
@@ -70,7 +72,7 @@ const Profile = () => {
     }
   };
 
-  if (!form) {
+  if (loading) {
     return <Spinner />;
   }
 
