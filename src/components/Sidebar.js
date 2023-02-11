@@ -79,7 +79,7 @@ const Sidebar = () => {
                 <li className="nav-item">
                   <a
                     href="/temphome"
-                    className="nav-link text-white transi"
+                    className="nav-link text-white"
                     aria-current="page"
                   >
                     <span className="align-text-bottom m-4">
@@ -90,9 +90,9 @@ const Sidebar = () => {
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link text-white transi"
-                    exact
+                    className="nav-link text-white"
                     to="/children"
+                    activeClassName="active"
                   >
                     <span className="align-text-bottom m-4">
                       <Users />
@@ -102,8 +102,7 @@ const Sidebar = () => {
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    className="nav-link text-white transi"
-                    exact
+                    className="nav-link text-white"
                     to="/vaccination-wiki"
                   >
                     <span className="align-text-bottom m-4">
@@ -113,10 +112,7 @@ const Sidebar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link text-white transi"
-                    href="/upcoming"
-                  >
+                  <a className="nav-link text-white" href="/upcoming">
                     <span className="align-text-bottom m-4">
                       <Bell />
                     </span>
@@ -124,11 +120,7 @@ const Sidebar = () => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <NavLink
-                    className="nav-link text-white transi"
-                    exact
-                    to="/profile"
-                  >
+                  <NavLink className="nav-link text-white" to="/profile">
                     <span className="align-text-bottom m-4">
                       <User />
                     </span>
@@ -137,9 +129,8 @@ const Sidebar = () => {
                 </li>
                 <li className="nav-item">
                   <NavLink
-                    exact
                     to="/"
-                    className="nav-link text-white transi"
+                    className="nav-link text-white"
                     onClick={onLogout}
                   >
                     <span className="align-text-bottom m-4">
