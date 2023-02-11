@@ -4,10 +4,10 @@ import { ArrowLeft } from "react-feather";
 
 const BackButton = () => (
     // eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/no-static-element-interactions
-    <a className="back-btn my-3 gilroy-light" type="button">
+    <div className="back-btn my-3 gilroy-light">
       <ArrowLeft className='mx-2' />
       Back
-    </a>
+    </div>
 );
 
 export default BackButton
