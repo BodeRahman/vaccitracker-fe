@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import BackButton from "../components/BackButton";
 import { addChild, selectWards, reset } from "../features/child/wardSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Spinner from "../components/Spinner";
 
@@ -75,6 +76,10 @@ const AddChildren = () => {
 
   return (
     <>
+      <Link to="/children" className="text-decoration-none flex see-all">
+        <BackButton />
+      </Link>
+
       <section className="wrapper">
         <div className="container gilroy-light">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -85,12 +90,12 @@ const AddChildren = () => {
                   <form onSubmit={handleSubmit}>
                     <div>
                       <div className="mb-4 d-flex justify-content-center">
-                          <img
-                            src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                            alt="example placeholder"
-                            style={{ width: "300px" }}
-                          />
-                        </div>
+                        <img
+                          src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                          alt="example placeholder"
+                          style={{ width: "300px" }}
+                        />
+                      </div>
                       <div className="d-flex justify-content-center">
                         <div className="btn btn-flat btn-rounded">
                           <label
@@ -153,7 +158,7 @@ const AddChildren = () => {
                             Date of birth
                           </label>
                           <input
-                            type="text"
+                            type="date"
                             id="date_of_birth"
                             name="date_of_birth"
                             className="form-control form-control-lg"
@@ -195,7 +200,7 @@ const AddChildren = () => {
                             Height (cm)
                           </label>
                           <input
-                            type="text"
+                            type="number"
                             id="height"
                             name="height"
                             className="form-control form-control-lg"
@@ -212,7 +217,7 @@ const AddChildren = () => {
                             Weight (Kg)
                           </label>
                           <input
-                            type="text"
+                            type="number"
                             id="weight"
                             name="weight"
                             className="form-control form-control-lg"

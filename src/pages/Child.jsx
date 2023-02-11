@@ -51,12 +51,12 @@ const Children = () => {
                     <div className="card transi ">
                       <div className="row">
                         <div
-                          className="col-3"
+                          className="col-3 child-card"
                           style={{ background: "#2F659D" }}
                         >
                           <img
-                            className="rounded-circle card-img-left m-2 my-5"
-                            src={avatar}
+                            className="rounded-circle card-img-left mr-2 my-5"
+                            src={child.avatar_url ? child.avatar_url : avatar}
                             style={{ width: "72px" }}
                             alt="avatar1"
                           />
