@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateChild, selectWards, reset } from "../features/child/wardSlice";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import BackButton from "../components/BackButton";
 import Swal from "sweetalert2";
 import Spinner from "../components/Spinner";
 
@@ -76,6 +77,9 @@ function EditChild() {
 
   return (
     <>
+      <Link to="/children" className="text-decoration-none flex see-all">
+        <BackButton />
+      </Link>
       <section className="wrapper">
         <div className="container gilroy-light">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -156,7 +160,7 @@ function EditChild() {
                             Date of birth
                           </label>
                           <input
-                            type="text"
+                            type="date"
                             id="date_of_birth"
                             name="date_of_birth"
                             className="form-control form-control-lg"
@@ -198,7 +202,7 @@ function EditChild() {
                             Height (cm)
                           </label>
                           <input
-                            type="text"
+                            type="number"
                             id="height"
                             name="height"
                             required
@@ -215,7 +219,7 @@ function EditChild() {
                             Weight (Kg)
                           </label>
                           <input
-                            type="text"
+                            type="number"
                             id="weight"
                             name="weight"
                             className="form-control form-control-lg"

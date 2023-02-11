@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import { selectChildren } from "../features/child/childSlice";
 import { selectUpcoming } from "../features/child/upcomingSlice";
-import { useSelector, useDispatch } from "react-redux";
 import { fetchUpcoming } from "../features/child/upcomingSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import Spinner from "../components/Spinner";
 import Sidebar from "../components/Sidebar";
 import vacci1 from "../assets/img/measles.png";
 import avatar from "../assets/img/child-pic.png";
 import Vaccinations from "../components/Vaccinations";
+import Spinner from "../components/Spinner";
 
 const TempHome = () => {
   const dispatch = useDispatch();
-  const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [show, setShow] = useState(false);
   const [selectedModal, setSelectedModal] = useState(-1);
 
   const children = useSelector(selectChildren);
@@ -39,12 +39,11 @@ const TempHome = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchUpcoming());
-    setLoading(false);
+    dispatch(fetchUpcoming()).then(() => setLoading(false));
   }, [dispatch]);
 
   if (loading) {
-    return <Spinner />;
+    return <Spinner />
   }
 
   return (
@@ -95,7 +94,7 @@ const TempHome = () => {
                     >
                       <div className="card" id="card-deet">
                         <div className="row">
-                          <div className="col-3 m-2 mt-5">
+                          <div className="col-3 m-2 my-5">
                             <img
                               className="rounded-circle card-img-left"
                               src={
@@ -107,7 +106,7 @@ const TempHome = () => {
                               alt="avatar1"
                             />
                           </div>
-                          <div className="col-8">
+                          <div className="col-8 mt-2">
                             <div className="card-body">
                               <h5 className="card-title fw-bold">
                                 {formattedDate}
@@ -135,7 +134,9 @@ const TempHome = () => {
                 className="mt-5 d-flex justify-content-between"
                 style={{ color: "#032F5B" }}
               >
-                <p className="title-head">My Children</p>
+                {children.length > 0 && (
+                  <p className="title-head">My Children</p>
+                )}
                 {children.length > 2 && (
                   <Link to="/children" className="text-decoration-none see-all">
                     See all
@@ -143,7 +144,7 @@ const TempHome = () => {
                 )}
               </div>
               {children.length === 0 && (
-                <div className="col-md-12">
+                <div className="col-md-12 home-btn">
                   <Link to="/addChildren" className="text-decoration-none">
                     <h3 className="home-add-btn">
                       Add a child <span>+</span>

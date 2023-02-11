@@ -21,7 +21,7 @@ const ChildrenVaccination = () => {
         vaccineData
       );
       
-      Swal.fire("Confirmed!", "Vaccine Updated!", "success");
+      Swal.fire("Confirmed!", "Vaccine Status Updated", "success");
       const updatedVaccines = await axios.get(
         `/vaccines?filter=${filter}&ward_id=${id}`
       );
@@ -74,9 +74,13 @@ const ChildrenVaccination = () => {
               />
             </div>
             <div className="d-flex justify-content-center">
-              <p className="fs-4">
+              <h2 className="display-6">
                 {selectedChild.first_name + " " + selectedChild.last_name}
-              </p>
+              </h2>
+            </div>
+            <div className="d-flex gap-5 child-details justify-content-center">
+              <p>Age: {`${selectedChild.age} years`}</p>
+              <p>Gender: {selectedChild.gender}</p>
             </div>
             <select
               className="form-select form-select-lg custom-select"
@@ -93,60 +97,64 @@ const ChildrenVaccination = () => {
             </select>
 
             <Accordion className="my-3 accordion" id="accordionExample">
-              {Object.keys(vaccines).map((vaccinationDate) => {
-                const date = new Date(vaccinationDate);
-                const options = {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                };
-                const formattedDate = new Intl.DateTimeFormat(
-                  "en-US",
-                  options
-                ).format(date);
-                return (
-                  <Accordion.Item
-                    eventKey={vaccinationDate}
-                    key={vaccinationDate}
-                    className="my-3 custom-accordion"
-                  >
-                    <Accordion.Header>{formattedDate}</Accordion.Header>
-                    <Accordion.Body>
-                      {vaccines[vaccinationDate].map((vaccine) => (
-                        <div
-                          key={vaccine.id}
-                          className="form-check form-check-reverse d-flex justify-content-between my-2"
-                          style={{
-                            backgroundColor: vaccine.completed
-                              ? "#E8FFE0"
-                              : "rgba(253, 224, 204, 0.6)",
-                            padding: "12px 57px 12px 24px",
-                          }}
-                        >
-                          <label
-                            className="form-check-label vaccine-label"
-                            htmlFor={`checkbox${vaccine.id}`}
+              {Object.entries(vaccines).map(
+                ([vaccinationDate, vaccinations]) => {
+                  const date = new Date(vaccinationDate);
+                  const options = {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  };
+                  const formattedDate = new Intl.DateTimeFormat(
+                    "en-US",
+                    options
+                  ).format(date);
+                  return (
+                    <Accordion.Item
+                      eventKey={vaccinationDate}
+                      key={vaccinationDate}
+                      className="my-3 custom-accordion"
+                    >
+                      <Accordion.Header>
+                        {formattedDate} ({vaccinations[0].vaccination_type})
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        {vaccines[vaccinationDate].map((vaccine) => (
+                          <div
+                            key={vaccine.id}
+                            className="form-check form-check-reverse d-flex justify-content-between my-2"
+                            style={{
+                              backgroundColor: vaccine.completed
+                                ? "#E8FFE0"
+                                : "rgba(253, 224, 204, 0.6)",
+                              padding: "12px 57px 12px 24px",
+                            }}
                           >
-                            {vaccine.name}
-                          </label>
-                          <input
-                            className="form-check-input"
-                            type="checkbox"
-                            checked={vaccine.completed}
-                            value=""
-                            id={`checkbox${vaccine.id}`}
-                            onChange={(e) =>
-                              handleUpdateVaccine(vaccine.id, {
-                                completed: e.target.checked,
-                              })
-                            }
-                          />
-                        </div>
-                      ))}
-                    </Accordion.Body>
-                  </Accordion.Item>
-                );
-              })}
+                            <label
+                              className="form-check-label vaccine-label"
+                              htmlFor={`checkbox${vaccine.id}`}
+                            >
+                              {vaccine.name}
+                            </label>
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              checked={vaccine.completed}
+                              value=""
+                              id={`checkbox${vaccine.id}`}
+                              onChange={(e) =>
+                                handleUpdateVaccine(vaccine.id, {
+                                  completed: e.target.checked,
+                                })
+                              }
+                            />
+                          </div>
+                        ))}
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  );
+                }
+              )}
             </Accordion>
           </div>
         </div>

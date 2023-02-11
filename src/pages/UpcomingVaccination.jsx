@@ -9,14 +9,14 @@ import { Link } from "react-router-dom";
 
 const Upcoming = () => {
   const dispatch = useDispatch();
-   const upcoming = useSelector(selectUpcoming);
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const upcoming = useSelector(selectUpcoming);
 
   useEffect(() => {
-    dispatch(fetchUpcoming());
-    setLoading(false);
+    dispatch(fetchUpcoming()).then(() => setLoading(false));
   }, [dispatch]);
-
+  
+   
   if (loading) {
     return <Spinner />;
   };
@@ -30,12 +30,16 @@ const Upcoming = () => {
         <div className="col-12 col-sm-12 col-md-9">
           <div className="row">
             <div className="col-12 col-sm-11 justify-content-center">
-              <div className="mt-5 d-flex justify-content-between">
+              <div className="set-rem-mobile">
+                <Link to="/reminders" className="text-decoration-none">
+                  <div className="set-rem">Set reminder</div>
+                </Link>
+                <p >set email reminders for all upcoming vaccinations</p>
+              </div>
+
+              <div className="">
                 <p className="title-head">Upcoming vaccinations</p>
               </div>
-              <Link to="/reminders" className="text-decoration-none see-all">
-                Set reminders
-              </Link>
               <div className="row mt-2">
                 {upcoming.length === 0 && (
                   <div className="col-md-12">
@@ -64,7 +68,7 @@ const Upcoming = () => {
                     >
                       <div className="card" id="card-deet">
                         <div className="row">
-                          <div className="col-3 m-2 mt-5">
+                          <div className="col-3 m-2 mt-4">
                             <img
                               className="rounded-circle card-img-left"
                               src={
@@ -76,7 +80,7 @@ const Upcoming = () => {
                               alt="avatar1"
                             />
                           </div>
-                          <div className="col-8">
+                          <div className="col-8 pt-1">
                             <div className="card-body">
                               <h5 className="card-title fw-bold">
                                 {formattedDate}
