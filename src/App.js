@@ -13,10 +13,7 @@ import Child from "./pages/Child";
 import VaccinationWiki from "./pages/VaccinationWiki";
 import { useDispatch } from "react-redux";
 import { fetchChildren } from "./features/child/childSlice";
-import { fetchUpcoming } from "./features/child/upcomingSlice";
-
 import AddChildren from "./pages/AddChildren";
-
 import ProtectedRoutes from "./config/ProtectedRoutes";
 import EditChild from "./pages/EditChild";
 import ChildrenVaccination from "./pages/ChildrenVaccination";
@@ -28,7 +25,6 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchChildren());
-    dispatch(fetchUpcoming());
     dispatch(fetchReminderDays());
   }, [dispatch]);
 

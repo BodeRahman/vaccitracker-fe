@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import avatar from "../assets/img/child-pic.png";
+import Spinner from "../components/Spinner";
 import { selectUpcoming } from "../features/child/upcomingSlice";
-import { useSelector } from "react-redux";
+import { fetchUpcoming } from "../features/child/upcomingSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Upcoming = () => {
+  const dispatch = useDispatch();
    const upcoming = useSelector(selectUpcoming);
+   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    dispatch(fetchUpcoming());
+    setLoading(false);
+  }, [dispatch]);
+
+  if (loading) {
+    return <Spinner />;
+  };
 
   return (
     <>

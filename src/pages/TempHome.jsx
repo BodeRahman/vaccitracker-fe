@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import { selectChildren } from "../features/child/childSlice";
 import { selectUpcoming } from "../features/child/upcomingSlice";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUpcoming } from "../features/child/upcomingSlice";
 import { Link } from "react-router-dom";
+import Spinner from "../components/Spinner";
 import Sidebar from "../components/Sidebar";
 import vacci1 from "../assets/img/measles.png";
 import avatar from "../assets/img/child-pic.png";
 import Vaccinations from "../components/Vaccinations";
 
 const TempHome = () => {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [selectedModal, setSelectedModal] = useState(-1);
 
   const children = useSelector(selectChildren);
@@ -33,6 +37,15 @@ const TempHome = () => {
     setSelectedModal(-1);
     setShow(false);
   };
+
+  useEffect(() => {
+    dispatch(fetchUpcoming());
+    setLoading(false);
+  }, [dispatch]);
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <>
