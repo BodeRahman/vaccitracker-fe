@@ -33,7 +33,7 @@ const Sidebar = () => {
               padding: .75rem 1rem;
           }
 
-          .active {
+          .nav-item.active {
             border-right: 6px solid white;
             padding-left: 4px;
           }
