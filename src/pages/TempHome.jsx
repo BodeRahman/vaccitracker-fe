@@ -173,7 +173,7 @@ const TempHome = () => {
                       <div className="card transi">
                         <div className="row">
                           <div
-                            className="col-4"
+                            className="col-4 child-card"
                             style={{ background: "#2F659D" }}
                           >
                             <img
