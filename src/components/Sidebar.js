@@ -44,7 +44,7 @@ const Sidebar = () => {
       <header className="navbar sticky-top flex-md-nowrap p-0 mt-4">
         <NavLink
           className="navbar-brand col-md-3 col-lg-4 me-4  px-3 fs-6 "
-          to="/"
+          to="/temphome"
         >
           <img
             src={logo}
