@@ -1,7 +1,6 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import Vaccinations from "../components/Vaccinations";
-import vacci1 from "../assets/img/measles.png";
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
 
@@ -39,7 +38,7 @@ const VaccinationWiki = () => {
                         <div className="m-2 mt-3">
                           <img
                             className="rounded card-img-left"
-                            src={vacci1}
+                            src={vaccination.image}
                             alt="avatar1"
                           />
                         </div>
