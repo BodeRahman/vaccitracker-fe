@@ -30,7 +30,7 @@ const Upcoming = () => {
         <div className="col-12 col-sm-12 col-md-9">
           <div className="row">
             <div className="col-12 col-sm-11 justify-content-center">
-              <div className="set-rem-mobile">
+              <div className="set-rem-mobile mt-5">
                 <Link to="/reminders" className="text-decoration-none">
                   <div className="set-rem">Set reminder</div>
                 </Link>
