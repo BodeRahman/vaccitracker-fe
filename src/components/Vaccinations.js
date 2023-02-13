@@ -1,4 +1,9 @@
 import measles from "../assets/img/measles.png";
+import vitamin from "../assets/img/vitamin.png";
+import phbv from "../assets/img/phbv.png";
+import opv from "../assets/img/polio.png";
+import pcv from "../assets/img/pcv.png";
+import bcg from "../assets/img/bcg.png";
 
 const Vaccinations = [
   {
@@ -23,7 +28,7 @@ const Vaccinations = [
     home: "Bacille Calmette-Guérin (BCG) is a vaccine for tuberculosis (TB) disease.",
     description:
       "Bacille Calmette-Guérin (BCG) is a vaccine for tuberculosis (TB) disease. It is used to prevent childhood tuberculous meningitis and miliary disease.",
-    image: measles,
+    image: bcg,
   },
   {
     id: 4,
@@ -47,7 +52,7 @@ const Vaccinations = [
     home: "OPV is a vaccine for Polio. It protects against severe disease caused by poliovirus.",
     description:
       "OPV is a vaccine for Polio. It protects against severe disease caused by poliovirus.",
-    image: measles,
+    image: opv,
   },
   {
     id: 7,
@@ -55,7 +60,7 @@ const Vaccinations = [
     home: "Pneumococcal polyvalent vaccine is an active immunizing agent used to prevent infection by pneumococcal bacteria.",
     description:
       "Pneumococcal polyvalent vaccine is an active immunizing agent used to prevent infection by pneumococcal bacteria.",
-    image: measles,
+    image: pcv,
   },
   {
     id: 8,
@@ -63,7 +68,7 @@ const Vaccinations = [
     home: "Hepatitis B Vaccine prevents infection of the liver caused by the hepatitis virus.",
     description:
       "Hepatitis B Vaccine prevents infection of the liver caused by the hepatitis virus.",
-    image: measles,
+    image: phbv,
   },
   {
     id: 9,
@@ -71,7 +76,7 @@ const Vaccinations = [
     home: "Vitamin A is needed for the proper growth and functioning of many parts of the body.",
     description:
       "Vitamin A is needed for the proper growth and functioning of many parts of the body, including the eyes, skin, and immune system.",
-    image: measles,
+    image: vitamin,
   },
   {
     id: 10,
