@@ -33,18 +33,21 @@ const Sidebar = () => {
               padding: .75rem 1rem;
           }
 
-          .nav-item.active {
-            border-right: 6px solid white;
+          .nav-link:active {
+            color: #F76600; !important;
+          }
+
+          .active {
+            border-right: 6px solid #F76600;
             padding-left: 4px;
           }
 
-         
         `}
       </style>
       <header className="navbar sticky-top flex-md-nowrap p-0 mt-4">
-        <NavLink
+        <a
           className="navbar-brand col-md-3 col-lg-4 me-4  px-3 fs-6 "
-          to="/temphome"
+          href="/temphome"
         >
           <img
             src={logo}
@@ -52,7 +55,7 @@ const Sidebar = () => {
             className="mx-4"
             style={{ height: "40px", width: "130px" }}
           />
-        </NavLink>
+        </a>
         <button
           className="navbar-toggler position-absolute d-md-none collapsed"
           type="button"
@@ -77,8 +80,8 @@ const Sidebar = () => {
             <div className="position-sticky pt-3 sidebar-sticky">
               <ul className="nav flex-column mt-4">
                 <li className="nav-item">
-                  <a
-                    href="/temphome"
+                  <NavLink
+                    to="/temphome"
                     className="nav-link text-white"
                     aria-current="page"
                   >
@@ -86,13 +89,13 @@ const Sidebar = () => {
                       <Home />
                     </span>
                     Home
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink
                     className="nav-link text-white"
                     to="/children"
-                    activeClassName="active"
+                    
                   >
                     <span className="align-text-bottom m-4">
                       <Users />
@@ -112,12 +115,12 @@ const Sidebar = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="/upcoming">
+                  <NavLink className="nav-link text-white" to="/upcoming">
                     <span className="align-text-bottom m-4">
                       <Bell />
                     </span>
                     Reminders
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link text-white" to="/profile">
