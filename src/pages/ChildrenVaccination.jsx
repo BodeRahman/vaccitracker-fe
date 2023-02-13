@@ -14,6 +14,18 @@ const ChildrenVaccination = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 5000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
   const handleUpdateVaccine = async (vaccineId, vaccineData) => {
     try {
       await axios.patch(
@@ -21,7 +33,11 @@ const ChildrenVaccination = () => {
         vaccineData
       );
       
-      Swal.fire("Confirmed!", "Vaccine Status Updated", "success");
+      Toast.fire({
+        icon: "success",
+        title: "Vaccination Status Updated!",
+      });
+      
       const updatedVaccines = await axios.get(
         `/vaccines?filter=${filter}&ward_id=${id}`
       );
@@ -81,6 +97,11 @@ const ChildrenVaccination = () => {
             <div className="d-flex gap-5 child-details justify-content-center">
               <p>Age: {`${selectedChild.age} years`}</p>
               <p>Gender: {selectedChild.gender}</p>
+            </div>
+            <div className="d-flex justify-content-center">
+              <h4 className="text-muted">
+                Update vaccination status for {selectedChild.first_name}
+              </h4>
             </div>
             <select
               className="form-select form-select-lg custom-select"
