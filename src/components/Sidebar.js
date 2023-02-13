@@ -20,10 +20,6 @@ const Sidebar = () => {
     <>
       <style>
         {`
-          .navbar-brand {
-            
-          }
-          
           .navbar .navbar-toggler {
               top: .45rem;
               right: 1rem;
@@ -45,17 +41,6 @@ const Sidebar = () => {
         `}
       </style>
       <header className="navbar sticky-top flex-md-nowrap p-0 mt-4">
-        <a
-          className="navbar-brand col-md-3 col-lg-4 me-4  px-3 fs-6 "
-          href="/temphome"
-        >
-          <img
-            src={logo}
-            alt="Vaccitracker logo"
-            className="mx-4"
-            style={{ height: "40px", width: "130px" }}
-          />
-        </a>
         <button
           className="navbar-toggler position-absolute d-md-none collapsed"
           type="button"
@@ -77,6 +62,17 @@ const Sidebar = () => {
             className="col-md-4 col-lg-4 d-md-block sidebar collapse"
             style={{ backgroundColor: "#054689" }}
           >
+            <a
+              className="navbar-brand col-md-3 col-lg-4 me-4  px-3 fs-6 "
+              href="/temphome"
+            >
+              <img
+                src={logo}
+                alt="Vaccitracker logo"
+                className="mx-4"
+                style={{ height: "40px", width: "130px" }}
+              />
+            </a>
             <div className="position-sticky pt-3 sidebar-sticky">
               <ul className="nav flex-column mt-4">
                 <li className="nav-item">
