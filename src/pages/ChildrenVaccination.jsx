@@ -98,6 +98,11 @@ const ChildrenVaccination = () => {
               <p>Age: {`${selectedChild.age} years`}</p>
               <p>Gender: {selectedChild.gender}</p>
             </div>
+            <div className="d-flex justify-content-center">
+              <h4 className="text-muted">
+                Update vaccination status for {selectedChild.first_name}
+              </h4>
+            </div>
             <select
               className="form-select form-select-lg custom-select"
               onChange={(e) => {

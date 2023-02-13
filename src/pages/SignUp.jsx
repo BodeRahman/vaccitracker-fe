@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Navbar from "../components/Navbar";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { register, reset } from "../features/auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "../components/Spinner";
+
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -229,12 +230,12 @@ function Signup() {
 
                     <p className="text-center text-muted mt-3 mb-0">
                       Have an account?{" "}
-                      <a
-                        href="/login"
-                        className="sign-in fw-bold text-decoration-none"
+                      <Link
+                        to="/login"
+                        className="sign-in fw-bold  text-decoration-none"
                       >
                         Login here
-                      </a>
+                      </Link>
                     </p>
                   </form>
                 </div>
