@@ -55,12 +55,19 @@ The basic requirements for building the executable are:
 #### Cloning the project
 
 ```
-git clone  <https://github.com/d2ndjim/vaccitracker.git>
-cd vaccitracker
+git clone  <https://github.com/BodeRahman/vaccitracker-fe.git>
 ```
+## Available Scripts
 
-All source code files are licensed under the permissive zlib license
-(http://opensource.org/licenses/Zlib) unless marked differently in a particular folder/file.
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
 # TEAM VACCITRACKER
 
@@ -86,15 +93,5 @@ All source code files are licensed under the permissive zlib license
 - LinkedIn: [Abdulrahman Olagunju](https://www.linkedin.com/in/olagunju-abdulrahman1/)
 
 
-## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
